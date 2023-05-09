@@ -17,6 +17,7 @@
 
     {{-- link font --}}
     <link href="https://fonts.cdnfonts.com/css/chunkfive" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
 
 
     <!-- Custom styles for this template -->
@@ -24,33 +25,35 @@
 
 </head>
 
-<body >
-
-    {{-- <div class="row justify-content-center">
-        <div class="col-md-3 mt-5">
-
-        </div>
-    </div> --}}
+<body>
 
     <main class="form-signin w-100 m-auto border border-dark border-3 rounded-2">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <form>
-          <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
-      
-          <div class="form-floating my-2">
-            <input type="name" class="form-control" id="name" placeholder="Name">
-            <label for="name">Nama</label>
-          </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
-          </div>
-          <small class="d-block mt-3 mb-3">Belum memiliki akun? <a href="/register">Daftar!</a></small>
-      
-          <button class="w-20 mb-5 btn btn-lg btn-primary" type="submit">Masuk</button>
-      
+            <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
+
+            <div class="form-floating my-2">
+                <input type="name" class="form-control" id="name" placeholder="Name">
+                <label for="name" style="font-family: 'Poppins', sans-serif;">Nama</label>
+            </div>
+            <div class="form-floating">
+                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword" style="font-family: 'Poppins', sans-serif;">Password</label>
+            </div>
+            <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Belum memiliki akun? <a
+                    href="/register">Daftar!</a></small>
+
+            <button class="w-20 mb-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
+                style="font-family: 'Poppins', sans-serif; background-color: #EEC921; color:black">Masuk</button>
+
         </form>
-        
-      </main>
+
+    </main>
 
 
 
