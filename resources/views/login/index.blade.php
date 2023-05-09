@@ -34,16 +34,29 @@
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
         @endif
-        <form>
+
+        @if (session()->has('loginError'))
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{ session('loginError') }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    @endif
+        <form action="/login" method="post">
+            @csrf
             <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
 
             <div class="form-floating my-2">
-                <input type="name" class="form-control" id="name" placeholder="Name">
+                <input type="name" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name" autofocus required value="{{ old('name') }}">
                 <label for="name" style="font-family: 'Poppins', sans-serif;">Nama</label>
+                @error('name')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+                @enderror
             </div>
             <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                <label for="floatingPassword" style="font-family: 'Poppins', sans-serif;">Password</label>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <label for="password" style="font-family: 'Poppins', sans-serif;">Password</label>
             </div>
             <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Belum memiliki akun? <a
                     href="/register">Daftar!</a></small>
