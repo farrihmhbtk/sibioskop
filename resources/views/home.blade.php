@@ -1,15 +1,15 @@
 @extends('layouts.main')
 
 @section('container')
-<div class="container-fluid" style="padding: 0px;">
+<div class="container" style="">
     <div class="row">
-        <div class="col-sm-12" style="border: 1px solid blue">
-            <div class="m-0">
-                <div class="wrapper" style="position: relative; width: 500px; ">
-                 <img id="video-cover" src="https://i.ytimg.com/vi/QbZqS2pvEmQ/maxresdefault.jpg" alt="Video title" style="max-width: 100%; height:auto; border-radius: 15px; border: 2px solid black; box-shadow: -10px 10px black">
+        <div class="col-sm-12" style="border: 1px solid blue;">
+            <div class="d-inline m-0">
+                <div class="wrapper" style="position: relative; width: 441px; ">
+                 <img id="video-cover" src="https://i.ytimg.com/vi/QbZqS2pvEmQ/maxresdefault.jpg" alt="Video title" style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
                  <iframe
                   id="video"
-                  width="500" height="281"
+                  width="441" height="247"
                   src="https://www.youtube.com/embed/5WfTEZJnv_8"
                   frameborder="0"
                   allow="autoplay; encrypted-media"
@@ -25,15 +25,21 @@
                  </button>
                 </div>
               </div>
+
         </div>
         <div class="col-sm-12" style="border: 1px solid blue">
-            <div class="container">
+            <div class="container" style="padding: 0;">
                 <div class="row">
-                    <div class="col-sm-12 mt-3 fs-4" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 3px; text-align: left; padding-left: 0px;">
+                    <div class="col-sm-12 my-4 fs-4" style="border: 1px solid rgb(255, 119, 0); font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 3px; text-align: left; padding-left: 0px;">
                         SEKARANG DI BIOSKOP
                     </div>
-                    <div class="col-sm-12">
-
+                    <div class="col-sm-12" style="border: 1px solid rgb(0, 255, 42)">
+                        <div class="wrapper" style="position: relative; width: 160px; ">
+                            <a href="">
+                                <img src="https://media.wdwnt.com/2023/01/quantumania-poster.jpeg" alt="" style="max-width: 100%; height:auto;">
+                                AntMan
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
