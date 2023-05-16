@@ -45,11 +45,11 @@
         <div class="container-fluid">
             {{-- row pertama --}}
 
-                <div class="row" style="height: 13vh; position: -webkit-sticky; position: sticky; top: 0; z-index: 11; background-color: white;">
+                <div class="row" style="height: 13vh; z-index: 11; background-color: white; padding:0;">
                     {{-- column kiri --}}
-                    <div class="col-sm-2" style="padding: 0px; border: 1px solid rgb(255, 0, 217); z-index: 1;">
+                    <div class="col-sm-2 fixed-top" style="padding: 0px; z-index: 1;">
                         <div class="container">
-                            <div class="row me-5" style="background-color: #222222; height: 13vh;">
+                            <div class="row me-5" style="background-color: #222222; height: 13.1vh;">
                                 <div class="col text-center mt-5">
                                     <a href="">
                                         <svg width="50" height="43" viewBox="0 0 68 58" fill="none"
@@ -74,9 +74,9 @@
                         </div>
                     </div>
                     {{-- column kanan --}}
-                    <div class="col" style="; padding: 0px; z-index: 9;;">
-                        <div class="container">
-                            <div class="row  align-items-center border" style="height: 13vh; ">
+                    <div class="col fixed-top" style="padding: 0px; z-index: 12; padding-left: 16.5%;">
+                        <div class="container" style="">
+                            <div class="row  align-items-center" style="height: 13vh; background-color: white;">
                                 {{-- navbar kolom kiri --}}
                                 <div class="col-sm-6 fs-3"
                                     style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 4px; text-align: left; padding-left: 0px;">
@@ -85,11 +85,12 @@
                                 {{-- navbar kolom kanan --}}
                                 <div class="col-sm-6" style="text-align:right;">
                                     <div class="d-inline dropdown">
-                                        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button"
+                                        <button class="btn btn-secondary btn-sm dropdown-toggle p-0" type="button"
                                             data-bs-toggle="dropdown" aria-expanded="false"
                                             style="color: black; background-color: white; border-width: 1px; border-color: black; width: 35%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: right; font-weight: 350; font-size: 9pt;">
+                                            
                                             Pilih lokasi
-                                            <svg width="20" height="20" viewBox="0 0 27 27" fill="none"
+                                            <svg class="" width="20" height="20" viewBox="0 0 27 27" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg" style="">
                                                 <path
                                                     d="M11.9999 13.43C12.4096 13.43 12.8153 13.3493 13.1939 13.1925C13.5724 13.0357 13.9163 12.8059 14.2061 12.5162C14.4958 12.2265 14.7256 11.8825 14.8824 11.504C15.0392 11.1254 15.1199 10.7197 15.1199 10.31C15.1199 9.90028 15.0392 9.49457 14.8824 9.11603C14.7256 8.73749 14.4958 8.39355 14.2061 8.10383C13.9163 7.81411 13.5724 7.58429 13.1939 7.4275C12.8153 7.2707 12.4096 7.19 11.9999 7.19C11.1724 7.19 10.3788 7.51872 9.79371 8.10383C9.2086 8.68894 8.87988 9.48253 8.87988 10.31C8.87988 11.1375 9.2086 11.9311 9.79371 12.5162C10.3788 13.1013 11.1724 13.43 11.9999 13.43Z"
@@ -101,9 +102,9 @@
                                             
                                         </button>
                                         <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Action</a></li>
-                                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                            <li><a class="dropdown-item" href="#">Surabaya</a></li>
+                                            <li><a class="dropdown-item" href="#">Kediri</a></li>
+                                            <li><a class="dropdown-item" href="#">Semarang</a></li>
                                         </ul>
         
                                     </div>
@@ -132,7 +133,7 @@
             {{-- row kedua --}}
                 <div class="row" style="height: 87vh;  ">
                     {{-- column kiri --}}
-                    <div class="col-sm-2 fixed-bottom" style="padding: 0px; border: 1px solid rgb(0, 255, 68); z-index:0; ">
+                    <div class="col-sm-2 fixed-bottom" style="padding: 0px; z-index:0; ">
                         <div class="container" style="">
                             <div class="row me-5" style="background-color: #222222; height: 86.9vh; ">
                                 <div class="d-block">
@@ -255,7 +256,7 @@
                         </div>
                     </div>
                     {{-- column kanan (ISI KONTEN) --}}
-                    <div class="col" style="border: 1px solid rgb(255, 225, 0); z-index: 10; margin-left: 16.5%; padding: 0;">
+                    <div class="col" style="z-index: 10; padding: 0; margin-left: 16.5%; ">
                         @yield('container')
                     </div>
                 </div>
