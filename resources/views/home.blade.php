@@ -30,7 +30,7 @@
         <div class="col-sm-12" style="">
             <div class="container" style="padding: 0;">
                 <div class="row">
-                    <div class="col-sm-12 my-4 fs-4" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 3px; text-align: left; padding-left: 0px;">
+                    <div class="col-sm-12 mt-4 mb-2 fs-4" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 3px; text-align: left; padding-left: 0px;">
                         SEKARANG DI BIOSKOP
                     </div>
                     <div class="col-sm-12" style="">
