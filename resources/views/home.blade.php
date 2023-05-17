@@ -3,14 +3,16 @@
 @section('container')
 <div class="container" style="">
     <div class="row">
-        <div class="col-sm-12" style="  ">
-            <div class="d-inline m-0">
+        <div class="col-sm-12 float-start" style="">
+            
+            <div class="float-start m-0" style="border: solid 1px blue; width: 441px;">
+                @foreach($films as $film)
                 <div class="wrapper" style="position: relative; width: 441px; ">
-                 <img id="video-cover" src="https://i.ytimg.com/vi/QbZqS2pvEmQ/maxresdefault.jpg" alt="Video title" style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
+                 <img id="video-cover" src="{{ $film->linkCoverTrailer }}" alt="Video title" style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
                  <iframe
                   id="video"
                   width="441" height="247"
-                  src="https://www.youtube.com/embed/5WfTEZJnv_8"
+                  src="https://www.youtube.com/embed/{{ $film->linkTrailerID }}"
                   frameborder="0"
                   allow="autoplay; encrypted-media"
                   allowfullscreen style="display: none;">
@@ -24,9 +26,13 @@
                         
                  </button>
                 </div>
+                @endforeach
               </div>
 
         </div>
+        
+
+        @foreach($films as $film)
         <div class="col-sm-12" style="">
             <div class="container" style="padding: 0;">
                 <div class="row">
@@ -36,7 +42,7 @@
                     <div class="col-sm-12" style="">
                         <div class="wrapper" style="position: relative; width: 160px; ">
                             <a href="">
-                                <img src="https://media.wdwnt.com/2023/01/quantumania-poster.jpeg" alt="" style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
+                                <img src="{{ $film->linkPoster }}" alt="" style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
                                 <p class="mt-3 mb-1" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; text-align:center; font-size: 10pt;">Ant Man: Quantumania</p>
                                 <svg class="" style="text-align: center;" width="150" height="30" viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M16.7241 3.6236L20.3539 14.795H32.1003L22.5973 21.6994L26.2271 32.8708L16.7241 25.9665L7.2211 32.8708L10.8509 21.6994L1.34793 14.795H13.0943L16.7241 3.6236Z" fill="#222222"/>
@@ -57,6 +63,8 @@
                 </div>
             </div>
         </div>
+        @endforeach
+        
     </div>
 </div> 
 @endsection
