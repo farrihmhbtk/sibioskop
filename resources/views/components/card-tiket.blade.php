@@ -5,8 +5,8 @@
                 style="max-width: 80%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
         </a>
     </div>
-    <div class="col justify-content-start" style="font-size: 10pt;">
-        <p class="mt-3 mb-1" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F">
+    <div class="col justify-content-start mt-3" style="font-size: 10pt;">
+        <p class="" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F">
             Ant Man: Quantumania</p>
         <P>DETAIL TRANSAKSI</P>
         <div class="data" style="display: flex; flex-direction: column">
