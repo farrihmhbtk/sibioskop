@@ -73,7 +73,7 @@
                     @include('partials.sidebar')
 
                     {{-- column kanan (ISI KONTEN) --}}
-                    <div class="col" style="z-index: 10; padding: 0; margin-left: 16.5%; ">
+                    <div class="col" style="z-index: 10; padding: 0; margin-left: 16.5%;">
                         @yield('container')
                     </div>
                 </div>

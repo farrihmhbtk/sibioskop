@@ -6,6 +6,11 @@
             flex: 0 0 calc(50% - 1.3rem);
             /* Adjust the width as needed */
         }
+        
+        .row {
+            font-family: 'Poppins', sans-serif;
+        }
+
     </style>
 
     <div class="container">

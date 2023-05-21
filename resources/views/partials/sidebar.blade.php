@@ -35,7 +35,7 @@
                   </li>
                   {{-- ICON BIOSKOP --}}
                   <li class="text-center my-3 " style="width: 100%">
-                      <a href="#" class="nav-link text-white">
+                      <a href="/daftarBioskop" class="nav-link text-white">
                           <svg width="40" height="57" viewBox="0 0 54 77" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -101,7 +101,7 @@
                   </li>
                   {{-- ICON KELUAR --}}
                   <li class="d-bloc" style="">
-                      <a href="#" class="nav-link text-white">
+                      <a href="/login" class="nav-link text-white">
                           <svg width="35" height="61" viewBox="0 0 48 84" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path

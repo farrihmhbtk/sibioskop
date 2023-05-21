@@ -26,7 +26,7 @@
       </div>
   </div>
   {{-- column kanan --}}
-  <div class="col fixed-top" style="padding: 0px; z-index: 12; padding-left: 16.5%;">
+  <div class="col fixed-top" style="padding: 0px; z-index: 12; padding-left: 16.5%; background-color: white">
       <div class="container" style="">
           <div class="row  align-items-center" style="height: 13vh; background-color: white;">
               {{-- navbar kolom kiri --}}

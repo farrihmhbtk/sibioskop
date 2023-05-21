@@ -33,3 +33,7 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/', [FilmController::class, 'index']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
+
+Route::get('/daftarBioskop', function() {
+    return view('daftarBioskop');
+});
