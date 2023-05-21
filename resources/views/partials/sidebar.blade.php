@@ -3,8 +3,9 @@
       <div class="row me-5" style="background-color: #222222; height: 86.9vh; ">
           <div class="d-block">
               <ul class="nav nav-pills d-flex">
+                {{-- ICON BERANDA --}}
                   <li class="text-center mt-5" style="width: 100%">
-                      <a href="#" class="nav-link" aria-current="page">
+                      <a href="/" class="nav-link" aria-current="page">
                           <svg width="40" height="57" viewBox="0 0 60 86" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path
@@ -32,6 +33,7 @@
 
                       </a>
                   </li>
+                  {{-- ICON BIOSKOP --}}
                   <li class="text-center my-3 " style="width: 100%">
                       <a href="#" class="nav-link text-white">
                           <svg width="40" height="57" viewBox="0 0 54 77" fill="none"
@@ -63,8 +65,9 @@
 
                       </a>
                   </li>
+                  {{-- ICON TIKET --}}
                   <li class="text-center my-3 " style="width: 100%">
-                      <a href="#" class="nav-link text-white">
+                      <a href="/cekTiket" class="nav-link text-white">
                           <svg width="33" height="57" viewBox="0 0 45 74" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path

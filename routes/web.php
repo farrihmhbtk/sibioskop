@@ -30,6 +30,6 @@ Route::get('/register', [RegisterController::class, 'index']);
 
 Route::post('/register', [RegisterController::class, 'store']);
 
+Route::get('/', [FilmController::class, 'index']);
 
-Route::get('/home', [FilmController::class, 'index']);
 Route::get('/cekTiket', [CekTiketController::class, 'index']);

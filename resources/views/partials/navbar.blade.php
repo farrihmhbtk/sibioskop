@@ -1,10 +1,10 @@
 <div class="row" style="height: 13vh; z-index: 11; background-color: white; padding:0;">
   {{-- column kiri --}}
-  <div class="col-sm-2 fixed-top" style="padding: 0px; z-index: 1;">
+  <div class="col-sm-2 fixed-top" style="padding: 0px; z-index: 20;">
       <div class="container">
           <div class="row me-5" style="background-color: #222222; height: 13.1vh;">
               <div class="col text-center mt-5">
-                  <a href="">
+                  <a href="/">
                       <svg width="50" height="43" viewBox="0 0 68 58" fill="none"
                           xmlns="http://www.w3.org/2000/svg">
                           <path
@@ -21,7 +21,6 @@
                               stroke-linejoin="round" />
                       </svg>
                   </a>
-
               </div>
           </div>
       </div>
