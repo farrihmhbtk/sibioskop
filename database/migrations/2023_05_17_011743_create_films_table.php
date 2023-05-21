@@ -17,11 +17,11 @@ return new class extends Migration
             $table->string('linkPoster');
             $table->string('linkTrailerID');
             $table->string('linkCoverTrailer');
-            $table->integer('skorfilm');
+            $table->integer('skorFilm');
             $table->string('genre');
             $table->string('sutradara');
             $table->string('ratingUsia');
-            $table->string('synopsis');
+            $table->string('sinopsis');
             $table->timestamps();
         });
     }

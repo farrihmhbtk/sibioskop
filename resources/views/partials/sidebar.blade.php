@@ -91,15 +91,16 @@
                   </li>
               </ul>
 
-
           </div>
           <div class="d-block mb-4 ">
               <ul class="nav nav-pills d-flex justify-content-center "
                   style="height: 100%; align-content: flex-end;">
-                  <li class="text-center" style="width: 70%">
+                  {{-- STRAIGHT LINE --}}
+                  <li class="d-block text-center" style="width: 70%">
                       <hr style="border-color: #8B8B8B; border-width: 3px">
                   </li>
-                  <li class="" style="">
+                  {{-- ICON KELUAR --}}
+                  <li class="d-bloc" style="">
                       <a href="#" class="nav-link text-white">
                           <svg width="35" height="61" viewBox="0 0 48 84" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
