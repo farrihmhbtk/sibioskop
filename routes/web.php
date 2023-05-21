@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\CekTiketController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +32,4 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 
 Route::get('/home', [FilmController::class, 'index']);
+Route::get('/cekTiket', [CekTiketController::class, 'index']);
