@@ -37,3 +37,7 @@ Route::get('/cekTiket', [CekTiketController::class, 'index']);
 Route::get('/daftarBioskop', function() {
     return view('daftarBioskop');
 });
+
+Route::get('/film', function() {
+    return view('filmBerdasarkanBioskop');
+});
