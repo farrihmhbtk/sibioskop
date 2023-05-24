@@ -50,4 +50,8 @@ Route::get('/bioskopBF', function() {
     return view('bioskopBerdasarkanFilm');
 });
 
+Route::get('/ringkasanOrder', function() {
+    return view('ringkasanOrder');
+});
+
 

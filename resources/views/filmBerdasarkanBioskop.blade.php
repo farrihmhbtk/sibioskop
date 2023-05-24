@@ -1,9 +1,20 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="d-block justify-content-start" style="width: 97%; border: 1px solid blue; padding: 0px;">
+<style>
+    li {
+        margin: 10px 0;
+        font-size: 10pt;
+    }
+
+    ul {
+        padding: 0;
+        
+    }
+</style>
+    <div class="d-block justify-content-start" style="width: 97%;  padding: 0px;">
         {{-- ROW PERTAMA --}}
-        <div class="row" style="border: 1px solid rgb(147, 158, 46)">
+        <div class="row" style="">
             <div class="col-sm-12 py-2 px-4 fs-5"
                 style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                 <svg width="27" height="44" viewBox="0 0 38 44" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -17,10 +28,10 @@
         {{-- ROW KEDUA --}}
         <div class="row my-4"
             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; height: 70vh;">
-            <div class="col-sm-5" style="border: 1px solid rgb(215, 92, 160);">
+            <div class="col-sm-5" style="border: 2px solid black; border-radius: 4px;">
                 column
             </div>
-            <div class="col-sm-7" style="border: 1px solid rgb(11, 122, 98);">
+            <div class="col-sm-7" style="">
                 <div class="container">
                     <div class="row justify-content-center text-center mt-4 mb-2">
                         <div class="col-sm-3 py-2 fs-6"
@@ -37,7 +48,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-3 ms-4 mt-4" style="border: 1px solid blue;">
+                        <div class="col-sm-3 ms-4 mt-4" style="">
                             <div class="wrapper"
                                 style="width: 160px; float: none; display:inline-block;position: relative; margin-right:30px">
                                 <img src="https://cdn.gramedia.com/uploads/picture_meta/2023/4/10/n2wfjd2hadzvmcyqhrjugo.jpg"
@@ -79,16 +90,25 @@
 
                             </div>
                         </div>
-                        <div class="col-sm-8 mt-4" style="border: 1px solid brown">
-                            <p class="text-start"
-                                    style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; text-align:center; font-size: 10pt;">
-                                    Buya Hamka</p>
-                                    <p>
-                                        Genre       Komedi <br>
-                                        Durasi      1 jam 50 menit <br>
-                                        Sutradara   
-                                    </p>
-                            </div>
+                        <div class="col-sm-8 mt-4" style="">
+                            <ul
+                            class="text-start" style="list-style-type: none; font-family: 'Poppins', sans-serif; ">
+                            <li class="" style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0;">
+                                Antman: Quantumania
+                            </li>
+                            <li>
+                                Genre &emsp; &emsp; &emsp;Action
+                            </li>
+                            <li>
+                                Durasi &emsp; &emsp; &emsp;1 Jam 50 Menit
+                            </li>
+                            <li>
+                                Sutradara &emsp; &nbsp;Antonio Alexandar
+                            </li>
+                            <li>
+                                Rating Usia &emsp;13+
+                            </li>
+                        </ul>
 
                     </div>
                     <div class="row justify-content-center text-center my-3">
