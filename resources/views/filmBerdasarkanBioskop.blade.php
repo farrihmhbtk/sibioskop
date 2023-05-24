@@ -23,15 +23,15 @@
             <div class="col-sm-7" style="border: 1px solid rgb(11, 122, 98);">
                 <div class="container">
                     <div class="row justify-content-center text-center mt-4 mb-2">
-                        <div class="col-sm-3 py-2 fs-5"
+                        <div class="col-sm-3 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                             12 Feb
                         </div>
-                        <div class="col-sm-3 mx-5 py-2 fs-5"
+                        <div class="col-sm-3 mx-5 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                             13 Feb
                         </div>
-                        <div class="col-sm-3 py-2 fs-5"
+                        <div class="col-sm-3 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                             14 Feb
                         </div>
@@ -92,15 +92,15 @@
 
                     </div>
                     <div class="row justify-content-center text-center my-3">
-                        <div class="col-sm-3 py-2 fs-5"
+                        <div class="col-sm-3 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                             14.40
                         </div>
-                        <div class="col-sm-3 mx-5 py-2 fs-5"
+                        <div class="col-sm-3 mx-5 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                             18.00
                         </div>
-                        <div class="col-sm-3 py-2 fs-5"
+                        <div class="col-sm-3 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                             20.00
                         </div>

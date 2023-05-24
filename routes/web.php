@@ -38,6 +38,16 @@ Route::get('/daftarBioskop', function() {
     return view('daftarBioskop');
 });
 
-Route::get('/film', function() {
+Route::get('/filmBB', function() {
     return view('filmBerdasarkanBioskop');
 });
+
+Route::get('/panduan', function() {
+    return view('panduan');
+});
+
+Route::get('/bioskopBF', function() {
+    return view('bioskopBerdasarkanFilm');
+});
+
+
