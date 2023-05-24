@@ -50,7 +50,7 @@
                             @foreach ($films as $film)
                                 <div class="wrapper"
                                     style="width: 160px; float: none; display:inline-block;position: relative; margin-right:30px">
-                                    <a href="/film" style="text-decoration: none;">
+                                    <a href="/bioskopBF" style="text-decoration: none;">
                                         <img src="{{ $film->linkPoster }}" alt=""
                                             style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
                                         <p class="mt-3 mb-1"

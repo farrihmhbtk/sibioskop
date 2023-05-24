@@ -15,7 +15,7 @@
     <div class="d-block justify-content-start" style="width: 94%;">
         <div class="row">
             {{-- ROW KIRI --}}
-            <div class="col-sm-6" style="">
+            <div class="col-sm-6" style="position:fixed;">
                 {{-- ATAS (TRAILER) --}}
                 <div class="row">
                     <div class="col-sm-12 mb-5">
@@ -44,7 +44,7 @@
                     {{-- ATAS (POSTER DAN INFO FILM) --}}
                     <div class="col-sm-12">
                         <div class="row">
-                            <div class="col-sm-4" style="">
+                            <div class="col-sm-3" style="">
                                 <div class="wrapper"
                                     style="width: 130px; float: none; display:inline-block;position: relative; margin-right:30px">
                                     <img src="https://images.thedirect.com/media/photos/4am_screenx.jpg" alt=""
@@ -88,7 +88,7 @@
                             <div class="col-sm-8" style="">
                                 <ul
                                     class="text-start" style="list-style-type: none; font-family: 'Poppins', sans-serif; ">
-                                    <li class="" style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0;">
+                                    <li class="" style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0; ">
                                         Antman: Quantumania
                                     </li>
                                     <li>
@@ -111,7 +111,7 @@
 
             </div>
             {{-- ROW KANAN --}}
-            <div class="col-sm-6" style=" font-family: 'Poppins', sans-serif;">
+            <div class="col-sm-6" style=" font-family: 'Poppins', sans-serif; margin-left: 50%;">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="row justify-content-center text-center mb-2">
@@ -120,7 +120,7 @@
                                 12 Feb
                             </div>
                             <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 12%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                                 13 Feb
                             </div>
                             <div class="col-sm-2 py-2 fs-6"
@@ -129,15 +129,15 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-12 mt-4 fw-bold" style="padding-left: 12%; font-size: 14pt;">
+                    <div class="col-sm-12 mt-4 fw-bold" style="padding-left: 5%; font-size: 14pt;">
                         Tunjungan 5 XXI
                     </div>
                     <div class="col-sm-12 mt-2">
                         <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 12%; font-size: 13pt;" >
+                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt;" >
                                 Reguler 2D
                             </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 14%; color: #A89797">
+                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
                                 Rp20,000
                             </div>
                         </div>
@@ -149,7 +149,7 @@
                                 14.40
                             </div>
                             <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 12%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                                 18.00
                             </div>
                             <div class="col-sm-2 py-2 fs-6"
@@ -160,10 +160,10 @@
                     </div>
                     <div class="col-sm-12">
                         <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 12%; font-size: 13pt">
+                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt">
                                 Premiere
                             </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 14%; color: #A89797">
+                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
                                 Rp20,000
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                                 14.40
                             </div>
                             <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 12%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                                 18.00
                             </div>
                             <div class="col-sm-2 py-2 fs-6"
@@ -184,6 +184,120 @@
                             </div>
                         </div>
                     </div>
+
+                    {{-- START UJI COBA (DUPLIKAT) --}}
+                    <div class="col-sm-12 mt-4 fw-bold" style="padding-left: 5%; font-size: 14pt;">
+                        Tunjungan 5 XXI
+                    </div>
+                    <div class="col-sm-12 mt-2">
+                        <div class="row">
+                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt;" >
+                                Reguler 2D
+                            </div>
+                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
+                                Rp20,000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row justify-content-center text-center mt-2 mb-4">
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                14.40
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                18.00
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                20.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt">
+                                Premiere
+                            </div>
+                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
+                                Rp20,000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row justify-content-center text-center mt-2 mb-2">
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                14.40
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                18.00
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                20.00
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 mt-4 fw-bold" style="padding-left: 5%; font-size: 14pt;">
+                        Tunjungan 5 XXI
+                    </div>
+                    <div class="col-sm-12 mt-2">
+                        <div class="row">
+                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt;" >
+                                Reguler 2D
+                            </div>
+                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
+                                Rp20,000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row justify-content-center text-center mt-2 mb-4">
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                14.40
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                18.00
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                20.00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row">
+                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt">
+                                Premiere
+                            </div>
+                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
+                                Rp20,000
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12">
+                        <div class="row justify-content-center text-center mt-2 mb-2">
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                14.40
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                18.00
+                            </div>
+                            <div class="col-sm-2 py-2 fs-6"
+                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                20.00
+                            </div>
+                        </div>
+                    </div>
+                    {{-- END UJI COBA --}}
                 </div>
             </div>
         </div>
