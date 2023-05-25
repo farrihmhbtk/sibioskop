@@ -54,4 +54,6 @@ Route::get('/ringkasanOrder', function() {
     return view('ringkasanOrder');
 });
 
+Route::get('/coba', [FilmController::class, 'index2']);
+
 

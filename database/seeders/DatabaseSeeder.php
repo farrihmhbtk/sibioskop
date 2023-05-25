@@ -104,8 +104,32 @@ class DatabaseSeeder extends Seeder
         Film::create([
             'title' => 'The Super Mario Bros. Movie',
             'linkPoster' => 'https://upload.wikimedia.org/wikipedia/en/4/44/The_Super_Mario_Bros._Movie_poster.jpg',
-            'linkTrailerID' => 'TnGl01FkMMo',
-            'linkCoverTrailer' => 'https://i.ytimg.com/an_webp/TnGl01FkMMo/mqdefault_6s.webp?du=3000&sqp=CIqRqaMG&rs=AOn4CLDribO2IiGPtIOehxpMp_UdH5LRkQ',
+            'linkTrailerID' => 'DUnQcJz76Ck',
+            'linkCoverTrailer' => 'https://i.ytimg.com/vi/DUnQcJz76Ck/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLApZDekbvN2Quai5HqyzHMFcSy3xw',
+            'skorFilm' => '5',
+            'genre' => 'Action',
+            'sutradara' => 'John',
+            'ratingUsia' => 'SU',
+            'sinopsis' => 'Pada suatu hari'
+        ]);
+
+        Film::create([
+            'title' => 'FAST X',
+            'linkPoster' => 'https://i.dailymail.co.uk/1s/2023/02/01/02/67189525-11699313-image-m-28_1675219232984.jpg',
+            'linkTrailerID' => 'aOb15GVFZxU',
+            'linkCoverTrailer' => 'https://i.ytimg.com/vi/aOb15GVFZxU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAcUVGjd6SxEFI8foHSNHYBRJ4arA',
+            'skorFilm' => '5',
+            'genre' => 'Action',
+            'sutradara' => 'John',
+            'ratingUsia' => 'SU',
+            'sinopsis' => 'Pada suatu hari'
+        ]);
+
+        Film::create([
+            'title' => 'GUY RITCHIES THE COVENANT',
+            'linkPoster' => 'https://asset.tix.id/wp-content/uploads/2023/04/dee6c5d6-25a0-4750-976e-07601e52bd6b.jpeg',
+            'linkTrailerID' => '02PPMPArNEQ',
+            'linkCoverTrailer' => 'https://i.ytimg.com/vi/02PPMPArNEQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvWGrxU50BeDsi_-BD-UMcrcLm8w',
             'skorFilm' => '5',
             'genre' => 'Action',
             'sutradara' => 'John',

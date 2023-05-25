@@ -17,6 +17,13 @@ class FilmController extends Controller
         ]);
     }
 
+    public function index2()
+    {
+        return view ('coba', [
+            "films" => Film::all()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
