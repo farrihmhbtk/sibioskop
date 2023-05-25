@@ -111,7 +111,7 @@
 
             </div>
             {{-- ROW KANAN --}}
-            <div class="col-sm-6" style=" font-family: 'Poppins', sans-serif; margin-left: 50%;">
+            <div class="col-sm-6 mb-4" style=" font-family: 'Poppins', sans-serif; margin-left: 50%;">
                 <div class="row">
                     <div class="col-sm-12">
                         <div class="row justify-content-center text-center mb-2">
