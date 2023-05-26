@@ -2,28 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Film;
 use App\Models\Lokasi;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreLokasiRequest;
+use App\Http\Requests\UpdateLokasiRequest;
 
-class FilmController extends Controller
+class LokasiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view ('beranda', [
-            "films" => Film::all(),
-            "lokasis" => Lokasi::all()
-        ]);
-    }
-
-    public function index2()
-    {
-        return view ('coba', [
-            "films" => Film::all()
-        ]);
+        //
     }
 
     /**
@@ -37,7 +27,7 @@ class FilmController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreLokasiRequest $request)
     {
         //
     }
@@ -45,17 +35,15 @@ class FilmController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(film $film)
+    public function show(Lokasi $lokasi)
     {
-        return view ('bioskopBerdasarkanFilm', [
-            "film" => $film
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Film $film)
+    public function edit(Lokasi $lokasi)
     {
         //
     }
@@ -63,7 +51,7 @@ class FilmController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Film $film)
+    public function update(UpdateLokasiRequest $request, Lokasi $lokasi)
     {
         //
     }
@@ -71,7 +59,7 @@ class FilmController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Film $film)
+    public function destroy(Lokasi $lokasi)
     {
         //
     }

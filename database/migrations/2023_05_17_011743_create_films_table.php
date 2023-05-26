@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('films', function (Blueprint $table) {
             $table->id('filmID');
             $table->string('title');
+            $table->string('slug');
             $table->string('linkPoster');
             $table->string('linkTrailerID');
             $table->string('linkCoverTrailer');
