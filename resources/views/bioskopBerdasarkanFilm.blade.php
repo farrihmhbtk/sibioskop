@@ -20,10 +20,10 @@
                 <div class="row">
                     <div class="col-sm-12 mb-5">
                         <div class="wrapper" style="position: relative; width: 480px; ">
-                            <img id="video-cover" src="{{ $film->linkCoverTrailer }}"
+                            <img id="video-cover" src="https://i.ytimg.com/vi/yjRHZEUamCc/maxresdefault.jpg"
                                 alt="Video title"
                                 style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
-                            <iframe id="video" width="480" height="269" src="https://www.youtube.com/embed/{{ $film->linkTrailerID }}"
+                            <iframe id="video" width="480" height="269" src="https://www.youtube.com/embed/qEVUtrk8_B4"
                                 frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: none;">
                             </iframe>
                             <button id="playbutton" class="play-btn">
@@ -47,7 +47,7 @@
                             <div class="col-sm-3" style="">
                                 <div class="wrapper"
                                     style="width: 130px; float: none; display:inline-block;position: relative; margin-right:30px">
-                                    <img src="{{ $film->linkPoster }}" alt=""
+                                    <img src="linkPoster" alt=""
                                         style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
                                     <svg class="mt-3" style="" width="130" height="30"
                                         viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,19 +89,19 @@
                                 <ul
                                     class="text-start" style="list-style-type: none; font-family: 'Poppins', sans-serif; ">
                                     <li class="" style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0; ">
-                                        {{ $film->title }}
+                                        =
                                     </li>
                                     <li>
-                                        Genre &emsp; &emsp; &emsp;{{ $film->genre }}
+                                        Genre &emsp; &emsp; &emsp;=
                                     </li>
                                     <li>
                                         Durasi &emsp; &emsp; &emsp;1 Jam 50 Menit
                                     </li>
                                     <li>
-                                        Sutradara &emsp; &nbsp;{{ $film->sutradara }}
+                                        Sutradara &emsp; &nbsp;=
                                     </li>
                                     <li>
-                                        Rating Usia &emsp;{{ $film->ratingUsia }}
+                                        Rating Usia &emsp;=
                                     </li>
                                 </ul>
                             </div>
