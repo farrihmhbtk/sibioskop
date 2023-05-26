@@ -12,3 +12,8 @@ const playVideo = PlayBtn.addEventListener( 'click' , () => {
       document.getElementById('video-cover').style.display='none';
     }
 });
+
+const changeSelected = (e) => {
+  const $select = document.querySelector('#mySelect');
+  $select.value = 'steve'
+};

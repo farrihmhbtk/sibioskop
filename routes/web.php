@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BioskopController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
@@ -35,9 +36,9 @@ Route::get('/', [FilmController::class, 'index']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
-Route::get('/daftarBioskop', function () {
-    return view('daftarBioskop');
-});
+Route::get('/daftarBioskop', [BioskopController::class, 'index']);
+
+Route::get('/film/{film:slug}', [FilmController::class, 'show']);
 
 Route::get('/filmBB', function() {
     return view('filmBerdasarkanBioskop');
@@ -47,17 +48,11 @@ Route::get('/panduan', function() {
     return view('panduan');
 });
 
-Route::get('/bioskopBF', function() {
-    return view('bioskopBerdasarkanFilm');
-});
-
 Route::get('/ringkasanOrder', function() {
     return view('ringkasanOrder');
 });
 
 Route::get('/coba', [FilmController::class, 'index2']);
-
-
 
 Route::get('/reset', [ResetPassController::class, 'index']);
 

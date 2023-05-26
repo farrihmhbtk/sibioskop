@@ -33,10 +33,11 @@
               <div class="col-sm-6 fs-3"
                   style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 4px; text-align: left; padding-left: 0px;">
                   SI BIOSKOP CINEMA
+                  
               </div>
               {{-- navbar kolom kanan --}}
               <div class="col-sm-6" style="text-align:right;">
-                  <div class="d-inline dropdown">
+                  {{-- <div class="d-inline dropdown">
                       <button class="btn btn-secondary btn-sm p-0" type="button"
                           data-bs-toggle="dropdown" aria-expanded="false"
                           style="color: black; background-color: white; border-width: 1px; border-color: black; width: 35%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: right; font-weight: 350; font-size: 9pt;">
@@ -69,7 +70,22 @@
                           <li><a class="dropdown-item" href="#">Semarang</a></li>
                       </ul>
 
+                  </div> --}}
+
+                  <div class="d-inline">
+                    
+                    <select id="my-select" style="color: black; background-color: white; border-width: 1px; border-color: black; width: 35%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: left; font-weight: 350; font-size: 9pt; appearance: none; overflow-y: hidden; padding-left: 6px;">
+                        <option value="pilih lokasi">Pilih lokasi</option>
+
+                        <option value="" >sss</option>
+
+                        
+                     </select>
+
+                     
                   </div>
+
+
                   <div class="d-inline mx-3">
                       <a class="btn" href="#" role="button">
                           <svg width="40" height="40" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
