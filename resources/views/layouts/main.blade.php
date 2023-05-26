@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="ch-ua-form-factor=()">
     <title>SI BIOSKOP</title>
 
     <link rel="icon" type="image/x-icon" href="icon/camera.svg">
@@ -85,7 +86,7 @@
     </div>
 
 
-    <script src="js/style.js"></script>
+    <script type="text/javascript" src="{{ URL::asset('js/style.js') }}"></script>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
