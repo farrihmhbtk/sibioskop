@@ -27,7 +27,7 @@
 
 <body>
 
-    <main class="form-signin w-100 m-auto border border-dark border-3 rounded-2">
+    <main class="form-signin w-100 h-75 card-center m-auto border border-dark border-3 rounded-2">
         @if (session()->has('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 {{ session('success') }}
@@ -36,31 +36,36 @@
         @endif
 
         @if (session()->has('loginError'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ session('loginError') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('loginError') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
         <form action="/login" method="post">
             @csrf
             <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
 
             <div class="form-floating my-2">
-                <input type="name" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Name" autofocus required value="{{ old('name') }}">
+                <input type="name" name="name" class="form-control @error('name') is-invalid @enderror"
+                    id="name" placeholder="Name" autofocus required value="{{ old('name') }}">
                 <label for="name" style="font-family: 'Poppins', sans-serif;">Nama</label>
                 @error('name')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
                 @enderror
             </div>
             <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                <input type="password" name="password" class="form-control" id="password" placeholder="Password"
+                    required>
                 <label for="password" style="font-family: 'Poppins', sans-serif;">Password</label>
             </div>
-            <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Belum memiliki akun? <a
-                    href="/register">Daftar!</a></small>
-
+            <div class="d-flex justify-content-between">
+                <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Belum memiliki akun? <a
+                        href="/register">Daftar!</a></small>
+                <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;"><a href="/reset">Lupa
+                        Password</a></small>
+            </div>
             <button class="w-20 mb-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
                 style="font-family: 'Poppins', sans-serif; background-color: #EEC921; color:black">Masuk</button>
 

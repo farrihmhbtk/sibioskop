@@ -5,6 +5,7 @@ use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CekTiketController;
+use App\Http\Controllers\ResetPassController;
 
 
 /*
@@ -34,10 +35,16 @@ Route::get('/', [FilmController::class, 'index']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
-Route::get('/daftarBioskop', function() {
+Route::get('/daftarBioskop', function () {
     return view('daftarBioskop');
 });
 
-Route::get('/film', function() {
+Route::get('/film', function () {
     return view('filmBerdasarkanBioskop');
 });
+
+Route::get('/reset', [ResetPassController::class, 'index']);
+
+Route::get('/resetVerification', [ResetPassController::class, 'verification']);
+
+Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
