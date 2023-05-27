@@ -319,7 +319,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         temp_lokasi::create([
-            'id_temp' => '1'
+            'id_temp' => 'pilihLokasi'
         ]);
 
     }

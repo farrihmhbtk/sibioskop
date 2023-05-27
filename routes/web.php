@@ -7,7 +7,6 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CekTiketController;
 use App\Http\Controllers\ResetPassController;
-use App\Models\temp_lokasi;
 use App\Models\Lokasi;
 
 
@@ -44,9 +43,9 @@ Route::get('/daftarBioskop', [BioskopController::class, 'index']);
 
 Route::get('/film/{film:slug}', [FilmController::class, 'show']);
 
-Route::get('/lokasi/{temp_lokasi:id_temp}', function(temp_lokasi $temp_lokasi){
+Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
     return view('daftarBioskop', [
-        'bioskops' => $temp_lokasi->bioskop
+        'bioskops' => $lokasi->bioskop
     ]);
 });
 
