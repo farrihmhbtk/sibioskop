@@ -95,7 +95,7 @@
                                         Genre &emsp; &emsp; &emsp;{{ $film->genre }}
                                     </li>
                                     <li>
-                                        Durasi &emsp; &emsp; &emsp;1 Jam 50 Menit
+                                        Durasi &emsp; &emsp; &emsp;{{ $film->durasi }}
                                     </li>
                                     <li>
                                         Sutradara &emsp; &nbsp;{{ $film->sutradara }}

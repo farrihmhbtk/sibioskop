@@ -12,3 +12,4 @@ const playVideo = PlayBtn.addEventListener( 'click' , () => {
       document.getElementById('video-cover').style.display='none';
     }
 });
+

@@ -35,7 +35,7 @@
                   </li>
                   {{-- ICON BIOSKOP --}}
                   <li class="text-center my-3 " style="width: 100%">
-                      <a href="/daftarBioskop" class="nav-link text-white">
+                      <a href="/lokasi/{{ $temp_lokasi->id_temp }}" class="nav-link text-white">
                           <svg width="40" height="57" viewBox="0 0 54 77" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path

@@ -15,8 +15,7 @@ class BioskopController extends Controller
     public function index()
     {
         return view ('daftarBioskop', [
-            "bioskops" => Bioskop::all(),
-            "lokasis" => Lokasi::all()
+            "bioskops" => Bioskop::find(1)
         ]);
     }
 
@@ -39,9 +38,9 @@ class BioskopController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Bioskop $bioskop)
+    public function show(bioskop $bioskop)
     {
-        //
+
     }
 
     /**

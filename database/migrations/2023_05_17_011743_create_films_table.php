@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('linkCoverTrailer');
             $table->integer('skorFilm');
             $table->string('genre');
+            $table->string('durasi');
             $table->string('sutradara');
             $table->string('ratingUsia');
             $table->string('sinopsis');

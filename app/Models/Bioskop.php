@@ -12,4 +12,8 @@ class Bioskop extends Model
     public function lokasi(){
         return $this->belongsTo(Lokasi::class, 'cityID');
     }
+
+    public function temp_lokasi(){
+        return $this->belongsTo(temp_lokasi::class);
+    }
 }
