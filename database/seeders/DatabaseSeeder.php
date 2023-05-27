@@ -7,6 +7,7 @@ use App\Models\Film;
 use App\Models\User;
 use App\Models\Lokasi;
 use App\Models\Bioskop;
+use App\Models\temp_lokasi;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -30,7 +31,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'halowow@gmail.com'
         ]);
 
-        
+
         Film::create([
             'title' => 'John Wick Chapter 4',
             'slug' => 'john-wick-chapter-4',
@@ -39,34 +40,37 @@ class DatabaseSeeder extends Seeder
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/yjRHZEUamCc/maxresdefault.jpg',
             'skorFilm' => '5',
             'genre' => 'Action',
-            'sutradara' => 'John',
-            'ratingUsia' => 'SU',
-            'sinopsis' => 'Pada suatu hari'
+            'durasi' => '2 Jam 49 Menit',
+            'sutradara' => 'Chad Stahelski',
+            'ratingUsia' => 'D 17+',
+            'sinopsis' => 'With the price on his head ever increasing, legendary hit man John Wick takes his fight against the High Table global as he seeks out the most powerful players in the underworld, from New York to Paris to Japan to Berlin.'
         ]);
 
         Film::create([
             'title' => 'Ant Man : Quantumania',
-            'slug' => 'ant-man-:-quantumania',
+            'slug' => 'ant-man-quantumania',
             'linkPoster' => 'https://images.thedirect.com/media/photos/4am_screenx.jpg',
             'linkTrailerID' => '5WfTEZJnv_8',
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/QbZqS2pvEmQ/maxresdefault.jpg',
             'skorFilm' => '5',
             'genre' => 'Action',
-            'sutradara' => 'John',
-            'ratingUsia' => 'SU',
+            'durasi' => '2 Jam 4 Menit',
+            'sutradara' => 'Peyton Reed',
+            'ratingUsia' => 'R 13+',
             'sinopsis' => 'Pada suatu hari'
         ]);
 
         Film::create([
             'title' => 'Avatar: The Way of Water',
-            'slug' => 'avatar-:-the-way-of-water',
+            'slug' => 'avatar-the-way-of-water',
             'linkPoster' => 'https://i.kinja-img.com/gawker-media/image/upload/c_fit,f_auto,g_center,q_60,w_645/eb4a61461794d426df55290532e15503.jpg',
             'linkTrailerID' => 'o5F8MOz_IDw',
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/o5F8MOz_IDw/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6EfY_-phwEFh_PGn7lQo_4gi6Pg',
             'skorFilm' => '5',
             'genre' => 'Action',
-            'sutradara' => 'John',
-            'ratingUsia' => 'SU',
+            'durasi' => '3 Jam 12 Menit',
+            'sutradara' => 'James Cameron',
+            'ratingUsia' => 'PG 13+',
             'sinopsis' => 'Pada suatu hari'
         ]);
 
@@ -78,8 +82,9 @@ class DatabaseSeeder extends Seeder
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/u3V5KDHRQvk/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCPjju4861mrOfgN9gsO8r90BYcEg',
             'skorFilm' => '5',
             'genre' => 'Action',
-            'sutradara' => 'John',
-            'ratingUsia' => 'SU',
+            'durasi' => '2 Jam 29 Menit',
+            'sutradara' => 'James Gunn',
+            'ratingUsia' => 'PG 13+',
             'sinopsis' => 'Pada suatu hari'
         ]);
 
@@ -90,9 +95,10 @@ class DatabaseSeeder extends Seeder
             'linkTrailerID' => 'uYPbbksJxIg',
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/uYPbbksJxIg/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLA2M_LSAVX5C1yeaypLoWxlz78y5Q',
             'skorFilm' => '5',
-            'genre' => 'Action',
-            'sutradara' => 'John',
-            'ratingUsia' => 'SU',
+            'genre' => 'History',
+            'durasi' => '2 Jam 30 Menit',
+            'sutradara' => 'Christopher Nolan',
+            'ratingUsia' => 'R 13+',
             'sinopsis' => 'Pada suatu hari'
         ]);
 
@@ -103,8 +109,9 @@ class DatabaseSeeder extends Seeder
             'linkTrailerID' => 'fAQnkdaGisM',
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/fAQnkdaGisM/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC1DjtaaWcAXTdYBR7OJgZMehgiHA',
             'skorFilm' => '5',
-            'genre' => 'Action',
-            'sutradara' => 'John',
+            'genre' => 'Drama',
+            'durasi' => '1 Jam 46 Menit',
+            'sutradara' => 'Fajar Bustomi',
             'ratingUsia' => 'SU',
             'sinopsis' => 'Pada suatu hari'
         ]);
@@ -116,8 +123,9 @@ class DatabaseSeeder extends Seeder
             'linkTrailerID' => 'DUnQcJz76Ck',
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/DUnQcJz76Ck/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLApZDekbvN2Quai5HqyzHMFcSy3xw',
             'skorFilm' => '5',
-            'genre' => 'Action',
-            'sutradara' => 'John',
+            'genre' => 'Animation',
+            'durasi' => '1 Jam 32 Menit',
+            'sutradara' => 'Aaron Horvath, Michael Jelenic',
             'ratingUsia' => 'SU',
             'sinopsis' => 'Pada suatu hari'
         ]);
@@ -130,8 +138,9 @@ class DatabaseSeeder extends Seeder
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/aOb15GVFZxU/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAcUVGjd6SxEFI8foHSNHYBRJ4arA',
             'skorFilm' => '5',
             'genre' => 'Action',
-            'sutradara' => 'John',
-            'ratingUsia' => 'SU',
+            'durasi' => '2 Jam 21 Menit',
+            'sutradara' => 'Louis Leterrier',
+            'ratingUsia' => 'R 13+',
             'sinopsis' => 'Pada suatu hari'
         ]);
 
@@ -143,13 +152,18 @@ class DatabaseSeeder extends Seeder
             'linkCoverTrailer' => 'https://i.ytimg.com/vi/02PPMPArNEQ/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDvWGrxU50BeDsi_-BD-UMcrcLm8w',
             'skorFilm' => '5',
             'genre' => 'Action',
-            'sutradara' => 'John',
-            'ratingUsia' => 'SU',
+            'durasi' => '2 Jam 3 Menit',
+            'sutradara' => 'Guy Ritchie',
+            'ratingUsia' => 'R 13+',
             'sinopsis' => 'Pada suatu hari'
         ]);
 
         Lokasi::create([
-            'city' => 'surabaya',
+            'city' => 'silahkanPilihLokasi',
+        ]);
+
+        Lokasi::create([
+            'city' => 'Surabaya',
         ]);
 
         Lokasi::create([
@@ -161,68 +175,152 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 1,
+            'temp_lokasi_id' => 1,
+            'bioskop' => 'Silahkan Pilih Lokasi'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'BG Junction CGV'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Ciputra World Premiere'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'CITO 21'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'City of Tommorrow Cinepolis'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Delta XXI'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Galaxy XXI'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Grand City Premiere'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Pakuwon Mall XXI'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'PTC XXI'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'ROYAL XXI'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Surabaya Town Square XXI'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Trans Icon Mall XXI'
         ]);
 
         Bioskop::create([
-            'cityID' => 1,
+            'lokasi_id' => 2,
+            'temp_lokasi_id' => 2,
             'bioskop' => 'Tunjungan 5 Premiere'
         ]);
+
+        Bioskop::create([
+            'lokasi_id' => 3,
+            'temp_lokasi_id' => 3,
+            'bioskop' => 'Kediri Mall CGV'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 3,
+            'temp_lokasi_id' => 3,
+            'bioskop' => 'Kediri XXI'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'Citra XXI Semarang'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'Tentrem Mall XXI'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'Tentrem Mall Premiere'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'Paragon XXI'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'Tentrem Mall Premiere'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'Tentrem Mall XXI'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'The Park Semarang XXI'
+        ]);
+
+        Bioskop::create([
+            'lokasi_id' => 4,
+            'temp_lokasi_id' => 4,
+            'bioskop' => 'Uptown Mall BSB City XXI'
+        ]);
+
+        temp_lokasi::create([
+            'id_temp' => '1'
+        ]);
+
     }
 }

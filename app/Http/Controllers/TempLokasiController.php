@@ -2,29 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Film;
-use App\Models\Lokasi;
 use App\Models\temp_lokasi;
 use Illuminate\Http\Request;
 
-class FilmController extends Controller
+class TempLokasiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view ('beranda', [
-            "films" => Film::all(),
-            "lokasis" => Lokasi::all()
-        ]);
-    }
-
-    public function index2()
-    {
-        return view ('coba', [
-            "films" => Film::all()
-        ]);
+        //
     }
 
     /**
@@ -40,29 +28,21 @@ class FilmController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'id_temp' => 'required'
-        ]);
-
-        temp_lokasi::create($validatedData);
-
-        return redirect('/');
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(film $film)
+    public function show(temp_lokasi $temp_lokasi)
     {
-        return view ('bioskopBerdasarkanFilm', [
-            "film" => $film
-        ]);
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Film $film)
+    public function edit(temp_lokasi $temp_lokasi)
     {
         //
     }
@@ -70,7 +50,7 @@ class FilmController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Film $film)
+    public function update(Request $request, temp_lokasi $temp_lokasi)
     {
         //
     }
@@ -78,7 +58,7 @@ class FilmController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Film $film)
+    public function destroy(temp_lokasi $temp_lokasi)
     {
         //
     }
