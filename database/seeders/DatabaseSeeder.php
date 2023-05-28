@@ -176,145 +176,121 @@ class DatabaseSeeder extends Seeder
 
         Bioskop::create([
             'lokasi_id' => 1,
-            'temp_lokasi_id' => 1,
             'bioskop' => 'Silahkan Pilih Lokasi'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'BG Junction CGV'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Ciputra World Premiere'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'CITO 21'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'City of Tommorrow Cinepolis'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Delta XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Galaxy XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Grand City Premiere'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Pakuwon Mall XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'PTC XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'ROYAL XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Surabaya Town Square XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Trans Icon Mall XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 2,
-            'temp_lokasi_id' => 2,
             'bioskop' => 'Tunjungan 5 Premiere'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 3,
-            'temp_lokasi_id' => 3,
             'bioskop' => 'Kediri Mall CGV'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 3,
-            'temp_lokasi_id' => 3,
             'bioskop' => 'Kediri XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'Citra XXI Semarang'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'Tentrem Mall XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'Tentrem Mall Premiere'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'Paragon XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'Tentrem Mall Premiere'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'Tentrem Mall XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'The Park Semarang XXI'
         ]);
 
         Bioskop::create([
             'lokasi_id' => 4,
-            'temp_lokasi_id' => 4,
             'bioskop' => 'Uptown Mall BSB City XXI'
         ]);
 

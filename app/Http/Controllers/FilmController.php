@@ -16,6 +16,7 @@ class FilmController extends Controller
     {
         return view ('beranda', [
             "films" => Film::all(),
+            "trailers" => Film::limit(5)->get(),
             "lokasis" => Lokasi::all()
         ]);
     }
