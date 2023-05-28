@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\BioskopController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
@@ -67,3 +66,8 @@ Route::get('/reset', [ResetPassController::class, 'index']);
 Route::get('/resetVerification', [ResetPassController::class, 'verification']);
 
 Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
+// Route::get('/pembayaransukses', function() {
+//     return view('PembayaranSukses');
+// });
+
+Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);
