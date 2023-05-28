@@ -16,6 +16,7 @@ class FilmController extends Controller
     {
         return view ('beranda', [
             "films" => Film::all(),
+            "trailers" => Film::limit(5)->get(),
             "lokasis" => Lokasi::all()
         ]);
     }
@@ -24,6 +25,13 @@ class FilmController extends Controller
     {
         return view ('coba', [
             "films" => Film::all()
+        ]);
+    }
+
+    public function pembayaransukses()
+    {
+        return view ('pembayaransukses', [
+            "films" => Film::where('filmID', 2)->get()
         ]);
     }
 

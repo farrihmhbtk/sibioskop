@@ -15,7 +15,7 @@ class Lokasi extends Model
 
     public $timestamps = false;
 
-    public function bioskop(){
-        return $this->hasMany(Bioskop::class);
+    public function cinema(){
+        return $this->hasMany(Cinema::class);
     }
 }

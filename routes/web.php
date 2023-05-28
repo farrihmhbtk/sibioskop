@@ -1,12 +1,12 @@
 <?php
 
-use App\Http\Controllers\BioskopController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CekTiketController;
 use App\Http\Controllers\ResetPassController;
+use App\Http\Controllers\filmBerdasarkanCinemaController;
 use App\Models\Lokasi;
 
 
@@ -39,19 +39,17 @@ Route::post('/', [FilmController::class, 'store']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
-Route::get('/daftarBioskop', [BioskopController::class, 'index']);
-
 Route::get('/film/{film:slug}', [FilmController::class, 'show']);
 
 Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
-    return view('daftarBioskop', [
-        'bioskops' => $lokasi->bioskop
+    return view('daftarCinema', [
+        'cinemas' => $lokasi->cinema
     ]);
 });
 
-Route::get('/filmBB', function() {
-    return view('filmBerdasarkanBioskop');
-});
+
+
+Route::get('/filmBB', [filmBerdasarkanCinemaController::class, 'index']);
 
 Route::get('/panduan', function() {
     return view('panduan');
@@ -68,3 +66,8 @@ Route::get('/reset', [ResetPassController::class, 'index']);
 Route::get('/resetVerification', [ResetPassController::class, 'verification']);
 
 Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
+// Route::get('/pembayaransukses', function() {
+//     return view('PembayaranSukses');
+// });
+
+Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);
