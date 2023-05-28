@@ -7,6 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CekTiketController;
 use App\Http\Controllers\ResetPassController;
+use App\Http\Controllers\filmBerdasarkanCinemaController;
 use App\Models\Lokasi;
 
 
@@ -39,19 +40,17 @@ Route::post('/', [FilmController::class, 'store']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
-Route::get('/daftarBioskop', [BioskopController::class, 'index']);
-
 Route::get('/film/{film:slug}', [FilmController::class, 'show']);
 
 Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
-    return view('daftarBioskop', [
-        'bioskops' => $lokasi->bioskop
+    return view('daftarCinema', [
+        'cinemas' => $lokasi->cinema
     ]);
 });
 
-Route::get('/filmBB', function() {
-    return view('filmBerdasarkanBioskop');
-});
+
+
+Route::get('/filmBB', [filmBerdasarkanCinemaController::class, 'index']);
 
 Route::get('/panduan', function() {
     return view('panduan');

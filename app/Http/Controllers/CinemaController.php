@@ -3,20 +3,20 @@
 namespace App\Http\Controllers;
 use App\Models\Lokasi;
 
-use App\Models\Bioskop;
-use App\Http\Requests\StoreBioskopRequest;
-use App\Http\Requests\UpdateBioskopRequest;
+use App\Models\Cinema;
+use App\Http\Requests\StoreCinemaRequest;
+use App\Http\Requests\UpdateCinemaRequest;
 
-class BioskopController extends Controller
+class CinemaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view ('daftarBioskop', [
-            "bioskops" => Bioskop::find(1)
-        ]);
+        // return view ('daftarCinema', [
+        //     "cinemas" => Cinema::find(1)
+        // ]);
     }
 
     /**
@@ -30,15 +30,15 @@ class BioskopController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBioskopRequest $request)
-    {
-        //
-    }
+    // public function store(StoreCinemaRequest $request)
+    // {
+    //     //
+    // }
 
     /**
      * Display the specified resource.
      */
-    public function show(bioskop $bioskop)
+    public function show(cinema $cinema)
     {
 
     }
@@ -46,7 +46,7 @@ class BioskopController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Bioskop $bioskop)
+    public function edit(cinema $cinema)
     {
         //
     }
@@ -54,15 +54,15 @@ class BioskopController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBioskopRequest $request, Bioskop $bioskop)
-    {
-        //
-    }
+    // public function update(UpdatecinemaRequest $request, cinema $cinema)
+    // {
+    //     //
+    // }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Bioskop $bioskop)
+    public function destroy(cinema $cinema)
     {
         //
     }

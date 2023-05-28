@@ -4,16 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Bioskop extends Model
 {
     use HasFactory;
 
-    public function lokasi(){
-        return $this->belongsTo(Lokasi::class, 'cityID');
+    protected $guarded =['id'];
+
+    public function cinemas(): BelongsToMany
+    {
+        return $this->belongsToMany(Cinema::class, 'cinema_bioskop', 'cinema_id', 'bioskop_id');
     }
 
-    public function temp_lokasi(){
-        return $this->belongsTo(temp_lokasi::class);
-    }
 }

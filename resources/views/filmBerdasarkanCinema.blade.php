@@ -38,7 +38,7 @@
                     <div class="row justify-content-center text-center mt-4 mb-4">
                         <div class="col-sm-3 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                            12 Feb
+                            {{ var_dump($bioskops) }}
                         </div>
                         <div class="col-sm-3 mx-5 py-2 fs-6"
                             style="box-shadow: -8px 10px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
