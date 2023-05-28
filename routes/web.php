@@ -50,4 +50,8 @@ Route::get('/bioskopBF', function() {
     return view('bioskopBerdasarkanFilm');
 });
 
+// Route::get('/pembayaransukses', function() {
+//     return view('PembayaranSukses');
+// });
 
+Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);

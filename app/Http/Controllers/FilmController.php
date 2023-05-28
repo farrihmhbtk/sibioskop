@@ -17,6 +17,13 @@ class FilmController extends Controller
         ]);
     }
 
+    public function pembayaransukses()
+    {
+        return view ('pembayaransukses', [
+            "films" => Film::where('filmID', 2)->get()
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */
