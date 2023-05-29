@@ -30,7 +30,7 @@
             style="font-family: 'Poppins', sans-serif; padding-top: 7%;">
             {{-- KOLOM KIRI (GAMBAR MAPS) --}}
             <div class="col" style="width: 32.4%; position: fixed; padding: 0; border: 2px solid black; border-radius: 4px; background-color: #EEC921; height: 65vh; box-shadow: -8px 10px black; ">
-                <img src="img/maps.png" alt="" style="max-width:100%; max-height:100%; border-radius: 4px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5349701158443!2d112.71673437485038!3d-7.2936285716924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb8bdc3056ef%3A0xb940ebcd5368b020!2sCiputra%20World%2C%20Gn.%20Sari%2C%20Kec.%20Dukuhpakis%2C%20Surabaya%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1685343701695!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             {{-- KOLOM KANAN (LIST FILM) --}}
             <div class="col-7" style="margin-left: 41.8%; background-color: #EEC921; border-radius: 4px; border: 2px solid black; box-shadow: -8px 10px black;">
