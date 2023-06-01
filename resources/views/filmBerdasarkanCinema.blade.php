@@ -21,8 +21,8 @@
                     style="margin-right: 20px;">
                     <path d="M36 41.0526L3 22L36 2.94744L36 41.0526Z" stroke="black" stroke-width="3" />
                 </svg>
-
-                Ciputra World XXI
+                {{ $cinemas->cinema }}    
+                
             </div>
         </div>
         {{-- ROW KEDUA --}}
@@ -30,7 +30,7 @@
             style="font-family: 'Poppins', sans-serif; padding-top: 7%;">
             {{-- KOLOM KIRI (GAMBAR MAPS) --}}
             <div class="col" style="width: 32.4%; position: fixed; padding: 0; border: 2px solid black; border-radius: 4px; background-color: #EEC921; height: 65vh; box-shadow: -8px 10px black; ">
-                <img src="img/maps.png" alt="" style="max-width:100%; max-height:100%; border-radius: 4px;">
+                <iframe src="{{ $cinemas->linkGMaps }}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             {{-- KOLOM KANAN (LIST FILM) --}}
             <div class="col-7" style="margin-left: 41.8%; background-color: #EEC921; border-radius: 4px; border: 2px solid black; box-shadow: -8px 10px black;">
@@ -49,6 +49,9 @@
                             14 Feb
                         </div>
                     </div>
+                    {{-- @foreach ($cinemas->bioskops as $cinema) --}}
+                        
+                    
                     <div class="row justify-content-center text-center">
                         <hr class="mt-4" style="border-color: solid black; border-width: 3px; width: 90%;">
                         <div class="col-sm-3 mt-4" style="">
@@ -128,11 +131,12 @@
                             20.00
                         </div>
                     </div>
+                    {{-- @endforeach --}}
                 </div>
 
                 {{-- DUPLIKAT --}}
 
-                <div class="container">
+                {{-- <div class="container">
                     <div class="row justify-content-center text-center">
                         <hr class="mt-4" style="border-color: solid black; border-width: 3px; width: 90%;">
                         <div class="col-sm-3 mt-4" style="">
@@ -212,7 +216,7 @@
                             20.00
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 
 

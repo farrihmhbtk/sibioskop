@@ -12,9 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('cinemas', function (Blueprint $table) {
-            $table->id();
-            $table->foreignId('lokasi_id');
+            $table->id('cinemaID');
+            $table->foreignId('lokasiID');
+            $table->foreign('lokasiID')->references('lokasiID')->on('lokasis')->onDelete('cascade');
             $table->string('cinema');
+            $table->text('linkGMaps');
             $table->timestamps();
         });
     }

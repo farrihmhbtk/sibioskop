@@ -9,13 +9,11 @@ class Lokasi extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'city',
-    ];
+    protected $primaryKey = 'lokasiID';
 
     public $timestamps = false;
 
-    public function cinema(){
-        return $this->hasMany(Cinema::class);
+    public function cinemas(){
+        return $this->hasMany(Cinema::class, 'lokasiID');
     }
 }

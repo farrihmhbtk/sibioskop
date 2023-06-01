@@ -10,11 +10,15 @@ class Bioskop extends Model
 {
     use HasFactory;
 
-    protected $guarded =['id'];
+    protected $guarded =['bioskopID'];
 
-    public function cinemas(): BelongsToMany
+    public function cinemas()
     {
-        return $this->belongsToMany(Cinema::class, 'cinema_bioskop', 'cinema_id', 'bioskop_id');
+        return $this->belongsTo(Cinema::class);
+    }
+
+    public function jadwal_films(){
+        return $this->hasMany(JadwalFilm::class);
     }
 
 }

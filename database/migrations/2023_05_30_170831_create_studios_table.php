@@ -11,11 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('cinema_bioskop', function (Blueprint $table) {
-            $table->id();
-            $table->string('cinema_id');
-            $table->string('bioskop_id');
-            $table->timestamps();
+        Schema::create('studios', function (Blueprint $table) {
+            $table->id('studioID');
+            // $table->timestamps();
         });
     }
 
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('cinema_bioskop');
+        Schema::dropIfExists('studios');
     }
 };

@@ -12,16 +12,19 @@ class Cinema extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'cinemaID';
+
+
     public function lokasi(){
-        return $this->belongsTo(Lokasi::class, 'cityID');
+        return $this->belongsTo(Lokasi::class, 'lokasiID');
     }
 
-    public function bioskops(): BelongsToMany
+    public function bioskops()
     {
-        return $this->belongsToMany(Bioskop::class);
+        return $this->hasMany(Bioskop::class);
 
-        $bioskop = Bioskop::find(1);
-        $bioskop->cinemas()->attach(1);
+        // $bioskop = Bioskop::find(1);
+        // $bioskop->cinemas()->attach(1);
     }
 
     
