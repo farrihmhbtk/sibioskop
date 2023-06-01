@@ -121,23 +121,27 @@
 
             </div>
             {{-- ROW KANAN --}}
-            <div class="col-sm-6 mb-4" style=" font-family: 'Poppins', sans-serif; margin-left: 50%; white-space: nowrap; position: relative;">
+            <div class="col-sm-6 mb-4"
+                style=" font-family: 'Poppins', sans-serif; margin-left: 50%; white-space: nowrap; position: relative;">
                 <div class="row">
                     {{-- TANGGAL TAYANG --}}
-                    <div class="col-sm-12 mb-2 text-center" style="padding-left: 5%; padding-bottom: 2%; white-space: nowrap; position: relative; overflow-x: scroll; -webkit-overflow-scrolling: touch;">
+                    <div class="col-sm-12 mb-2 text-center"
+                        style="padding-left: 5%; padding-bottom: 2%; white-space: nowrap; position: relative; overflow-x: scroll; -webkit-overflow-scrolling: touch;">
                         <?php
-                        $tanggals = DB::table('tanggal_tayangs')->select('showDateStr')->get();
-                    ?>
-                        
+                        $tanggals = DB::table('tanggal_tayangs')
+                            ->select('tanggal_tayangs.*')
+                            ->get();
+                        ?>
+
                         @foreach ($tanggals as $tanggal)
-                        <a href="" style="color: black;">
-                            <div class="justify-content-start py-2 fs-6 button1" style="width: 18%; margin-right: 20%; box-shadow: -5px 7px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; float: none; display:inline-block;position: relative;">
+                            <a href="/film/{{ $film->slug }}/{{ $tanggal->showDateID }}" style="color: black;">
+                                <div class="justify-content-start py-2 fs-6 button1"
+                                    style="width: 18%; margin-right: 20%; box-shadow: -5px 7px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; float: none; display:inline-block;position: relative;">
 
-                                {{ $tanggal->showDateStr}}
-                    </div>
-                        </a>
-
-                        @endforeach 
+                                    {{ $tanggal->showDateStr }}
+                                </div>
+                            </a>
+                        @endforeach
                     </div>
                     {{-- MULAI FOREACH --}}
                     @foreach ($loopCinemas as $loopCinema)
@@ -159,6 +163,7 @@
                             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
                             ->where('lokasis.city', '=', $temp_lokasi->id_temp)
                             ->where('cinemas.cinema', '=', $loopCinema->cinema)
+                            ->where('jadwal_films.filmID', '=', $film->filmID)
                             ->get(); ?>
                         @foreach ($loopBioskops as $loopBioskop)
                             <div class="col-sm-12 mt-2">
@@ -183,7 +188,7 @@
                                             ->where('bioskops.bioskop', '=', $loopBioskop->bioskop)
                                             ->get();
                                         ?>
-                                    
+
                                         @foreach ($hargas as $harga)
                                             Rp{{ $harga->price }}
                                         @endforeach
@@ -205,6 +210,7 @@
                                         ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
                                         ->where('lokasis.city', '=', $temp_lokasi->id_temp)
                                         ->where('bioskops.bioskop', '=', $loopBioskop->bioskop)
+                                        ->where('jadwal_films.filmID', '=', $film->filmID)
                                         ->get();
                                     ?>
                                     @foreach ($loopStartTimes as $loopStartTime)

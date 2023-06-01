@@ -73,7 +73,7 @@
                     <div class="d-inline">
                         
                             
-                            <select id="id_temp" name="id_temp"
+                            <select id="id_temp" name="id_temp" class="dropdown"
                                 style="color: black; background-color: white; border-width: 1px; border-color: black; width: 35%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: left; font-weight: 350; font-size: 9pt; appearance: none; overflow-y: hidden; padding-left: 6px; overlow-y: hidden;">
                                 <option value="silahkanPilihLokasi">Pilih Lokasi</option>
                                 <option value="Surabaya">Surabaya</option>

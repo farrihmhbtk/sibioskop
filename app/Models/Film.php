@@ -9,7 +9,7 @@ class Film extends Model
 {
     use HasFactory;
 
-    protected $guarded = ['filmID'];
+    protected $primaryKey = 'filmID';
 
     public function jadwal_films(){
         return $this->hasMany(JadwalFilm::class);

@@ -21,10 +21,6 @@ use App\Models\Lokasi;
 |
 */
 
-// Route::get('/home', function () {
-//     return view('home');
-// });
-
 Route::get('/login', [LoginController::class, 'index']);
 
 Route::post('/login', [LoginController::class, 'authenticate']);
@@ -39,17 +35,13 @@ Route::post('/', [FilmController::class, 'store']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
-Route::get('/film/{film:slug}/{temp_lokasi:id_temp}', [FilmController::class, 'show']);
+Route::get('/film/{film:slug}/{min_tanggal_tayangs}', [FilmController::class, 'showTodayDate']);
 
 Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
     return view('daftarCinema', [
         'cinemas' => $lokasi->cinemas
     ]);
 });
-
-
-
-// Route::get('/filmBB', [filmBerdasarkanCinemaController::class, 'index']);
 
 Route::get('/panduan', function() {
     return view('panduan');
@@ -66,13 +58,10 @@ Route::get('/reset', [ResetPassController::class, 'index']);
 Route::get('/resetVerification', [ResetPassController::class, 'verification']);
 
 Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
-// Route::get('/pembayaransukses', function() {
-//     return view('PembayaranSukses');
-// });
 
 Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);
 
-Route::get('/cinema/{cinema:cinema}', [FilmController::class, 'indexCinema']);
+Route::get('/cinema/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::class, 'filmBB']);
 
 Route::get('/editnama', function() {
     return view('edit-profil-nama');

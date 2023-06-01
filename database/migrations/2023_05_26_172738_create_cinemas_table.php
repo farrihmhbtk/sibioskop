@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('lokasiID');
             $table->foreign('lokasiID')->references('lokasiID')->on('lokasis')->onDelete('cascade');
             $table->string('cinema');
+            $table->string('slug');
             $table->text('linkGMaps');
             $table->timestamps();
         });
