@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Permissions-Policy" content="ch-ua-form-factor=()">
+    <meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
     <title>SI BIOSKOP</title>
 
     <link rel="icon" type="image/x-icon" href="icon/camera.svg">
@@ -19,6 +21,9 @@
     {{-- link font --}}
     <link href="https://fonts.cdnfonts.com/css/chunkfive" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
+
+    {{-- link icon font awesome --}}
+    <script src="https://kit.fontawesome.com/c8f1453a23.js" crossorigin="anonymous"></script>
 
     <style>
         .play-btn {

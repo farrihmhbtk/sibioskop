@@ -183,24 +183,28 @@ class DatabaseSeeder extends Seeder
         Cinema::create([
             'lokasiID' => 1,
             'cinema' => 'Silahkan Pilih Lokasi',
+            'slug' => 'silahkan-pilih-lokasi',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.634549007205!2d112.79235037465187!3d-7.282355992724917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1323221a93%3A0x306c3c99adedb258!2sSepuluh%20Nopember%20Institute%20of%20Technology!5e0!3m2!1sen!2sid!4v1685464476580!5m2!1sen!2sid'
         ]);
 
         Cinema::create([
             'lokasiID' => 2,
             'cinema' => 'BG Junction CGV',
+            'slug' => 'bg-junction-cgv',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.8724376321243!2d112.73121817465156!3d-7.255355892751291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7f944808906ff%3A0xb49024a3b07c8918!2sBG%20Junction%20Surabaya!5e0!3m2!1sen!2sid!4v1685463805048!5m2!1sen!2sid'
         ]);
 
         Cinema::create([
             'lokasiID' => 2,
             'cinema' => 'Ciputra World Premiere',
+            'slug' => 'ciputra-world-premiere',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5433961682493!2d112.71671087465181!3d-7.292675392714824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb8af981617d%3A0xd85ddf73b988ae56!2sCiputra%20World%20XXI!5e0!3m2!1sen!2sid!4v1685463871140!5m2!1sen!2sid'
         ]);
 
         Cinema::create([
             'lokasiID' => 2,
             'cinema' => 'CITO 21',
+            'slug' => 'cito-21',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.0772373127397!2d112.72531137465242!3d-7.34522374266348!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fca9c2171c9f%3A0xefadbc76ce524bdc!2sCity%20of%20Tomorrow%20Mall!5e0!3m2!1sen!2sid!4v1685463962291!5m2!1sen!2sid'
         ]);
 
@@ -257,30 +261,35 @@ class DatabaseSeeder extends Seeder
         Cinema::create([
             'lokasiID' => 3,
             'cinema' => 'Kediri Mall CGV',
+            'slug' => 'kediri-mall-cgv',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7533892099436!2d112.01683757465761!3d-7.815908292204723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857eba9ef7827%3A0xd081dd0fb60b6fed!2sCGV%20Cinemas%20Kediri%20Mall!5e0!3m2!1sen!2sid!4v1685463999119!5m2!1sen!2sid'
         ]);
 
         Cinema::create([
             'lokasiID' => 3,
             'cinema' => 'Kediri XXI',
+            'slug' => 'kediri-xxi',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.7533892099436!2d112.01683757465761!3d-7.815908292204723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7857eba9ef7827%3A0xd081dd0fb60b6fed!2sCGV%20Cinemas%20Kediri%20Mall!5e0!3m2!1sen!2sid!4v1685463999119!5m2!1sen!2sid'
         ]);
 
         Cinema::create([
             'lokasiID' => 4,
             'cinema' => 'Citra XXI Semarang',
+            'slug' => 'citra-xxi-semarang',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.1726456064807!2d110.42081127464874!3d-6.988935293012059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e6371dc7edbf%3A0xc09f7d0520aaaf90!2sCitra%20XXI!5e0!3m2!1sen!2sid!4v1685464026127!5m2!1sen!2sid'
         ]);
 
         Cinema::create([
             'lokasiID' => 4,
             'cinema' => 'Tentrem Mall XXI',
+            'slug' => 'tentrem-mall-xxi',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.1913232761726!2d110.41927637464876!3d-6.986730593014224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708ba5eccf390f%3A0xcb6b2ed622293930!2sTentrem%20Mall!5e0!3m2!1sen!2sid!4v1685464074989!5m2!1sen!2sid'
         ]);
 
         Cinema::create([
             'lokasiID' => 4,
             'cinema' => 'Paragon XXI',
+            'slug' => 'paragon-xxi',
             'linkGMaps' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.2551965757298!2d110.41340207464866!3d-6.979185793021598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e708b5242b2daf9%3A0x590ece08d249b4e3!2sMall%20Paragon%20City%20Semarang!5e0!3m2!1sen!2sid!4v1685464143416!5m2!1sen!2sid'
         ]);
 
@@ -572,6 +581,16 @@ class DatabaseSeeder extends Seeder
         ]);
 
         JadwalFilm::create([
+            'bioskopID' => 3,
+            'startTimeID' => 4,
+            'filmID' => 1,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 25000,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
             'bioskopID' => 4,
             'startTimeID' => 1,
             'filmID' => 1,
@@ -595,6 +614,16 @@ class DatabaseSeeder extends Seeder
             'bioskopID' => 4,
             'startTimeID' => 3,
             'filmID' => 1,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 25000,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 3,
+            'startTimeID' => 3,
+            'filmID' => 2,
             'showDateID' => 1,
             'studioID' => 1,
             'price' => 25000,

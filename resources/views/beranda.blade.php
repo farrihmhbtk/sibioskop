@@ -51,10 +51,12 @@
                                 <div class="row justify-content-start">
                                     @foreach ($films as $film)
                                     <div class="col-sm-2 my-3">
-                                        
                                             <div class="wrapper"
                                                 style="width: 160px; float: none; display:inline-block;position: relative; margin-right:30px">
-                                                <a href="/film/{{ $film->slug }}/{{ $temp_lokasi->id_temp }}" style="text-decoration: none;">
+                                                <?php
+                                                    $min_tanggal_tayangs = DB::table('tanggal_tayangs')->min('showDateID');
+                                                ?>
+                                                <a href="/film/{{ $film->slug }}/{{ $min_tanggal_tayangs}}" style="text-decoration: none;">
                                                     <img src="{{ $film->linkPoster }}" alt="{{ $film->title }}"
                                                         style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
                                                     <p class="mt-3 mb-1"

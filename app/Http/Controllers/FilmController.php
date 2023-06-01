@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Film;
 use App\Models\Cinema;
 use App\Models\Lokasi;
+use App\Models\TanggalTayang;
 use App\Models\temp_lokasi;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -19,7 +20,8 @@ class FilmController extends Controller
         return view('beranda', [
             "films" => Film::all(),
             "trailers" => Film::limit(5)->get(),
-            "lokasis" => Lokasi::all()
+            "lokasis" => Lokasi::all(),
+            "min_tanggal_tayangs"=> TanggalTayang::first()
         ]);
     }
 
@@ -30,12 +32,12 @@ class FilmController extends Controller
         ]);
     }
 
-    public function indexCinema(Cinema $cinema)
-    {
-        return view('filmBerdasarkanCinema', [
-            "cinemas" => $cinema
-        ]);
-    }
+    // public function indexCinema(Cinema $cinema)
+    // {
+    //     return view('filmBerdasarkanCinema', [
+    //         "cinemas" => $cinema
+    //     ]);
+    // }
 
     public function pembayaransukses()
     {
@@ -69,11 +71,13 @@ class FilmController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(film $film)
+    public function showTodayDate(Film $film, $min_tanggal_tayangs)
     {
         $temp_lokasi = temp_lokasi::select('id_temp')->orderBy('id', 'desc')->first();
 
-        $min_tanggal_tayangs = DB::table('tanggal_tayangs')->min('showDateID');
+        // $min_tanggal_tayangs = DB::table('tanggal_tayangs')->select('showDateID')->where('showDateID', $min_tanggal_tayangs)->get();
+
+        // $min_tanggal_tayangs = TanggalTayang::whereshowdateid($min_tanggal_tayangs)->first();
 
         $loopCinemas = DB::table('lokasis')
         ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
@@ -86,7 +90,7 @@ class FilmController extends Controller
         ->distinct()->select('cinemas.cinema')
         ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
         ->where('lokasis.city', '=', $temp_lokasi->id_temp)
-        ->where('films.title', '=', $film->title)
+        ->where('films.slug', '=', $film->slug)
         ->get(); 
 
         if($temp_lokasi->id_temp == 'silahkanPilihLokasi'){
@@ -104,6 +108,40 @@ class FilmController extends Controller
             "loopCinemas" => $loopCinemas,
             "temp_lokasi" => $temp_lokasi,
             "min_tanggal_tayangs" => $min_tanggal_tayangs
+        ]);
+    }
+
+    public function filmBB(Cinema $cinema, $min_tanggal_tayangs)
+    {
+        $temp_lokasi = temp_lokasi::select('id_temp')->orderBy('id', 'desc')->first();
+
+        // $min_tanggal_tayangs = DB::table('tanggal_tayangs')->select('showDateID')->where('showDateID', $min_tanggal_tayangs)->get();
+
+        // $min_tanggal_tayangs = TanggalTayang::whereshowdateid($min_tanggal_tayangs)->first();
+
+        $loopFilms = DB::table('lokasis')
+        ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
+        ->join('bioskops', 'cinemas.cinemaID', '=', 'bioskops.cinemaID')
+        ->join('jadwal_films', 'bioskops.bioskopID', '=', 'jadwal_films.bioskopID')
+        ->join('films', 'jadwal_films.filmID', '=', 'films.filmID')
+        ->join('waktu_tayangs', 'jadwal_films.startTimeID', '=', 'waktu_tayangs.startTimeID')
+        ->join('tanggal_tayangs', 'jadwal_films.showDateID', '=', 'tanggal_tayangs.showDateID')
+        ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
+        ->distinct()->select('jadwal_films.filmID')
+        ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
+        ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+        ->where('cinemas.slug', '=', $cinema->slug)
+        ->get(); 
+
+        if($temp_lokasi->id_temp == 'silahkanPilihLokasi'){
+            return redirect()->back()->with('alert','hello');
+        }
+
+        return view('filmBerdasarkanCinema', [
+            "cinemas" => $cinema,
+            "loopFilms" => $loopFilms,
+            "temp_lokasi" => $temp_lokasi,
+            "min_tanggal_tayangs" => $min_tanggal_tayangs,
         ]);
     }
 

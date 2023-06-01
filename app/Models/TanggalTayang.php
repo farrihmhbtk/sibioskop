@@ -9,7 +9,7 @@ class TanggalTayang extends Model
 {
     use HasFactory;
 
-    protected $guarded=['showDateID'];
+    protected $primaryKey= 'showDateID';
 
     public $timestamps = false;
 
