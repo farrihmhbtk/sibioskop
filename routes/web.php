@@ -39,17 +39,17 @@ Route::post('/', [FilmController::class, 'store']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
-Route::get('/film/{film:slug}', [FilmController::class, 'show']);
+Route::get('/film/{film:slug}/{temp_lokasi:id_temp}', [FilmController::class, 'show']);
 
 Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
     return view('daftarCinema', [
-        'cinemas' => $lokasi->cinema
+        'cinemas' => $lokasi->cinemas
     ]);
 });
 
 
 
-Route::get('/filmBB', [filmBerdasarkanCinemaController::class, 'index']);
+// Route::get('/filmBB', [filmBerdasarkanCinemaController::class, 'index']);
 
 Route::get('/panduan', function() {
     return view('panduan');
@@ -71,3 +71,5 @@ Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
 // });
 
 Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);
+
+Route::get('/cinema/{cinema:cinema}', [FilmController::class, 'indexCinema']);

@@ -1,22 +1,18 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Lokasi;
-use Illuminate\Http\Request;
-use App\Models\Cinema;
-use App\Http\Requests\StoreCinemaRequest;
-use App\Http\Requests\UpdateCinemaRequest;
 
-class CinemaController extends Controller
+use App\Models\JadwalFilm;
+use Illuminate\Http\Request;
+
+class JadwalFilmController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        // return view ('daftarCinema', [
-        //     "cinemas" => Cinema::find(1)
-        // ]);
+        //
     }
 
     /**
@@ -32,23 +28,21 @@ class CinemaController extends Controller
      */
     public function store(Request $request)
     {
-        $bioskop = [1, 2, 3];
-        $cinemas = Cinema::find(2);
-        $cinemas->bioskops->attach($bioskop);
+        //
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(cinema $cinema)
+    public function show(JadwalFilm $jadwalFilm)
     {
-
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(cinema $cinema)
+    public function edit(JadwalFilm $jadwalFilm)
     {
         //
     }
@@ -56,15 +50,15 @@ class CinemaController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    // public function update(UpdatecinemaRequest $request, cinema $cinema)
-    // {
-    //     //
-    // }
+    public function update(Request $request, JadwalFilm $jadwalFilm)
+    {
+        //
+    }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(cinema $cinema)
+    public function destroy(JadwalFilm $jadwalFilm)
     {
         //
     }

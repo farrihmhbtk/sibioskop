@@ -21,8 +21,8 @@
                     style="margin-right: 20px;">
                     <path d="M36 41.0526L3 22L36 2.94744L36 41.0526Z" stroke="black" stroke-width="3" />
                 </svg>
-
-                Ciputra World XXI
+                {{ $cinemas->cinema }}    
+                
             </div>
         </div>
         {{-- ROW KEDUA --}}
@@ -30,7 +30,7 @@
             style="font-family: 'Poppins', sans-serif; padding-top: 7%;">
             {{-- KOLOM KIRI (GAMBAR MAPS) --}}
             <div class="col" style="width: 32.4%; position: fixed; padding: 0; border: 2px solid black; border-radius: 4px; background-color: #EEC921; height: 65vh; box-shadow: -8px 10px black; ">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5349701158443!2d112.71673437485038!3d-7.2936285716924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb8bdc3056ef%3A0xb940ebcd5368b020!2sCiputra%20World%2C%20Gn.%20Sari%2C%20Kec.%20Dukuhpakis%2C%20Surabaya%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1685343701695!5m2!1sid!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe src="{{ $cinemas->linkGMaps }}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
             {{-- KOLOM KANAN (LIST FILM) --}}
             <div class="col-7" style="margin-left: 41.8%; background-color: #EEC921; border-radius: 4px; border: 2px solid black; box-shadow: -8px 10px black;">
@@ -49,6 +49,9 @@
                             14 Feb
                         </div>
                     </div>
+                    {{-- @foreach ($cinemas->bioskops as $cinema) --}}
+                        
+                    
                     <div class="row justify-content-center text-center">
                         <hr class="mt-4" style="border-color: solid black; border-width: 3px; width: 90%;">
                         <div class="col-sm-3 mt-4" style="">
@@ -128,11 +131,12 @@
                             20.00
                         </div>
                     </div>
+                    {{-- @endforeach --}}
                 </div>
 
                 {{-- DUPLIKAT --}}
 
-                <div class="container">
+                {{-- <div class="container">
                     <div class="row justify-content-center text-center">
                         <hr class="mt-4" style="border-color: solid black; border-width: 3px; width: 90%;">
                         <div class="col-sm-3 mt-4" style="">
@@ -212,7 +216,7 @@
                             20.00
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
                 
 

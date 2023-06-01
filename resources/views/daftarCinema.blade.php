@@ -7,7 +7,7 @@
         <ul class="mx-3 my-4" style="list-style-type: none;  width: 93%;">
             @foreach ($cinemas as $cinema)
             <li class="fs-5 my-4" style="">
-                <a href="/filmBB" style="text-decoration: none; color:black;"> {{ $cinema->cinema }} </a>
+                <a href="/cinema/{{ $cinema->cinema }}" style="text-decoration: none; color:black;"> {{ $cinema->cinema }} </a>
                 <hr style="border-color: solid black; border-width: 3px">
             </li>
             @endforeach

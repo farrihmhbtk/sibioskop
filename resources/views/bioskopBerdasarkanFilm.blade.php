@@ -9,7 +9,17 @@
 
         ul {
             padding: 0;
-            
+
+        }
+
+        .button1 {
+            background-color: #EEC921;
+            color: black;
+        }
+
+        .button1:hover {
+            background-color: #A49241;
+            color: white;
         }
     </style>
     <div class="d-block justify-content-start" style="width: 94%;">
@@ -20,11 +30,11 @@
                 <div class="row">
                     <div class="col-sm-12 mb-5">
                         <div class="wrapper" style="position: relative; width: 480px; ">
-                            <img id="video-cover" src="{{ $film->linkCoverTrailer }}"
-                                alt="Video title"
+                            <img id="video-cover" src="{{ $film->linkCoverTrailer }}" alt="Video title"
                                 style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
-                            <iframe id="video" width="480" height="269" src="https://www.youtube.com/embed/{{ $film->linkTrailerID }}"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: none;">
+                            <iframe id="video" width="480" height="269"
+                                src="https://www.youtube.com/embed/{{ $film->linkTrailerID }}" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen style="display: none;">
                             </iframe>
                             <button id="playbutton" class="play-btn">
                                 <svg width="100" height="103" viewBox="0 0 119 123" fill="none"
@@ -49,8 +59,8 @@
                                     style="width: 130px; float: none; display:inline-block;position: relative; margin-right:30px">
                                     <img src="{{ $film->linkPoster }}" alt=""
                                         style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
-                                    <svg class="mt-3" style="" width="130" height="30"
-                                        viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="mt-3" style="" width="130" height="30" viewBox="0 0 180 36"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M16.7241 3.6236L20.3539 14.795H32.1003L22.5973 21.6994L26.2271 32.8708L16.7241 25.9665L7.2211 32.8708L10.8509 21.6994L1.34793 14.795H13.0943L16.7241 3.6236Z"
                                             fill="#222222" />
@@ -86,9 +96,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-8" style="">
-                                <ul
-                                    class="text-start" style="list-style-type: none; font-family: 'Poppins', sans-serif; ">
-                                    <li class="" style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0; ">
+                                <ul class="text-start" style="list-style-type: none; font-family: 'Poppins', sans-serif; ">
+                                    <li class=""
+                                        style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0; ">
                                         {{ $film->title }}
                                     </li>
                                     <li>
@@ -111,193 +121,105 @@
 
             </div>
             {{-- ROW KANAN --}}
-            <div class="col-sm-6 mb-4" style=" font-family: 'Poppins', sans-serif; margin-left: 50%;">
+            <div class="col-sm-6 mb-4" style=" font-family: 'Poppins', sans-serif; margin-left: 50%; white-space: nowrap; position: relative;">
                 <div class="row">
-                    <div class="col-sm-12">
-                        <div class="row justify-content-center text-center mb-2">
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                12 Feb
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                13 Feb
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                14 Feb
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 mt-4 fw-bold" style="padding-left: 5%; font-size: 14pt;">
-                        Tunjungan 5 XXI
-                    </div>
-                    <div class="col-sm-12 mt-2">
-                        <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt;" >
-                                Reguler 2D
-                            </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
-                                Rp20,000
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row justify-content-center text-center mt-2 mb-4">
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                14.40
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                18.00
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                20.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt">
-                                Premiere
-                            </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
-                                Rp20,000
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row justify-content-center text-center mt-2 mb-2">
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                14.40
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                18.00
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                20.00
-                            </div>
-                        </div>
-                    </div>
+                    {{-- TANGGAL TAYANG --}}
+                    <div class="col-sm-12 mb-2 text-center" style="padding-left: 5%; padding-bottom: 2%; white-space: nowrap; position: relative; overflow-x: scroll; -webkit-overflow-scrolling: touch;">
+                        <?php
+                        $tanggals = DB::table('tanggal_tayangs')->select('showDateStr')->get();
+                    ?>
+                        
+                        @foreach ($tanggals as $tanggal)
+                        <a href="" style="color: black;">
+                            <div class="justify-content-start py-2 fs-6 button1" style="width: 18%; margin-right: 20%; box-shadow: -5px 7px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; float: none; display:inline-block;position: relative;">
 
-                    {{-- START UJI COBA (DUPLIKAT) --}}
-                    <div class="col-sm-12 mt-4 fw-bold" style="padding-left: 5%; font-size: 14pt;">
-                        Tunjungan 5 XXI
+                                {{ $tanggal->showDateStr}}
                     </div>
-                    <div class="col-sm-12 mt-2">
-                        <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt;" >
-                                Reguler 2D
-                            </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
-                                Rp20,000
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row justify-content-center text-center mt-2 mb-4">
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                14.40
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                18.00
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                20.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt">
-                                Premiere
-                            </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
-                                Rp20,000
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row justify-content-center text-center mt-2 mb-2">
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                14.40
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                18.00
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                20.00
-                            </div>
-                        </div>
-                    </div>
+                        </a>
 
-                    <div class="col-sm-12 mt-4 fw-bold" style="padding-left: 5%; font-size: 14pt;">
-                        Tunjungan 5 XXI
+                        @endforeach 
                     </div>
-                    <div class="col-sm-12 mt-2">
-                        <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt;" >
-                                Reguler 2D
-                            </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
-                                Rp20,000
-                            </div>
+                    {{-- MULAI FOREACH --}}
+                    @foreach ($loopCinemas as $loopCinema)
+                        {{-- LOOP CINEMA --}}
+                        <div class="col-sm-12 mt-2 fw-bold" style="padding-left: 5%; font-size: 14pt;">
+                            {{ $loopCinema->cinema }}
                         </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row justify-content-center text-center mt-2 mb-4">
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                14.40
+                        {{-- LOOP BIOSKOP --}}
+                        <?php $loopBioskops = DB::table('lokasis')
+                            ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
+                            ->join('bioskops', 'cinemas.cinemaID', '=', 'bioskops.cinemaID')
+                            ->join('jadwal_films', 'bioskops.bioskopID', '=', 'jadwal_films.bioskopID')
+                            ->join('films', 'jadwal_films.filmID', '=', 'films.filmID')
+                            ->join('waktu_tayangs', 'jadwal_films.startTimeID', '=', 'waktu_tayangs.startTimeID')
+                            ->join('tanggal_tayangs', 'jadwal_films.showDateID', '=', 'tanggal_tayangs.showDateID')
+                            ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
+                            ->distinct()
+                            ->select('bioskops.bioskop')
+                            ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
+                            ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+                            ->where('cinemas.cinema', '=', $loopCinema->cinema)
+                            ->get(); ?>
+                        @foreach ($loopBioskops as $loopBioskop)
+                            <div class="col-sm-12 mt-2">
+                                <div class="row">
+                                    <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt;">
+                                        {{ $loopBioskop->bioskop }}
+                                    </div>
+                                    {{-- LOOP HARGA --}}
+                                    <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
+                                        <?php $hargas = DB::table('lokasis')
+                                            ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
+                                            ->join('bioskops', 'cinemas.cinemaID', '=', 'bioskops.cinemaID')
+                                            ->join('jadwal_films', 'bioskops.bioskopID', '=', 'jadwal_films.bioskopID')
+                                            ->join('films', 'jadwal_films.filmID', '=', 'films.filmID')
+                                            ->join('waktu_tayangs', 'jadwal_films.startTimeID', '=', 'waktu_tayangs.startTimeID')
+                                            ->join('tanggal_tayangs', 'jadwal_films.showDateID', '=', 'tanggal_tayangs.showDateID')
+                                            ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
+                                            ->distinct()
+                                            ->select('jadwal_films.price')
+                                            ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
+                                            ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+                                            ->where('bioskops.bioskop', '=', $loopBioskop->bioskop)
+                                            ->get();
+                                        ?>
+                                    
+                                        @foreach ($hargas as $harga)
+                                            Rp{{ $harga->price }}
+                                        @endforeach
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                18.00
+                            {{-- HARGA --}}
+                            <div class="col-sm-12">
+                                <div class="row justify-content-between text-center mt-2 mb-4 px-3" style="">
+                                    <?php $loopStartTimes = DB::table('lokasis')
+                                        ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
+                                        ->join('bioskops', 'cinemas.cinemaID', '=', 'bioskops.cinemaID')
+                                        ->join('jadwal_films', 'bioskops.bioskopID', '=', 'jadwal_films.bioskopID')
+                                        ->join('films', 'jadwal_films.filmID', '=', 'films.filmID')
+                                        ->join('waktu_tayangs', 'jadwal_films.startTimeID', '=', 'waktu_tayangs.startTimeID')
+                                        ->join('tanggal_tayangs', 'jadwal_films.showDateID', '=', 'tanggal_tayangs.showDateID')
+                                        ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
+                                        ->select('waktu_tayangs.startTime')
+                                        ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
+                                        ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+                                        ->where('bioskops.bioskop', '=', $loopBioskop->bioskop)
+                                        ->get();
+                                    ?>
+                                    @foreach ($loopStartTimes as $loopStartTime)
+                                        <a href="" class="d-flex"
+                                            style="text-decoration: none; z-index: 30; color: black; width: 22%;">
+                                            <div class="py-2 fs-6 button1"
+                                                style="box-shadow: -5px 7px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; width: 100%;">
+                                                {{ $loopStartTime->startTime }}
+                                            </div>
+                                        </a>
+                                    @endforeach
+                                </div>
                             </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                20.00
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row">
-                            <div class="col-sm-6 text-start" style="padding-left: 5%; font-size: 13pt">
-                                Premiere
-                            </div>
-                            <div class="col-sm-6 text-end fw-bold" style="padding-right: 6%; color: #A89797">
-                                Rp20,000
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <div class="row justify-content-center text-center mt-2 mb-2">
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                14.40
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                18.00
-                            </div>
-                            <div class="col-sm-2 py-2 fs-6"
-                                style="box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                                20.00
-                            </div>
-                        </div>
-                    </div>
-                    {{-- END UJI COBA --}}
+                        @endforeach
+                    @endforeach
                 </div>
             </div>
         </div>
