@@ -73,3 +73,27 @@ Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
 Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);
 
 Route::get('/cinema/{cinema:cinema}', [FilmController::class, 'indexCinema']);
+
+Route::get('/editnama', function() {
+    return view('edit-profil-nama');
+});
+
+Route::get('/editnope', function() {
+    return view('edit-profil-nope');
+});
+
+Route::get('/editemail', function() {
+    return view('edit-profil-email');
+});
+
+Route::get('/editpass', function() {
+    return view('edit-profil-pass');
+});
+
+Route::get('/editprofil', function() {
+    return view('edit-profil');
+});
+
+Route::get('/pilihkursi', function() {
+    return view('pilih-kursi');
+});
