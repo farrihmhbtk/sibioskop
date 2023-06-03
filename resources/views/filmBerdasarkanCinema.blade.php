@@ -51,7 +51,7 @@
                 <div class="container" style="">
                     {{-- ROW TANGGAL TAYANG --}}
                     <div class="row mb-3 mt-2"
-                        style=" padding-left: 8.5%; padding-bottom: 2%; white-space: nowrap; position: relative; overflow-x: scroll; -webkit-overflow-scrolling: touch;">
+                        style=" padding-left: 4%; padding-bottom: 2%; white-space: nowrap; position: relative; overflow-x: scroll; -webkit-overflow-scrolling: touch;">
                         {{-- FOREACH TANGGAL TAYANG --}}
                         <?php
                         $tanggals = DB::table('tanggal_tayangs')
@@ -60,9 +60,9 @@
                         ?>
                         <div class="col-sm-12 text-center mt-3" style="">
                             @foreach ($tanggals as $tanggal)
-                                <a href="" style="text-decoration: none; color: black; ">
+                                <a href="/cinema/{{ $cinemas->slug }}/{{ $tanggal->showDateID }}" style="text-decoration: none; color: black; ">
                                     <div class="py-2 fs-6 button1"
-                                        style="margin-right: 12.5%; width: 20%; box-shadow: -8px 10px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; float: none; display:inline-block;position: relative;">
+                                        style="margin-right: 17%; width: 20%; box-shadow: -8px 10px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; float: none; display:inline-block;position: relative;">
                                         {{ $tanggal->showDateStr }}
                                     </div>
                                 </a>
@@ -93,10 +93,10 @@
                             
                         
                         <div class="row justify-content-center text-center mb-2" style="">
-                            <hr class="mt-1" style="border-color: solid black; border-width: 3px; width: 82%;">
+                            <hr class="mt-1" style="border-color: solid black; border-width: 3px; width: 90%;">
                             {{-- COLOUMN POSTER DAN RATING FILM --}}
                             @foreach ($infoFilms as $infoFilm)
-                            <div class="col-sm-3 mt-2 mb-2" style="margin-left: 8%;">
+                            <div class="col-sm-3 mt-2 mb-2" style="margin-left: 0;">
                                 <div class="wrapper"
                                     style="width: 160px; float: none; display:inline-block;position: relative; margin-right:30px">
                                     <img src="{{ $infoFilm->linkPoster }}"
@@ -181,7 +181,7 @@
                             @foreach ($bioskops as $bioskop)
                                 
                             
-                            <div class="row  fw-bold" style="padding-left: 10%; padding-right: 13.4%; ">
+                            <div class="row  fw-bold" style="padding-left: 5%; padding-right: 5.5%; ">
                                 <div class="col-sm-6 text-start" style="padding-left: 0px; font-size: 14pt; ">
                                     {{ $bioskop->bioskop }}
                                 </div>
@@ -191,7 +191,7 @@
 
                             </div>
                             {{-- ROW JAM TAYANG FILM --}}
-                            <div class="row text-center mb-4 mt-1" style="padding-left: 10%;">
+                            <div class="row justify-content-between text-center mb-4 mt-1" style="padding-left: 5%; padding-right: 5%;">
                                 <?php
                                 $waktuTayangs = DB::table('lokasis')
                                 ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
@@ -213,12 +213,13 @@
                                 @foreach ($waktuTayangs as $waktuTayang)
                                     
                                 
-                                <div class="col-sm-4 mb-3" style="padding: 0px;">
-                                    <div class="py-2 fs-6 button1"
-                                        style="width: 61%; box-shadow: -8px 10px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+
+                                    <a href="" style="text-decoration: none; width: 20%; padding: 0;">
+                                        <div class="py-2 fs-6 button1"
+                                        style="width: 100%; box-shadow: -8px 10px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                                         {{ $waktuTayang->startTime }}
                                     </div>
-                                </div>
+                                    </a>
 
                                 @endforeach
 

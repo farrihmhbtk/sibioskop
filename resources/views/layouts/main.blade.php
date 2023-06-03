@@ -22,9 +22,6 @@
     <link href="https://fonts.cdnfonts.com/css/chunkfive" rel="stylesheet">
     <link href="https://fonts.cdnfonts.com/css/poppins" rel="stylesheet">
 
-    {{-- link icon font awesome --}}
-    <script src="https://kit.fontawesome.com/c8f1453a23.js" crossorigin="anonymous"></script>
-
     <style>
         .play-btn {
             position: absolute;
@@ -63,6 +60,16 @@
         /* Handle on hover */
         ::-webkit-scrollbar-thumb:hover {
             background: #555;
+        }
+
+        .button1 {
+            background-color: #EEC921;
+            color: black;
+        }
+
+        .button1:hover {
+            background-color: #A49241;
+            color: white;
         }
     </style>
 

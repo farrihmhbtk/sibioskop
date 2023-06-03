@@ -12,20 +12,27 @@ class RegisterController extends Controller
         return view('register.index');
     }
 
+    public function verifEmail()
+    {
+        return view('register.verifikasiEmail', [
+            'title' => 'Login',
+            'active' => 'login'
+        ]);
+    }
+
     public function store(Request $request)
     {
 
-        $validatedData = $request->validate([
+        $user = $request->validate([
             'name' => 'required|max:225',
             'password' => 'required|min:3|max:255|unique:users',
             'phoneNumber' => 'required|unique:users|min:5',
-            'email' => 'required|min:5|max:255'
+            'email' => 'required|min:5|unique:users|max:255'
         ]);
 
-        $validatedData['password'] = bcrypt($validatedData['password']);
+        $user['password'] = bcrypt($user['password']);
 
-
-        User::create($validatedData);
+        User::create($user);
 
         return redirect('/login')->with('success', 'Registration was successful!');
     }

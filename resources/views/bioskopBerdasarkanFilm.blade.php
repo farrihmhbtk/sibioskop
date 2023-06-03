@@ -215,7 +215,7 @@
                                     ?>
                                     @foreach ($loopStartTimes as $loopStartTime)
                                         <a href="" class="d-flex"
-                                            style="text-decoration: none; z-index: 30; color: black; width: 22%;">
+                                            style="text-decoration: none; z-index: 30; color: black; width: 22%; ">
                                             <div class="py-2 fs-6 button1"
                                                 style="box-shadow: -5px 7px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; width: 100%;">
                                                 {{ $loopStartTime->startTime }}

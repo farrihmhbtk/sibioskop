@@ -6,7 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CekTiketController;
 use App\Http\Controllers\ResetPassController;
-use App\Http\Controllers\filmBerdasarkanCinemaController;
+use App\Http\Controllers\EditProfileController;
 use App\Models\Lokasi;
 
 
@@ -21,9 +21,13 @@ use App\Models\Lokasi;
 |
 */
 
-Route::get('/login', [LoginController::class, 'index']);
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 
 Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/verifEmail', [RegisterController::class, 'verifEmail']);
 
 Route::get('/register', [RegisterController::class, 'index']);
 
@@ -63,26 +67,28 @@ Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);
 
 Route::get('/cinema/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::class, 'filmBB']);
 
-Route::get('/editnama', function() {
-    return view('edit-profil-nama');
+Route::get('/editName', function() {
+    return view('edit-profile.edit-profile-nama');
 });
 
 Route::get('/editnope', function() {
-    return view('edit-profil-nope');
+    return view('edit-profile.edit-profil-nope');
 });
 
 Route::get('/editemail', function() {
-    return view('edit-profil-email');
+    return view('edit-profile.edit-profil-email');
 });
 
 Route::get('/editpass', function() {
-    return view('edit-profil-pass');
+    return view('edit-profile.edit-profil-pass');
 });
 
-Route::get('/editprofil', function() {
-    return view('edit-profil');
+Route::get('/profile', function() {
+    return view('edit-profile.edit-profile');
 });
 
 Route::get('/pilihkursi', function() {
-    return view('pilih-kursi');
+    return view('pilihKursi');
 });
+
+Route::post('/editName/{user:id}', [EditProfileController::class, 'editName']);

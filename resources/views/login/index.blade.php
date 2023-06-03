@@ -35,6 +35,13 @@
             </div>
         @endif
 
+        @if (session()->has('loginSuccess'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('loginSuccess') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         @if (session()->has('loginError'))
             <div class="alert alert-danger alert-dismissible fade show" role="alert">
                 {{ session('loginError') }}
@@ -46,10 +53,10 @@
             <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
 
             <div class="form-floating my-2">
-                <input type="name" name="name" class="form-control @error('name') is-invalid @enderror"
-                    id="name" placeholder="Name" autofocus required value="{{ old('name') }}">
-                <label for="name" style="font-family: 'Poppins', sans-serif;">Nama</label>
-                @error('name')
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                    id="email" placeholder="Email" autofocus required value="{{ old('email') }}">
+                <label for="email" style="font-family: 'Poppins', sans-serif;">Email</label>
+                @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
