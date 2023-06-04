@@ -6,7 +6,7 @@
 
         <ul class="mx-3 my-4" style="list-style-type: none;">
             <li class="fs-5 my-4" style="">
-                <a href="/film" style="text-decoration: none; color:black;"> Panduan </a>
+                <a href="#" style="text-decoration: none; color:black;"> Panduan </a>
             </li>
 
 

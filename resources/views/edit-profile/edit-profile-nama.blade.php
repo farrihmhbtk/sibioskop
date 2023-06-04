@@ -49,7 +49,7 @@
             <div class="container-editprofil" style="
         padding:3rem;
         ">
-                <h1 class="pengaturan" style="font-family:'ChunkFive';">PENGATURAN AKUN</h1>
+                <h1 class="pengaturan" style="font-family:'ChunkFive';">Ubah Nama</h1>
                 <br>
                 @if (session()->has('editSuccess'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -58,29 +58,29 @@
                     </div>
                 @endif
 
-                @if (session()->has('editError'))
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        {{ session('editError') }}
+                @if (session()->has('noChange'))
+                    <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                        {{ session('noChange') }}
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                 @endif
 
                 <form action="/editName/{{ auth()->user()->id }}" method="post">
                     @csrf
+                    <input type="hidden" id="oldName" name="oldName" value="{{ auth()->user()->name }}">
                     <input type="name" name="name" class="form-control @error('name') is-invalid @enderror"
-                    id="name" placeholder="Name" required value="{{ auth()->user()->name }}">
-                <label for="name" style="font-family: 'Poppins', sans-serif;"></label>
-                @error('name')
-                    <div class="invalid-feedback">
-                        {{ $message }}
-                    </div>
-                @enderror
+                        id="name" placeholder="Name" required value="{{ auth()->user()->name }}">
+                    @error('name')
+                        <div class="invalid-feedback">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                    <label for="name" style="font-family: 'Poppins', sans-serif;"></label>
 
-                    <button class="w-20 mt-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
+
+                    <button class="button1 w-20 mt-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
                         style="
                         font-family: 'Poppins', sans-serif; 
-                        background-color: #EEC921; 
-                        color:black
                         ">Simpan</button>
                 </form>
 

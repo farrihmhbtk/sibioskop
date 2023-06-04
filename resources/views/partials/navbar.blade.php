@@ -31,7 +31,7 @@
                     style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 4px; text-align: left; padding-left: 0px; ">
                     @auth
                     <p style="display: inline;">SI BIOSKOP CINEMA | </p>
-                    <p style="display: inline; font-size: 15pt;">welcome {{ auth()->user()->name }}</p>
+                    <p style="display: inline; letter-spacing: 0;font-size: 15pt; font-family: 'Poppins', sans-serif; ">Welcome {{ auth()->user()->name }}</p>
                     @else
                     <div class="container" style="padding-top: 2%; padding-left: 0;  red">
                         <div class="row" style="">

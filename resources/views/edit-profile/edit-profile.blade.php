@@ -59,7 +59,7 @@
                             <div class="row justify-content-between" style=" padding-inline: 0;">
                                 <div class="col-10">
                                     <input type="text" name="text" class="form-control" readonly id="text"
-                                        placeholder="Nama" autofocus required value="{{ auth()->user()->name }}">
+                                        placeholder="Nama" required value="{{ auth()->user()->name }}">
                                     <label for="nama"
                                         style="font-family: 'Poppins', sans-serif; background-color: #EEC921; 
                             color:black;"></label>
@@ -79,13 +79,12 @@
                             <div class="row justify-content-between" style=" padding-inline: 0;">
                                 <div class="col-10">
                                     <input type="text" name="text" class="form-control" id="text"
-                                        placeholder="Nomor Handphone" autofocus required
-                                        value="{{ auth()->user()->phoneNumber }}">
+                                        placeholder="Nomor Handphone" required value="{{ auth()->user()->phoneNumber }}">
                                     <label for="nama" style="font-family: 'Poppins', sans-serif;"></label>
                                 </div>
                                 <div class="col-2">
 
-                                    <a class="d-flex justify-content-center" href="/login"
+                                    <a class="d-flex justify-content-center" href="/editNoHP"
                                         style="text-decoration: none; height: 100%">
                                         <div class="button1 text-center"
                                             style="width: 90%; height: 60%; padding-top: 5%; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
@@ -98,12 +97,12 @@
                             <div class="row justify-content-between" style=" padding-inline: 0;">
                                 <div class="col-10">
                                     <input type="text" name="text" class="form-control" id="text" placeholder="Email"
-                                        autofocus required value="{{ auth()->user()->email }}">
+                                        required value="{{ auth()->user()->email }}">
                                     <label for="nama" style="font-family: 'Poppins', sans-serif;"></label>
                                 </div>
                                 <div class="col-2">
 
-                                    <a class="d-flex justify-content-center" href="/login"
+                                    <a class="d-flex justify-content-center" href="/editEmail"
                                         style="text-decoration: none; height: 100%">
                                         <div class="button1 text-center"
                                             style="width: 90%; height: 60%; padding-top: 5%; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
@@ -116,12 +115,12 @@
                             <div class="row justify-content-between" style=" padding-inline: 0;">
                                 <div class="col-10">
                                     <input type="password" maxlength="10" name="text" class="form-control" id="password"
-                                        placeholder="Password" autofocus required value="password">
+                                        placeholder="Password" required value="password">
                                     <label for="nama" style="font-family: 'Poppins', sans-serif;"></label>
                                 </div>
                                 <div class="col-2">
 
-                                    <a class="d-flex justify-content-center" href="/login"
+                                    <a class="d-flex justify-content-center" href="/editpass"
                                         style="text-decoration: none; height: 100%">
                                         <div class="button1 text-center"
                                             style="width: 90%; height: 60%; padding-top: 5%; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
@@ -138,21 +137,30 @@
 
 
                     </form>
-
                     <div class="profil-button">
-                        <button class="w-20 mb-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
-                            style="
-                font-family: 'Poppins', sans-serif; 
-                background-color: #EEC921; 
-                color:black
-                ">Panduan</button>
+                        <a href="/panduan" style="text-decoration: none;" class="d-inline me-2">
+                            <button class="button1 w-20 mb-5 px-5 btn btn-lg btn-primary border border-dark border-2"
+                                type="submit" style="font-family: 'Poppins', sans-serif;">Panduan</button>
+                        </a>
 
-                        <button class="w-20 mb-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
-                            style="
-                font-family: 'Poppins', sans-serif; 
-                background-color: #EE6B21; 
-                color:white;
-                ">Keluar</button>
+                        <form action="/logout" method="post" style="" class="d-inline">
+                            @csrf
+                            <button class="button2 w-20 mb-5 px-5 btn btn-lg btn-primary border border-dark border-2"
+                                type="submit"
+                                style="font-family: 'Poppins', sans-serif; ">Keluar</button>
+                        </form>
+
+                        <style>
+                            .button2 {
+                                background-color: #EE6B21; color:white;
+                            }
+
+                            .button2:hover {
+                                background-color: #FDC09E;
+                                color: black;
+                            }
+                        </style>
+
                     </div>
                 @else
                     <a class="d-flex justify-content-center text-center" href="/login" style="text-decoration: none;">

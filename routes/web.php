@@ -71,16 +71,16 @@ Route::get('/editName', function() {
     return view('edit-profile.edit-profile-nama');
 });
 
-Route::get('/editnope', function() {
-    return view('edit-profile.edit-profil-nope');
+Route::get('/editNoHP', function() {
+    return view('edit-profile.edit-profile-noHP');
 });
 
-Route::get('/editemail', function() {
-    return view('edit-profile.edit-profil-email');
+Route::get('/editEmail', function() {
+    return view('edit-profile.edit-profile-email');
 });
 
 Route::get('/editpass', function() {
-    return view('edit-profile.edit-profil-pass');
+    return view('edit-profile.edit-profile-pass');
 });
 
 Route::get('/profile', function() {
@@ -92,3 +92,9 @@ Route::get('/pilihkursi', function() {
 });
 
 Route::post('/editName/{user:id}', [EditProfileController::class, 'editName']);
+
+Route::post('/editPass/{user:id}', [EditProfileController::class, 'editPass']);
+
+Route::post('/editNoHP', [EditProfileController::class, 'editNoHP']);
+
+Route::post('/editEmail', [EditProfileController::class, 'editEmail']);
