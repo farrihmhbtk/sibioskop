@@ -23,17 +23,34 @@
         </div>
     </div>
     {{-- column kanan --}}
-    <div class="col fixed-top" style="padding: 0px; z-index: 12; padding-left: 16.5%; background-color: white">
+    <div class="col fixed-top" style="padding: 0px; z-index: 12; padding-left: 16.5%; background-color: white;">
         <div class="container" style="">
-            <div class="row  align-items-center" style="height: 13vh; background-color: white;">
+            <div class="row  align-items-center" style="height: 13vh; background-color: white; ">
                 {{-- navbar kolom kiri --}}
-                <div class="col-sm-6 fs-3"
-                    style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 4px; text-align: left; padding-left: 0px;">
-                    SI BIOSKOP CINEMA
+                <div class="col-sm-8 fs-3"
+                    style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 4px; text-align: left; padding-left: 0px; ">
+                    @auth
+                    <p style="display: inline;">SI BIOSKOP CINEMA | </p>
+                    <p style="display: inline; letter-spacing: 0;font-size: 15pt; font-family: 'Poppins', sans-serif; ">Welcome {{ auth()->user()->name }}</p>
+                    @else
+                    <div class="container" style="padding-top: 2%; padding-left: 0;  red">
+                        <div class="row" style="">
+                            <p class="col-sm-6" id="title" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F;">SI BIOSKOP CINEMA</p>
+                            <a class="col-sm-4 justify-content-center" id="button"href="/login" style="text-decoration: none; padding-top: 0.5%">
+                                <div class="button1 text-center"
+                                    style="width: 40%; height: 50%; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; font-size: 10pt; letter-spacing: 0; padding-top: 1%">
+                                    Masuk/Daftar
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    @endauth
+                    
 
                 </div>
                 {{-- navbar kolom kanan --}}
-                <div class="col-sm-6" style="text-align:right;">
+                <div class="col-sm-4" style="text-align:right; padding-left: 0;">
                     {{-- <div class="d-inline dropdown">
                       <button class="btn btn-secondary btn-sm p-0" type="button"
                           data-bs-toggle="dropdown" aria-expanded="false"
@@ -70,17 +87,17 @@
                   </div> --}}
                   <form action="/" method="post">
                     @csrf
-                    <div class="d-inline">
+                    <div class="d-inline text-start" style="width: 100%;">
                         
                             
-                            <select id="id_temp" name="id_temp" class="dropdown"
-                                style="color: black; background-color: white; border-width: 1px; border-color: black; width: 35%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: left; font-weight: 350; font-size: 9pt; appearance: none; overflow-y: hidden; padding-left: 6px; overlow-y: hidden;">
+                            <select id="id_temp" name="id_temp" class="dropdown fw-medium"
+                                style="color: black; background-color: white; border-width: 1px; border-color: black; width: 50%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: left;; font-size: 11pt; appearance: none; overflow-y: hidden; padding-left: 6px; overlow-y: hidden;">
                                 <option value="silahkanPilihLokasi">Pilih Lokasi</option>
                                 <option value="Surabaya">Surabaya</option>
                                 <option value="Kediri">Kediri</option>
                                 <option value="Semarang">Semarang</option>
                             </select>
-                            <button type="submit" class="btn btn-secondary" style="width: 8%; font-size: 12pt; height: 5%; text-align: center; padding: 0; font-family: 'Poppins', sans-serif;">Ubah</button>
+                            <button type="submit" class="button1" style="width: 12%; font-size: 11pt; height: 5%; text-align: center; padding: 0; font-family: 'Poppins', sans-serif; border-radius: 4px;">Ubah</button>
                         
 
                         <script>
@@ -92,7 +109,7 @@
 
 
                     <div class="d-inline mx-3">
-                        <a class="btn" href="#" role="button">
+                        <a class="btn" href="/profile" role="button">
                             <svg width="40" height="40" viewBox="0 0 56 56" fill="none"
                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                 <circle cx="28" cy="28" r="28" fill="url(#pattern0)" />
