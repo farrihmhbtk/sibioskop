@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CekTiketController;
 use App\Http\Controllers\ResetPassController;
 use App\Http\Controllers\EditProfileController;
+use App\Http\Controllers\PilihKursiController;
 use App\Models\Lokasi;
 
 
@@ -29,7 +30,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 
 Route::get('/verifEmail', [RegisterController::class, 'verifEmail']);
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -77,7 +78,7 @@ Route::get('/editNoHP', function() {
 
 Route::get('/editEmail', function() {
     return view('edit-profile.edit-profile-email');
-});
+})->middleware('auth');
 
 Route::get('/editpass', function() {
     return view('edit-profile.edit-profile-pass');
@@ -87,9 +88,9 @@ Route::get('/profile', function() {
     return view('edit-profile.edit-profile');
 });
 
-Route::get('/pilihkursi', function() {
-    return view('pilihKursi');
-});
+// Route::get('/pilihKursi', function() {
+//     return view('pilihKursi');
+// });
 
 Route::post('/editName/{user:id}', [EditProfileController::class, 'editName']);
 
@@ -98,3 +99,5 @@ Route::post('/editPass/{user:id}', [EditProfileController::class, 'editPass']);
 Route::post('/editNoHP', [EditProfileController::class, 'editNoHP']);
 
 Route::post('/editEmail', [EditProfileController::class, 'editEmail']);
+
+Route::get('/pilihKursi/{showID}/{price}/{startTimeID}', [PilihKursiController::class, 'index'])->middleware('auth');

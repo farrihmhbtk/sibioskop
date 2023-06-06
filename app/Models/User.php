@@ -14,13 +14,20 @@ class User extends Authenticatable implements MustVerifyEmail
 
     use HasFactory;
 
-    use HasFactory;
-
         protected $fillable = [
         'name',
         'phoneNumber',
         'email',
         'password',
     ];
+
+    public function pesanans(){
+        return $this->hasMany(Pesanan::class, 'id_user');
+    }
+
+    public function history_lokasis()
+    {
+        return $this->hasMany(HistoryLokasi::class);
+    }
     
 }

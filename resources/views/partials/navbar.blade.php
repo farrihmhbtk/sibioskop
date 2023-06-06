@@ -28,17 +28,17 @@
             <div class="row  align-items-center" style="height: 13vh; background-color: white; ">
                 {{-- navbar kolom kiri --}}
                 <div class="col-sm-8 fs-3"
-                    style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 4px; text-align: left; padding-left: 0px; ">
+                    style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F; letter-spacing: 4px; text-align: left; padding-left: 0px;">
                     @auth
                     <p style="display: inline;">SI BIOSKOP CINEMA | </p>
                     <p style="display: inline; letter-spacing: 0;font-size: 15pt; font-family: 'Poppins', sans-serif; ">Welcome {{ auth()->user()->name }}</p>
                     @else
-                    <div class="container" style="padding-top: 2%; padding-left: 0;  red">
+                    <div class="container" style="padding-top: 2%; padding-left: 0; width: 100%; ">
                         <div class="row" style="">
-                            <p class="col-sm-6" id="title" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F;">SI BIOSKOP CINEMA</p>
-                            <a class="col-sm-4 justify-content-center" id="button"href="/login" style="text-decoration: none; padding-top: 0.5%">
+                            <p class="col-sm-7" id="title" style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F;">SI BIOSKOP CINEMA</p>
+                            <a class="col justify-content-center" id="button"href="/login" style="text-decoration: none; padding-top: 0.5%">
                                 <div class="button1 text-center"
-                                    style="width: 40%; height: 50%; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; font-size: 10pt; letter-spacing: 0; padding-top: 1%">
+                                    style="width: 35%; height: 50%; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; font-size: 10pt; letter-spacing: 0; padding-top: 0.5%">
                                     Masuk/Daftar
                                 </div>
                             </a>

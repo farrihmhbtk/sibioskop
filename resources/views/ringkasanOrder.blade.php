@@ -9,7 +9,7 @@
 
         ul {
             padding: 0;
-            
+
         }
     </style>
     <div class="d-block justify-content-start" style="width: 94%;">
@@ -23,8 +23,9 @@
                             <img id="video-cover" src="https://i.ytimg.com/vi/QbZqS2pvEmQ/maxresdefault.jpg"
                                 alt="Video title"
                                 style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
-                            <iframe id="video" width="480" height="269" src="https://www.youtube.com/embed/5WfTEZJnv_8"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: none;">
+                            <iframe id="video" width="480" height="269"
+                                src="https://www.youtube.com/embed/5WfTEZJnv_8" frameborder="0"
+                                allow="autoplay; encrypted-media" allowfullscreen style="display: none;">
                             </iframe>
                             <button id="playbutton" class="play-btn">
                                 <svg width="100" height="103" viewBox="0 0 119 123" fill="none"
@@ -49,8 +50,8 @@
                                     style="width: 130px; float: none; display:inline-block;position: relative; margin-right:30px">
                                     <img src="https://images.thedirect.com/media/photos/4am_screenx.jpg" alt=""
                                         style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
-                                    <svg class="mt-3" style="" width="130" height="30"
-                                        viewBox="0 0 180 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <svg class="mt-3" style="" width="130" height="30" viewBox="0 0 180 36"
+                                        fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <path
                                             d="M16.7241 3.6236L20.3539 14.795H32.1003L22.5973 21.6994L26.2271 32.8708L16.7241 25.9665L7.2211 32.8708L10.8509 21.6994L1.34793 14.795H13.0943L16.7241 3.6236Z"
                                             fill="#222222" />
@@ -86,9 +87,9 @@
                                 </div>
                             </div>
                             <div class="col-sm-8" style="">
-                                <ul
-                                    class="text-start" style="list-style-type: none; font-family: 'Poppins', sans-serif; ">
-                                    <li class="" style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0; ">
+                                <ul class="text-start" style="list-style-type: none; font-family: 'Poppins', sans-serif; ">
+                                    <li class=""
+                                        style="font-family: 'ChunkFive', sans-serif; font-size: 12pt; margin-top: 0; ">
                                         Antman: Quantumania
                                     </li>
                                     <li>
@@ -138,16 +139,17 @@
                             ** Untuk Anak usia 2 tahun keatas wajib membeli tiket
                         </li>
                     </ul>
-
-                    <a href="">
-                        <div class="py-2 fs-6"
-                        style="margin-inline: 20%; box-shadow: -5px 7px black; background-color: #EEC921; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
-                        Bayar Sekarang
+                    <div class="d-flex" style="padding-left: 0;">
+                        <a href="" style="text-decoration: none; color: black; ">
+                            <div class="button1 py-2 text-center"
+                                style=" font-size: 14pt; padding-inline: 10% ; width: 150%; margin-inline: 20%; box-shadow: -5px 7px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
+                                Bayar Sekarang
+                            </div>
+                        </a>
                     </div>
-                    </a>
 
 
+                </div>
             </div>
         </div>
-    </div>
-@endsection
+    @endsection

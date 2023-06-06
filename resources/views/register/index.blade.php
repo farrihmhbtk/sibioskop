@@ -34,8 +34,8 @@
         </div>
     </div> --}}
 
-    <main class="form-signin w-100 m-auto border border-dark border-3 rounded-2 h-75 card-center">
-        <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
+    <main class="form-signin w-100 m-auto border border-dark border-3 rounded-2 card-center" style="padding-top: 2%; padding-bottom: 1%;">
+        <h1 class="h3 mb-3 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
 
         <form action="/register" method="post">
             @csrf

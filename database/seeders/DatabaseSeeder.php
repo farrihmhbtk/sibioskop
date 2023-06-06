@@ -5,15 +5,16 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Film;
 use App\Models\User;
+use App\Models\Kursi;
 use App\Models\Cinema;
 use App\Models\Lokasi;
-use App\Models\Bioskop;
-use App\Models\cinema_bioskop;
-use App\Models\JadwalFilm;
 use App\Models\Studio;
+use App\Models\Bioskop;
+use App\Models\JadwalFilm;
 use App\Models\temp_lokasi;
 use App\Models\WaktuTayang;
 use App\Models\TanggalTayang;
+use App\Models\cinema_bioskop;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -31,10 +32,10 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         User::create([
-            'name' => 'Admin',
-            'password' => bcrypt('admin'),
+            'name' => 'John Doe',
+            'password' => bcrypt('john'),
             'phoneNumber' => '08123456789',
-            'email' => 'admin@gmail.com'
+            'email' => 'johndoe@gmail.com'
         ]);
 
 
@@ -338,19 +339,21 @@ class DatabaseSeeder extends Seeder
             'bioskop' => 'IMAX 2D'
         ]);
 
+        // BIOSKOP DI Kediri Mall CGV
+
         Bioskop::create([
-            'cinemaID' => 3,
+            'cinemaID' => 5,
             'bioskop' => 'GOLD CLASS 2D'
         ]);
 
         
         Bioskop::create([
-            'cinemaID' => 3,
+            'cinemaID' => 5,
             'bioskop' => 'SUB AUDI 2D'
         ]);
 
         Bioskop::create([
-            'cinemaID' => 3,
+            'cinemaID' => 5,
             'bioskop' => 'STARIUM ATMOS 2D'
         ]);
 
@@ -526,7 +529,7 @@ class DatabaseSeeder extends Seeder
             'filmID' => 1,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
+            'price' => 30000,
             'endTime' => '00:00'
         ]);
 
@@ -536,7 +539,7 @@ class DatabaseSeeder extends Seeder
             'filmID' => 1,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
+            'price' => 30000,
             'endTime' => '00:00'
         ]);
 
@@ -546,7 +549,7 @@ class DatabaseSeeder extends Seeder
             'filmID' => 1,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
+            'price' => 30000,
             'endTime' => '00:00'
         ]);
 
@@ -556,7 +559,7 @@ class DatabaseSeeder extends Seeder
             'filmID' => 1,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
+            'price' => 35000,
             'endTime' => '00:00'
         ]);
 
@@ -566,7 +569,7 @@ class DatabaseSeeder extends Seeder
             'filmID' => 1,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
+            'price' => 35000,
             'endTime' => '00:00'
         ]);
 
@@ -576,7 +579,7 @@ class DatabaseSeeder extends Seeder
             'filmID' => 1,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
+            'price' => 35000,
             'endTime' => '00:00'
         ]);
 
@@ -586,37 +589,7 @@ class DatabaseSeeder extends Seeder
             'filmID' => 1,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
-            'endTime' => '00:00'
-        ]);
-
-        JadwalFilm::create([
-            'bioskopID' => 4,
-            'startTimeID' => 1,
-            'filmID' => 1,
-            'showDateID' => 1,
-            'studioID' => 1,
-            'price' => 25000,
-            'endTime' => '00:00'
-        ]);
-
-        JadwalFilm::create([
-            'bioskopID' => 4,
-            'startTimeID' => 2,
-            'filmID' => 1,
-            'showDateID' => 1,
-            'studioID' => 1,
-            'price' => 25000,
-            'endTime' => '00:00'
-        ]);
-
-        JadwalFilm::create([
-            'bioskopID' => 4,
-            'startTimeID' => 3,
-            'filmID' => 1,
-            'showDateID' => 1,
-            'studioID' => 1,
-            'price' => 25000,
+            'price' => 35000,
             'endTime' => '00:00'
         ]);
 
@@ -626,8 +599,318 @@ class DatabaseSeeder extends Seeder
             'filmID' => 2,
             'showDateID' => 1,
             'studioID' => 1,
-            'price' => 25000,
+            'price' => 35000,
             'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 4,
+            'startTimeID' => 1,
+            'filmID' => 3,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 27500,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 4,
+            'startTimeID' => 2,
+            'filmID' => 3,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 27500,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 4,
+            'startTimeID' => 3,
+            'filmID' => 3,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 27500,
+            'endTime' => '00:00'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A1'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A2'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A3'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A4'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A5'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A6'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A7'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'A8'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B1'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B2'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B3'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B4'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B5'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B6'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B7'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'B8'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C1'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C2'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C3'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C4'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C5'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C6'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C7'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'C8'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D1'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D2'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D3'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D4'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D5'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D6'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D7'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'D8'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E1'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E2'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E3'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E4'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E5'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E6'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E7'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'E8'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F1'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F2'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F3'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F4'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F5'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F6'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F7'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'F8'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G1'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G2'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G3'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G4'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G5'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G6'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G7'
+        ]);
+
+        Kursi::create([
+            'bioskopID' => 1,
+            'seatNumber' => 'G8'
         ]);
 
     }

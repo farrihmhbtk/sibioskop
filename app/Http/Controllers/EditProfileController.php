@@ -30,8 +30,6 @@ class EditProfileController extends Controller
 
             return back()->with('editSuccess', 'Nama berhasil di ubah!');
         }
-
-        return back()->with('noChange', 'Tidak ada perubahan');
     }
 
 
@@ -96,7 +94,6 @@ class EditProfileController extends Controller
             return back()->with('editSuccess', 'No HP berhasil di ubah!');
         }
 
-        return back()->with('noChange', 'Tidak ada perubahan');
     }
 
     public function editEmail(Request $request)
@@ -122,6 +119,5 @@ class EditProfileController extends Controller
             return back()->with('editSuccess', 'Email berhasil di ubah!');
         }
 
-        return back()->with('noChange', 'Tidak ada perubahan');
     }
 }

@@ -1,246 +1,190 @@
 @extends('layouts.main')
 
 @section('container')
+    <style>
+        .row {
+            display: flex;
+        }
 
-<script type="text/javascript">
-const container = document.querySelector('.container');
-const seats = document.querySelectorAll('.row .seat:not(.occupied)');
-const count = document.getElementById('count');
-const total = document.getElementById('total');
-const movieSelect = document.getElementById('movie');
+        .seat {
+            background-color: #444451;
+            /* height: 12px;
+                                                        width: 15px; */
+            margin: 5px;
+            /* border-top-left-radius: 10px;
+                                                    border-top-right-radius: 10px; */
 
-let ticketPrice = +movieSelect.value;
+            border-radius: 5px;
+            font-size: 15pt;
+            padding-top: 7px;
+            font-weight: ;
+            height: 50px;
+            width: 50px;
+            background: #EEC921;
+            border: 2px solid black;
+            transition: all .2s ease;
+        }
 
-//Update total and count
-function updateSelectedCount() {
-  const selectedSeats = document.querySelectorAll('.row .seat.selected');
-  const selectedSeatsCount = selectedSeats.length;
-  count.innerText = selectedSeatsCount;
-  total.innerText = selectedSeatsCount * ticketPrice;
-}
+        .seatShowcase {
+            background-color: #444451;
+            /* height: 12px;
+                                                        width: 15px; */
+            margin: 5px;
+            /* border-top-left-radius: 10px;
+                                                    border-top-right-radius: 10px; */
+            border-radius: 5px;
+            height: 50px;
+            width: 50px;
+            background: #EEC921;
+            border: 2px solid black;
+            transition: all .2s ease;
+        }
 
-//Movie Select Event
-movieSelect.addEventListener('change', e => {
-  ticketPrice = +e.target.value;
-  updateSelectedCount();
-});
+        .seat.selected {
+            background-color: #6feaf6;
+            background-color: #EE6B21;
+        }
 
-//Seat click event
-container.addEventListener('click', e => {
-  if (e.target.classList.contains('seat') &&
-     !e.target.classList.contains('occupied')) {
-    e.target.classList.toggle('selected');
-  }
-  updateSelectedCount();
-});
-</script>
+        .seat.occupied {
+            background-color: #fff;
+        }
 
-<style>
+        .seat:nth-of-type(2) {
+            margin-right: 18px;
+        }
 
-@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+        .seat:nth-last-of-type(2) {
+            margin-left: 18px;
+        }
 
-.movie-container {
-  margin: 20px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column
-}
+        .seat:not(.occupied):hover {
+            /* Selecting seats that do not have "occupied" class */
+            cursor: pointer;
+            transform: scale(1.2);
+        }
 
-.movie-container select {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  border: 0;
-  padding: 5px 15px;
-  margin-bottom: 40px;
-  font-size: 14px;
-  border-radius: 5px;
-}
+        .row {
+            display: flex;
+            justify-content: center;
+            /* Align items horizontally to the center */
+        }
+    </style>
 
-.seat {
-  background-color: #EEC921;
-  height: 12px;
-  width: 15px;
-  margin: 3px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-
-.selected {
-  background-color: #EE6B21;
-}
-
-.occupied {
-  background-color: black;
-}
-
-.seat:nth-of-type(2) {
-  margin-right: 18px;
-}
-
-.seat:nth-last-of-type(2) {
-  margin-left: 18px;
-}
-
-.seat:not(.occupied):hover {
-  cursor: pointer;
-  transform: scale(1.2);
-}
-
-.showcase .seat:not(.occupied):hover {
-  cursor: default;
-  transform: scale(1);
-}
-
-.showcase {
-  display: flex;
-  justify-content: space-between;
-  list-style-type: none;
-  background: rgba(0,0,0,0.1);
-  padding: 5px 10px;
-  border-radius: 5px;
-  height: 100%;
-  color: #777;
-}
-
-.showcase li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 10px;
-}
-
-.showcase li small {
-  margin-left: 2px;
-}
-
-.row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.screen {
-  background: #fff;
-  height: 100%;
-  width: 100%;
-  margin: 15px 0;
-  transform: rotateX(-45deg);
-  box-shadow: 0 3px 10px rgba(255,255,255,0.7);
-}
-
-p.text {
-  margin: 40px 0;
-}
-
-p.text span {
-  color: #0081cb;
-  font-weight: 600;
-  box-sizing: content-box;
-}
-
-.credits a {
-  color: #fff;
-}
-
-
-</style>
-
-<div class="movie-container">
-    <label>Pick a movie: </label>
-    <select id="movie">
-      <option value="250">Interstellar (Rs. 250)</option>
-      <option value="200">Kabir Singh (Rs. 200)</option>
-      <option value="150">Duniyadari (Rs. 150)</option>
-      <option value="100">Natsamrat (Rs. 100)</option>
-    </select>
-    
-    <ul class="showcase">
-      <li>
-        <div class="seat"></div>
-        <small>N/A</small>
-      </li>
-      <li>
-        <div class="seat selected"></div>
-        <small>Selected</small>
-      </li>
-      <li>
-        <div class="seat occupied"></div>
-        <small>Occupied</small>
-      </li>    
-    </ul>
-    
-    <div class="container">
-      <div class="screen"></div>
-      
-      <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
+    <div class="container text-center">
+        <div class="movie-screen mb-5">
+            <img src='/img/screen-thumb.png' alt='screen' />
         </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
+
+        <?php
+        $loopSeats = DB::table('kursis')
+            ->join('bioskops', 'kursis.bioskopID', '=', 'bioskops.bioskopID')
+            ->join('jadwal_films', 'bioskops.bioskopID', '=', 'jadwal_films.bioskopID')
+            ->select('kursis.*')
+            ->where('jadwal_films.showID', '=', $showID)
+            ->get();
+        ?>
+
+        <div class="row-container" style="font-family: 'Poppins', sans-serif;">
+
+            @php
+                $chunkedSeats = $loopSeats->chunk(8);
+            @endphp
+
+            @foreach ($chunkedSeats as $rowSeats)
+                <div class="row">
+                    @foreach ($rowSeats as $index => $seat)
+                        <div class="seat" data-seat-index="{{ $index }}">{{ $seat->seatNumber }}</div>
+                    @endforeach
+                </div>
+            @endforeach
+
+            <div class="container mb-4" style="font-family: 'Poppins', sans-serif;">
+                <div class="row mt-5" style="">
+                    <div class="col-3 mx-3 text-start"
+                        style="padding-top: 6px; padding-bottom: 6px; padding-left: 1.2%; box-shadow: -7px 7px black; color: black; background-color: #EEC921; border: 2px solid black; border-radius: 8px;">
+                        <div class="d-flex">
+                            Total Harga
+                        </div>
+                        <div class="d-flex fw-bold" style="font-size: 18pt; margin-top: 0;">
+                            Rp <span id="total">0</span>
+                        </div>
+                    </div>
+                    <div class="col-3 mx-3 text-start"
+                        style="padding-top: 6px; padding-bottom: 6px; padding-left: 1.2%; box-shadow: -7px 7px black; color: black; background-color: #EEC921; border: 2px solid black; border-radius: 8px;">
+                        <div class="d-flex">
+                            Selected Seat
+                        </div>
+                        <div class="d-flex fw-bold" style="font-size: 18pt; margin-top: 0;">
+                            <span id='count'>0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5" style="">
+                    <div class="col-3" style="">
+                        <div class="d-flex" style="list-style-type: none;">
+                            <li>
+                                <div class="seatShowcase"></div>
+                                <small>Kosong</small>
+                            </li>
+                            <li>
+                                <div class="seatShowcase" style="background-color: #EE6B21"></div>
+                                <small>Dipilih</small>
+                            </li>
+                            <li>
+                                <div class="seat occupied"></div>
+                                <small>Terisi</small>
+                            </li>
+                        </div>
+                    </div>
+                    <div class="col-9" style="padding-top: 5px; padding-left: 14.8%">
+                        <a href="/ringkasanOrder" style="text-decoration: none;">
+                            <div class="button1 d-flex justify-content-center"
+                                style="font-size: 15pt; padding-top: 1%; width: 35%; height: 62%; box-shadow: -7px 7px black; border: 2px solid black; border-radius: 8px;">
+                                Ringkasan Order
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            {{-- <div class="text-wrapper">
+                <p class="text">Selected Seats <span id='count'>0</span>
+                <p class="text">Total Price ₹<span id="total">0</span></p>
+            </div> --}}
         </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
+
+        <div class="movie-container" hidden="hidden">
+            <label>Pick a movie:</label>
+            <select id="movie">
+                <option value="{{ $price }}" selected>Film Selected</option>
+                {{-- <option value="850">Joker (₹850)</option>
+                <option value="550">Jumanji: Next Level (₹550)</option>
+                <option value="750">Dolittle (₹750)</option> --}}
+            </select>
         </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-        </div>
-        <div class="row">
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat occupied"></div>
-          <div class="seat"></div>
-        </div>
-      
-      <p class="text">
-        You have selected <span id="count">0</span> seats for the total price of Rs. <span id="total">0</span>
-      </p>
+
+        {{-- <ul class="showcase">
+            <li>
+                <div class="seat"></div>
+                <small>N/A</small>
+            </li>
+            <li>
+                <div class="seat selected"></div>
+                <small>Selected</small>
+            </li>
+            <li>
+                <div class="seat occupied"></div>
+                <small>Occupied</small>
+            </li>
+        </ul> --}}
+
     </div>
-  </div>
-  
-  <div class="credits"><a href="http://www.aniket.co" target="_blank">aniket.co</a></div>
 
+
+    <!-- <div class="text-wrapper">
+                                            <p class="text">Selected Seats <span id='count'>0</span>
+                                                <p class="text">Total Price ₹<span id="total">0</span></p>
+                                        </div> -->
+
+    <script type="text/javascript" src="{{ URL::asset('js/pilihKursi.js') }}"></script>
 @endsection
