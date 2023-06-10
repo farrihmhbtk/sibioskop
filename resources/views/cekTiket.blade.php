@@ -4,6 +4,7 @@
     <style>
         .custom-column {
             flex: 0 0 calc(50% - 1.3rem);
+            margin-right: 1.7rem;
             /* Adjust the width as needed */
         }
 
@@ -14,13 +15,13 @@
 
     </style>
 
-    <div class="container">
+    <div class="container mb-5" style="padding-left: 0px;">
 
         @auth
             <div class="row justify-content-between">
 
                 {{-- Kolom tiket aktif --}}
-                <div class="custom-column">
+                <div class="custom-column" style="margin-right: 0px; margin-left: 0px;">
 
                     {{-- Header "Tiket Aktif" --}}
                     <div class="header text-center px-4 py-3 border border-dark border-3 rounded-2"
@@ -35,13 +36,12 @@
                         {{-- Item 1 --}}
                         <x-card-tiket />
 
-                        <hr>
                     </div>
 
                 </div>
 
                 {{-- Kolom daftar transaksi --}}
-                <div class="custom-column">
+                <div class="custom-column" style="">
 
                     {{-- Header "Daftar Transaksi" --}}
                     <div class="header text-center px-4 py-3 border border-dark border-3 rounded-2"
@@ -50,13 +50,13 @@
                     </div>
 
                     {{-- Container daftar transaksi --}}
-                    <div class="container-tiket-aktif px-4 py-3 mt-5 border border-dark border-3 rounded-2"
+                    <div class="text-center container-tiket-aktif px-4 py-3 mt-5 border border-dark border-3 rounded-2"
                         style="background-color: #EEC921; box-shadow: -10px 12px black">
-
+                        <p>Belum ada daftar transaksi</p>
                         {{-- Item 1 --}}
-                        <x-card-tiket />
+                        {{-- <x-card-tiket />
 
-                        <hr>
+                        <hr> --}}
                     </div>
                 </div>
 

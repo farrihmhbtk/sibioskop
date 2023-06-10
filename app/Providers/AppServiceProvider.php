@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Lokasi;
-use App\Models\temp_lokasi;
+use App\Models\HistoryLokasiGuest;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         view()->composer('*', function ($view) {
-            $view->with('temp_lokasi', temp_lokasi::orderBy('id', 'desc')->first());
+            $view->with('temp_lokasi', HistoryLokasiGuest::orderBy('id', 'desc')->first());
         });
     }
 }

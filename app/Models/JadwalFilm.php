@@ -33,5 +33,9 @@ class JadwalFilm extends Model
         return $this->belongsTo(Studio::class);
     }
 
+    public function pesanans(){
+        return $this->hasMany(Pesanan::class);
+    }
+
 
 }

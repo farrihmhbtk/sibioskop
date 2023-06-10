@@ -8,15 +8,14 @@
                 style="height: 265px; white-space: nowrap; position: relative; overflow-x: scroll; -webkit-overflow-scrolling: touch;">
                 @foreach ($trailers as $trailer)
                     <div class="me-4" style="width: 441px; float: none; display:inline-block;position: relative;">
-
                         <div class="wrapper" style="position: relative; width: 441px; ">
-                            <img id="video-cover" src="{{ $trailer->linkCoverTrailer }}" alt="Video title"
+                            <img id="video-cover-{{$loop->index}}" src="{{ $trailer->linkCoverTrailer }}" alt="Video title"
                                 style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
-                            <iframe id="video" width="441" height="247"
+                            <iframe id="video-{{$loop->index}}" width="441" height="247"
                                 src="https://www.youtube.com/embed/{{ $trailer->linkTrailerID }}" frameborder="0"
                                 allow="autoplay; encrypted-media" allowfullscreen style="display: none;">
                             </iframe>
-                            <button id="playbutton" class="play-btn">
+                            <button id="playbutton-{{$loop->index}}" class="play-btn">
                                 <svg width="100" height="103" viewBox="0 0 119 123" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -56,7 +55,13 @@
                                                 <?php
                                                     $min_tanggal_tayangs = DB::table('tanggal_tayangs')->min('showDateID');
                                                 ?>
-                                                <a href="/film/{{ $film->slug }}/{{ $min_tanggal_tayangs}}" style="text-decoration: none;">
+                                                @auth
+                                                <a href="/filmAuth/{{ $film->slug }}/{{ $min_tanggal_tayangs}}" style="text-decoration: none;">
+
+                                                @else
+                                                <a href="/filmGuest/{{ $film->slug }}/{{ $min_tanggal_tayangs}}" style="text-decoration: none;">
+
+                                                @endauth
                                                     <img src="{{ $film->linkPoster }}" alt="{{ $film->title }}"
                                                         style="max-width: 100%; height:auto; border-radius: 8px; box-shadow: -8px 10px black;">
                                                     <p class="mt-3 mb-1"

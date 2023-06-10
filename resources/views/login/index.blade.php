@@ -28,30 +28,31 @@
 <body>
 
     <main class="form-signin w-100 h-75 card-center m-auto border border-dark border-3 rounded-2">
-        @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
 
-        @if (session()->has('loginSuccess'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                {{ session('loginSuccess') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-
-        @if (session()->has('loginError'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                {{ session('loginError') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
         <form action="/login" method="post">
             @csrf
-            <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
 
+            <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
+            @if (session()->has('success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if (session()->has('loginSuccess'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{ session('loginSuccess') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if (session()->has('loginError'))
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{ session('loginError') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
             <div class="form-floating my-2">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
                     id="email" placeholder="Email" autofocus required value="{{ old('email') }}">
