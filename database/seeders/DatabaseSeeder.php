@@ -10,12 +10,15 @@ use App\Models\Cinema;
 use App\Models\Lokasi;
 use App\Models\Studio;
 use App\Models\Bioskop;
+use App\Models\Pesanan;
 use App\Models\JadwalFilm;
 use App\Models\temp_lokasi;
 use App\Models\WaktuTayang;
+use App\Models\KursiPesanan;
 use App\Models\TanggalTayang;
 use App\Models\cinema_bioskop;
 use Illuminate\Database\Seeder;
+use App\Models\HistoryLokasiGuest;
 
 class DatabaseSeeder extends Seeder
 {
@@ -357,6 +360,11 @@ class DatabaseSeeder extends Seeder
             'bioskop' => 'STARIUM ATMOS 2D'
         ]);
 
+        Bioskop::create([
+            'cinemaID' => 8,
+            'bioskop' => 'VELVET 2D'
+        ]);
+
         // Bioskop::create([
         //     'bioskop' => 'REGULAR 3D'
         // ]);
@@ -420,8 +428,8 @@ class DatabaseSeeder extends Seeder
         //     'bioskopID' => 3
         // ]);
 
-        temp_lokasi::create([
-            'id_temp' => 'silahkanPilihLokasi'
+        HistoryLokasiGuest::create([
+            'lokasi' => 'silahkanPilihLokasi'
         ]);
 
         WaktuTayang::create([
@@ -518,6 +526,35 @@ class DatabaseSeeder extends Seeder
             'startTimeID' => 3,
             'filmID' => 1,
             'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 25000,
+            'endTime' => '00:00'
+        ]);
+        JadwalFilm::create([
+            'bioskopID' => 1,
+            'startTimeID' => 1,
+            'filmID' => 1,
+            'showDateID' => 2,
+            'studioID' => 1,
+            'price' => 25000,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 1,
+            'startTimeID' => 2,
+            'filmID' => 1,
+            'showDateID' => 2,
+            'studioID' => 1,
+            'price' => 25000,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 1,
+            'startTimeID' => 3,
+            'filmID' => 1,
+            'showDateID' => 2,
             'studioID' => 1,
             'price' => 25000,
             'endTime' => '00:00'
@@ -630,6 +667,35 @@ class DatabaseSeeder extends Seeder
             'showDateID' => 1,
             'studioID' => 1,
             'price' => 27500,
+            'endTime' => '00:00'
+        ]);
+        JadwalFilm::create([
+            'bioskopID' => 7,
+            'startTimeID' => 1,
+            'filmID' => 4,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 28000,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 7,
+            'startTimeID' => 2,
+            'filmID' => 4,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 28000,
+            'endTime' => '00:00'
+        ]);
+
+        JadwalFilm::create([
+            'bioskopID' => 7,
+            'startTimeID' => 3,
+            'filmID' => 4,
+            'showDateID' => 1,
+            'studioID' => 1,
+            'price' => 28000,
             'endTime' => '00:00'
         ]);
 
@@ -913,5 +979,17 @@ class DatabaseSeeder extends Seeder
             'seatNumber' => 'G8'
         ]);
 
+        Pesanan::create([
+            'showID' => 1,
+            'user_id' => 1,
+            'bookingCode' => '296547',
+            'totalPembayaran' => '100000'
+        ]);
+
+        KursiPesanan::create([
+            'seatID' => 1,
+            'orderNumber' => 1
+        ]);
+        
     }
 }

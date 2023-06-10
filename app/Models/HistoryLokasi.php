@@ -9,7 +9,7 @@ class HistoryLokasi extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id';
+    protected $fillable = ['user_id','lokasi'];
 
     public function users()
     {

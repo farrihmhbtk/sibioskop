@@ -10,8 +10,14 @@
             ?>
             @foreach ($cinemas as $cinema)
                 <li class="fs-5 my-4" style="">
-                    <a href="/cinema/{{ $cinema->slug }}/{{ $min_tanggal_tayangs }}"
+                    @auth
+                    <a href="/cinemaAuth/{{ $cinema->slug }}/{{ $min_tanggal_tayangs }}"
                         style="text-decoration: none; color:black;">
+                    @else
+                    <a href="/cinemaGuest/{{ $cinema->slug }}/{{ $min_tanggal_tayangs }}"
+                        style="text-decoration: none; color:black;">
+                    @endauth
+
                         {{ $cinema->cinema }} </a>
                     <hr style="border-color: solid black; border-width: 3px">
                 </li>

@@ -36,11 +36,15 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 Route::get('/', [FilmController::class, 'index']);
 
-Route::post('/', [FilmController::class, 'store']);
+Route::post('/guest', [FilmController::class, 'storeGuest']);
+
+Route::post('/auth', [FilmController::class, 'storeAuth']);
 
 Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
-Route::get('/film/{film:slug}/{min_tanggal_tayangs}', [FilmController::class, 'showTodayDate']);
+Route::get('/filmGuest/{film:slug}/{min_tanggal_tayangs}', [FilmController::class, 'showTodaysFilmGuest']);
+
+Route::get('/filmAuth/{film:slug}/{min_tanggal_tayangs}', [FilmController::class, 'showTodaysFilmAuth']);
 
 Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
     return view('daftarCinema', [
@@ -64,9 +68,9 @@ Route::get('/resetVerification', [ResetPassController::class, 'verification']);
 
 Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
 
-Route::get('/pembayaransukses', [FilmController::class, 'pembayaransukses']);
+Route::get('/cinemaGuest/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::class, 'filmBBGuest']);
 
-Route::get('/cinema/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::class, 'filmBB']);
+Route::get('/cinemaAuth/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::class, 'filmBBAuth']);
 
 Route::get('/editName', function() {
     return view('edit-profile.edit-profile-nama');
@@ -100,4 +104,14 @@ Route::post('/editNoHP', [EditProfileController::class, 'editNoHP']);
 
 Route::post('/editEmail', [EditProfileController::class, 'editEmail']);
 
-Route::get('/pilihKursi/{showID}/{price}/{startTimeID}', [PilihKursiController::class, 'index'])->middleware('auth');
+Route::get('/pilihKursi/{showID}', [PilihKursiController::class, 'pilihKursi'])->middleware('auth');
+
+Route::get('/ringkasanOrder/{showID}/{seats}', [PilihKursiController::class, 'ringkasanOrder'])->middleware('auth');
+
+Route::get('/ringkasanOrder/{showID}/', [PilihKursiController::class, 'belumPilihKursi'])->middleware('auth');
+
+Route::get('/transfer/{showID}/{seats}/{totBay}/{orderNumber}', [PilihKursiController::class, 'transfer'])->middleware('auth');
+
+Route::post('/timer/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'storePesanan'])->middleware('auth');
+
+Route::get('/pembayaranSukses/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'pembayaranSukses'])->middleware('auth');

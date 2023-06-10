@@ -12,9 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kursi_pesanans', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('seatID');
+            $table->unsignedBigInteger('orderNumber');
+            
+            $table->foreign('seatID')->references('seatID')->on('kursis')->onDelete('cascade');
+            $table->foreign('orderNumber')->references('orderNumber')->on('pesanans')->onDelete('cascade');
+            
+            // Add other columns as needed
         });
+        
     }
 
     /**

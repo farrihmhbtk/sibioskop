@@ -11,13 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('akun_penggunas', function (Blueprint $table) {
-            $table->id('userID');
-            $table->string('name');
-            $table->string('password');
-            $table->string('phoneNumber');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
+        Schema::create('history_lokasi_guests', function (Blueprint $table) {
+            $table->id();
+            $table->string('lokasi');
             $table->timestamps();
         });
     }
@@ -27,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('akun_penggunas');
+        Schema::dropIfExists('history_lokasi_guests');
     }
 };

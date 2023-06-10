@@ -13,6 +13,13 @@ class Pesanan extends Model
 
     protected $primaryKey = 'orderNumber';
 
+    protected $fillable = [
+        'showID',
+        'user_id',
+        'bookingCode',
+        'totalPembayaran'
+    ];
+
     public $timestamps = false;
 
     public function kursis(): BelongsToMany

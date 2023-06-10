@@ -60,7 +60,13 @@
                         ?>
                         <div class="col-sm-12 text-center mt-3" style="">
                             @foreach ($tanggals as $tanggal)
-                                <a href="/cinema/{{ $cinemas->slug }}/{{ $tanggal->showDateID }}" style="text-decoration: none; color: black; ">
+                            @auth
+                            <a href="/cinemaAuth/{{ $cinemas->slug }}/{{ $tanggal->showDateID }}" style="text-decoration: none; color: black; ">
+
+                            @else
+                            <a href="/cinemaGuest/{{ $cinemas->slug }}/{{ $tanggal->showDateID }}" style="text-decoration: none; color: black; ">
+
+                            @endauth
                                     <div class="py-2 fs-6 button1"
                                         style="margin-right: 17%; width: 20%; box-shadow: -8px 10px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; float: none; display:inline-block;position: relative;">
                                         {{ $tanggal->showDateStr }}
@@ -84,7 +90,7 @@
                             ->distinct()
                             ->select('films.*')
                             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-                            ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+                            
                             ->where('cinemas.slug', '=', $cinemas->slug)
                             ->where('films.filmID', '=', $loopFilm->filmID)
                             ->get();
@@ -173,7 +179,7 @@
                             ->distinct()
                             ->select('bioskops.*','jadwal_films.price')
                             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-                            ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+                            
                             ->where('cinemas.slug', '=', $cinemas->slug)
                             ->where('films.filmID', '=', $loopFilm->filmID)
                             ->get();
@@ -201,9 +207,9 @@
                                 ->join('waktu_tayangs', 'jadwal_films.startTimeID', '=', 'waktu_tayangs.startTimeID')
                                 ->join('tanggal_tayangs', 'jadwal_films.showDateID', '=', 'tanggal_tayangs.showDateID')
                                 ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
-                                ->select('waktu_tayangs.startTime')
+                                ->select('waktu_tayangs.startTime','jadwal_films.*')
                                 ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-                                ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+                                
                                 ->where('cinemas.slug', '=', $cinemas->slug)
                                 ->where('films.filmID', '=', $loopFilm->filmID)
                                 ->where('jadwal_films.bioskopID', '=', $bioskop->bioskopID)
@@ -214,7 +220,7 @@
                                     
                                 
 
-                                    <a href="" style="text-decoration: none; width: 20%; padding: 0;">
+                                    <a href="/pilihKursi/{{ $waktuTayang->showID }}/{{ $waktuTayang->price }}/{{ $waktuTayang->startTimeID }}" style="text-decoration: none; width: 20%; padding: 0;">
                                         <div class="py-2 fs-6 button1"
                                         style="width: 100%; box-shadow: -8px 10px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                                         {{ $waktuTayang->startTime }}

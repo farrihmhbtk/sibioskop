@@ -9,10 +9,10 @@
         .seat {
             background-color: #444451;
             /* height: 12px;
-                                                        width: 15px; */
+                                                                    width: 15px; */
             margin: 5px;
             /* border-top-left-radius: 10px;
-                                                    border-top-right-radius: 10px; */
+                                                                border-top-right-radius: 10px; */
 
             border-radius: 5px;
             font-size: 15pt;
@@ -28,10 +28,10 @@
         .seatShowcase {
             background-color: #444451;
             /* height: 12px;
-                                                        width: 15px; */
+                                                                    width: 15px; */
             margin: 5px;
             /* border-top-left-radius: 10px;
-                                                    border-top-right-radius: 10px; */
+                                                                border-top-right-radius: 10px; */
             border-radius: 5px;
             height: 50px;
             width: 50px;
@@ -69,8 +69,38 @@
             /* Align items horizontally to the center */
         }
     </style>
+    <span id="showID" style="display:none">{{ $showID }}</span>
+    @php
+        $schedule_details = DB::table('jadwal_films')
+            ->join('bioskops', 'jadwal_films.bioskopID', '=', 'bioskops.bioskopID')
+            ->join('cinemas', 'bioskops.cinemaID', '=', 'cinemas.cinemaID')
+            ->join('tanggal_tayangs', 'jadwal_films.showDateID', '=', 'tanggal_tayangs.showDateID')
+            ->join('waktu_tayangs', 'jadwal_films.startTimeID', '=', 'waktu_tayangs.startTimeID')
+            ->select('cinemas.cinema', 'tanggal_tayangs.showDateStr', 'waktu_tayangs.startTime')
+            ->where('jadwal_films.showID', '=', $showID)
+            ->get();
+        
+    @endphp
+    @foreach ($schedule_details as $schedule_detail)
+    <div class="container">
+        <div class="row">
+            <div class="col-1 fs-2" style=" width: 4%;">
+                <i class="bi bi-clock"></i>
+            </div>
+            <div class="col" style="font-family: 'Poppins', sans-serif;  font-weight: 600;">
+                <p style="; margin-bottom: 0; font-size: 14pt;">{{ $schedule_detail->cinema }}</p>
+                <p style="">{{ $schedule_detail->showDateStr }} | {{ $schedule_detail->startTime }}</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    @endforeach
 
     <div class="container text-center">
+        <p class="tex-center"style="color: red; font-family: 'Poppins', sans-serif; font-size: 15pt;">{{ $alert }}</p>
+
         <div class="movie-screen mb-5">
             <img src='/img/screen-thumb.png' alt='screen' />
         </div>
@@ -93,10 +123,28 @@
             @foreach ($chunkedSeats as $rowSeats)
                 <div class="row">
                     @foreach ($rowSeats as $index => $seat)
-                        <div class="seat" data-seat-index="{{ $index }}">{{ $seat->seatNumber }}</div>
+                        @php
+                            $occupied = DB::table('kursis')
+                                ->join('bioskops', 'kursis.bioskopID', '=', 'bioskops.bioskopID')
+                                ->join('jadwal_films', 'bioskops.bioskopID', '=', 'jadwal_films.bioskopID')
+                                ->join('kursi_pesanans', 'kursis.seatID', '=', 'kursi_pesanans.seatID')
+                                ->join('pesanans', 'kursi_pesanans.orderNumber', '=', 'pesanans.orderNumber')
+                                ->join('jadwal_films AS jf', 'pesanans.showID', '=', 'jf.showID')
+                                ->select('pesanans.*')
+                                ->where('jf.showID', '=', $showID)
+                                ->where('kursi_pesanans.seatID', '=', $seat->seatID)
+                                ->exists();
+                            
+                            $seatClass = $occupied ? 'occupied' : '';
+                        @endphp
+
+                        <div class="seat {{ $seatClass }}" data-seat-index="{{ $seat->seatNumber }}">
+                            {{ $seat->seatNumber }}
+                        </div>
                     @endforeach
                 </div>
             @endforeach
+
 
             <div class="container mb-4" style="font-family: 'Poppins', sans-serif;">
                 <div class="row mt-5" style="">
@@ -112,7 +160,7 @@
                     <div class="col-3 mx-3 text-start"
                         style="padding-top: 6px; padding-bottom: 6px; padding-left: 1.2%; box-shadow: -7px 7px black; color: black; background-color: #EEC921; border: 2px solid black; border-radius: 8px;">
                         <div class="d-flex">
-                            Selected Seat
+                            Pilihan Kursi
                         </div>
                         <div class="d-flex fw-bold" style="font-size: 18pt; margin-top: 0;">
                             <span id='count'>0</span>
@@ -137,54 +185,35 @@
                         </div>
                     </div>
                     <div class="col-9" style="padding-top: 5px; padding-left: 14.8%">
-                        <a href="/ringkasanOrder" style="text-decoration: none;">
+                        <a href="" id="order-link" style="text-decoration: none;">
                             <div class="button1 d-flex justify-content-center"
                                 style="font-size: 15pt; padding-top: 1%; width: 35%; height: 62%; box-shadow: -7px 7px black; border: 2px solid black; border-radius: 8px;">
                                 Ringkasan Order
                             </div>
                         </a>
+
                     </div>
                 </div>
             </div>
 
-            {{-- <div class="text-wrapper">
-                <p class="text">Selected Seats <span id='count'>0</span>
-                <p class="text">Total Price ₹<span id="total">0</span></p>
-            </div> --}}
         </div>
 
         <div class="movie-container" hidden="hidden">
             <label>Pick a movie:</label>
             <select id="movie">
-                <option value="{{ $price }}" selected>Film Selected</option>
-                {{-- <option value="850">Joker (₹850)</option>
-                <option value="550">Jumanji: Next Level (₹550)</option>
-                <option value="750">Dolittle (₹750)</option> --}}
+                @php
+                    $prices = DB::table('jadwal_films')
+                        ->select('jadwal_films.*')
+                        ->where('jadwal_films.showID', '=', $showID)
+                        ->get();
+                @endphp
+                @foreach ($prices as $price)
+                    <option value="{{ $price->price }}" selected>Film Selected</option>
+                @endforeach
             </select>
         </div>
 
-        {{-- <ul class="showcase">
-            <li>
-                <div class="seat"></div>
-                <small>N/A</small>
-            </li>
-            <li>
-                <div class="seat selected"></div>
-                <small>Selected</small>
-            </li>
-            <li>
-                <div class="seat occupied"></div>
-                <small>Occupied</small>
-            </li>
-        </ul> --}}
-
     </div>
-
-
-    <!-- <div class="text-wrapper">
-                                            <p class="text">Selected Seats <span id='count'>0</span>
-                                                <p class="text">Total Price ₹<span id="total">0</span></p>
-                                        </div> -->
 
     <script type="text/javascript" src="{{ URL::asset('js/pilihKursi.js') }}"></script>
 @endsection

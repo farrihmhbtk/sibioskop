@@ -29,29 +29,9 @@ function setMovieData(movieIndex, moviePrice) {
   localStorage.setItem("selectedMoviePrice", moviePrice);
 }
 
-// function updateSelectedCount() {
-//   const selectedSeats = document.querySelectorAll(".container .selected");
-//   const selectedSeatNumbers = [...selectedSeats].map(function(seat) {
-//     return seat.textContent;
-//   });
-
-//   seatsIndex = [...selectedSeats].map(function(seat) {
-//     return seat.dataset.seatIndex;
-//   });
-
-//   localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
-
-//   let selectedSeatsCount = selectedSeats.length;
-//   // count.textContent = selectedSeatsCount;
-//   total.textContent = selectedSeatsCount * ticketPrice;
-
-//   // Update the seat numbers in the count span
-//   count.textContent = selectedSeatNumbers.join(", ");
-// }
-
 function updateSelectedCount() {
   const selectedSeats = document.querySelectorAll(".container .selected");
-  const selectedSeatNumbers = [...selectedSeats].map(function(seat) {
+  const selectedSeatLabels = [...selectedSeats].map(function(seat) {
     return seat.textContent;
   });
 
@@ -62,20 +42,21 @@ function updateSelectedCount() {
   localStorage.setItem("selectedSeats", JSON.stringify(seatsIndex));
 
   let selectedSeatsCount = selectedSeats.length;
-  count.textContent = selectedSeatsCount;
+  count.textContent = selectedSeatLabels.join(", "); // Display seat numbers
   total.textContent = selectedSeatsCount * ticketPrice;
-
-  // Update the seat numbers in the count span
-  count.textContent = selectedSeatNumbers.join(", ");
-
-  // Update the href of the "Ringkasan Order" button
-  // const ringkasanOrderLink = document.querySelector(".row-container a");
-  // ringkasanOrderLink.href = ringkasanOrderLink.href.split('?')[0] + "?seatCount=" + selectedSeatsCount + "&seatIndices=" + seatsIndex.join(",");
+  
+  const orderLink = document.getElementById("order-link");
+  const selectedSeatsQueryParam = seatsIndex.join(", ");
+  const showID = document.getElementById("showID").textContent;
+  
+  // Update the href with the absolute URL to the 'ringkasanOrder' page
+  orderLink.href = `/ringkasanOrder/${showID}/${selectedSeatsQueryParam}`;
 }
 
 
 
 // Get data from localstorage and populate
+
 function populateUI() {
   const selectedSeats = JSON.parse(localStorage.getItem("selectedSeats"));
 
@@ -109,7 +90,6 @@ seatContainer.addEventListener("click", function(e) {
     e.target.classList.contains("seat") &&
     !e.target.classList.contains("occupied")
   ) {
-    console.log("klik");
     e.target.classList.toggle("selected");
     updateSelectedCount();
   }

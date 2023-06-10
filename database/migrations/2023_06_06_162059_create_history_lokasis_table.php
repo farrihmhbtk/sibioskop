@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('history_lokasis', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('id_user');
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('lokasi');
             $table->timestamps();
         });

@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('pesanans', function (Blueprint $table) {
             $table->id('orderNumber');
             $table->unsignedBigInteger('showID');
-            $table->unsignedBigInteger('id_user');
+            $table->unsignedBigInteger('user_id');
             $table->foreign('showID')->references('showID')->on('jadwal_films')->onDelete('cascade');
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('bookingCode');
+            $table->string('totalPembayaran');
         });
     }
 
