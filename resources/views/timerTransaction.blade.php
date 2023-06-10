@@ -20,7 +20,7 @@
         .timer>svg>circle {
             fill: none;
             stroke-opacity: 0.3;
-            stroke: #0d6efd;
+            stroke: #EEC921;
             stroke-width: 10;
             transform-origin: center center;
             transform: rotate(-90deg);

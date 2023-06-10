@@ -220,7 +220,7 @@
                                     
                                 
 
-                                    <a href="/pilihKursi/{{ $waktuTayang->showID }}/{{ $waktuTayang->price }}/{{ $waktuTayang->startTimeID }}" style="text-decoration: none; width: 20%; padding: 0;">
+                                    <a href="/pilihKursi/{{ $waktuTayang->showID }}" style="text-decoration: none; width: 20%; padding: 0;">
                                         <div class="py-2 fs-6 button1"
                                         style="width: 100%; box-shadow: -8px 10px black; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px;">
                                         {{ $waktuTayang->startTime }}
