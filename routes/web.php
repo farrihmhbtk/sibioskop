@@ -8,6 +8,7 @@ use App\Http\Controllers\CekTiketController;
 use App\Http\Controllers\ResetPassController;
 use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\PilihKursiController;
+use App\Http\Controllers\PanduanController;
 use App\Models\Lokasi;
 
 
@@ -46,17 +47,17 @@ Route::get('/filmGuest/{film:slug}/{min_tanggal_tayangs}', [FilmController::clas
 
 Route::get('/filmAuth/{film:slug}/{min_tanggal_tayangs}', [FilmController::class, 'showTodaysFilmAuth']);
 
-Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
+Route::get('/lokasi/{lokasi:city}', function (Lokasi $lokasi) {
     return view('daftarCinema', [
         'cinemas' => $lokasi->cinemas
     ]);
 });
 
-Route::get('/panduan', function() {
+Route::get('/panduan', function () {
     return view('panduan');
 });
 
-Route::get('/ringkasanOrder', function() {
+Route::get('/ringkasanOrder', function () {
     return view('ringkasanOrder');
 });
 
@@ -72,23 +73,23 @@ Route::get('/cinemaGuest/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::
 
 Route::get('/cinemaAuth/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::class, 'filmBBAuth']);
 
-Route::get('/editName', function() {
+Route::get('/editName', function () {
     return view('edit-profile.edit-profile-nama');
 });
 
-Route::get('/editNoHP', function() {
+Route::get('/editNoHP', function () {
     return view('edit-profile.edit-profile-noHP');
 });
 
-Route::get('/editEmail', function() {
+Route::get('/editEmail', function () {
     return view('edit-profile.edit-profile-email');
 })->middleware('auth');
 
-Route::get('/editpass', function() {
+Route::get('/editpass', function () {
     return view('edit-profile.edit-profile-pass');
 });
 
-Route::get('/profile', function() {
+Route::get('/profile', function () {
     return view('edit-profile.edit-profile');
 });
 
@@ -115,3 +116,5 @@ Route::get('/transfer/{showID}/{seats}/{totBay}/{orderNumber}', [PilihKursiContr
 Route::post('/timer/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'storePesanan'])->middleware('auth');
 
 Route::get('/pembayaranSukses/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'pembayaranSukses'])->middleware('auth');
+
+Route::get('/panduan', [PanduanController::class, 'index']);
