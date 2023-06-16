@@ -18,16 +18,8 @@
         flex-direction:column;
         ">
 
-            <img src="/img/maps.png" alt="Avatar" class="avatar"
-                style="
-            vertical-align: middle;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border-style: solid;
-            border-width: 2px;
-            border-color:black;
-        ">
+            @include('edit-profile.partials-photo-profile.photo-profile')
+
 
         </div>
 
@@ -66,7 +58,8 @@
                 @endif
                 <form action="/editNoHP" method="post">
                     @csrf
-                    <input type="hidden" id="oldPhoneNumber" name="oldPhoneNumber" value="{{ auth()->user()->phoneNumber }}">
+                    <input type="hidden" id="oldPhoneNumber" name="oldPhoneNumber"
+                        value="{{ auth()->user()->phoneNumber }}">
                     <input type="tel" name="phoneNumber" class="form-control @error('phoneNumber') is-invalid @enderror"
                         id="phoneNumber" placeholder="Nomor Handphone" autofocus required
                         value="{{ auth()->user()->phoneNumber }}">
@@ -77,7 +70,8 @@
                     @enderror
                     <label for="nama" style="font-family: 'Poppins', sans-serif;"></label>
 
-                    <button class="button1 w-20 mb-5 mt-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
+                    <button class="button1 w-20 mb-5 mt-5 px-5 btn btn-lg btn-primary border border-dark border-2"
+                        type="submit"
                         style="
                         font-family: 'Poppins', sans-serif; 
                         ">Simpan</button>

@@ -18,16 +18,8 @@
         flex-direction:column;
         ">
 
-            <img src="/img/maps.png" alt="Avatar" class="avatar"
-                style="
-            vertical-align: middle;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border-style: solid;
-            border-width: 2px;
-            border-color:black;
-        ">
+            @include('edit-profile.partials-photo-profile.photo-profile')
+
 
         </div>
 
@@ -49,7 +41,7 @@
             <div class="container-editprofil" style="
         padding:3rem;
         ">
-                <h1 class="pengaturan" style="font-family:'ChunkFive';">PENGATURAN AKUN</h1>
+                <h1 class="pengaturan" style="font-family:'ChunkFive';">Ubah Email</h1>
                 <br>
                 @if (session()->has('editSuccess'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -75,7 +67,8 @@
                         </div>
                     @enderror
                     <label for="nama" style="font-family: 'Poppins', sans-serif;"></label>
-                    <button class="button1 w-20 mb-5 mt-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
+                    <button class="button1 w-20 mb-5 mt-5 px-5 btn btn-lg btn-primary border border-dark border-2"
+                        type="submit"
                         style="
                         font-family: 'Poppins', sans-serif; 
                         ">Simpan</button>

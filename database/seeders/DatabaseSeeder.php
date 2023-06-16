@@ -169,19 +169,19 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Lokasi::create([
-            'city' => 'silahkanPilihLokasi',
+            'lokasi' => 'silahkanPilihLokasi',
         ]);
 
         Lokasi::create([
-            'city' => 'Surabaya',
+            'lokasi' => 'Surabaya',
         ]);
 
         Lokasi::create([
-            'city' => 'Kediri',
+            'lokasi' => 'Kediri',
         ]);
 
         Lokasi::create([
-            'city' => 'Semarang',
+            'lokasi' => 'Semarang',
         ]);
 
         Cinema::create([

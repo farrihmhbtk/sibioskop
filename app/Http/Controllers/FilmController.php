@@ -47,15 +47,6 @@ class FilmController extends Controller
             "films" => Film::where('filmID', 2)->get()
         ]);
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -105,7 +96,7 @@ class FilmController extends Controller
             ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
             ->distinct()->select('cinemas.cinema')
             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-            ->where('lokasis.city', '=', $lokasi->lokasi)
+            ->where('lokasis.lokasi', '=', $lokasi->lokasi)
             ->where('films.slug', '=', $film->slug)
             ->get();
 
@@ -143,7 +134,7 @@ class FilmController extends Controller
 
         // $min_tanggal_tayangs = TanggalTayang::whereshowdateid($min_tanggal_tayangs)->first();
 
-        if($lokasi){
+        if($lokasi != null){
             $loopCinemas = DB::table('lokasis')
             ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
             ->join('bioskops', 'cinemas.cinemaID', '=', 'bioskops.cinemaID')
@@ -154,7 +145,7 @@ class FilmController extends Controller
             ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
             ->distinct()->select('cinemas.cinema')
             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-            ->where('lokasis.city', '=', $lokasi->lokasi)
+            ->where('lokasis.lokasi', '=', $lokasi->lokasi)
             ->where('films.slug', '=', $film->slug)
             ->get();
 
@@ -177,6 +168,8 @@ class FilmController extends Controller
         }
         
         $lokasi = Lokasi::select('lokasis.*')->where('lokasis.lokasiID', '=', 1)->get();
+        
+        $lokasi = Lokasi::find(1);
 
         $loopCinemas = DB::table('cinemas')->select('cinemas.cinema')->where('cinemas.cinemaID', '=', 1)->get();
                 return view('bioskopBerdasarkanFilm', [
@@ -185,12 +178,6 @@ class FilmController extends Controller
                     "lokasi" => $lokasi,
                     "min_tanggal_tayangs" => $min_tanggal_tayangs
                 ]);
-
-        
-
-
-
-
         
     }
 
@@ -212,7 +199,7 @@ class FilmController extends Controller
             ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
             ->distinct()->select('jadwal_films.filmID')
             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-            // ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+            // ->where('lokasis.lokasi', '=', $temp_lokasi->id_temp)
             ->where('cinemas.slug', '=', $cinema->slug)
             ->get();
 
@@ -254,7 +241,7 @@ class FilmController extends Controller
             ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
             ->distinct()->select('jadwal_films.filmID')
             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-            // ->where('lokasis.city', '=', $temp_lokasi->id_temp)
+            // ->where('lokasis.lokasi', '=', $temp_lokasi->id_temp)
             ->where('cinemas.slug', '=', $cinema->slug)
             ->get();
 
@@ -273,24 +260,5 @@ class FilmController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Film $film)
-    {
-        //
-    }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Film $film)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Film $film)
-    {
-        //
-    }
 }

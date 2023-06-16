@@ -128,7 +128,7 @@
                     <li class="d-block" style="">
 
                         @auth
-                            <div class="nav-link text-white" >
+                            <div class="nav-link text-white">
                                 <form action="/logout" class="hide-submit" method="post">
                                     @csrf
                                     <label>
