@@ -34,19 +34,20 @@
                         <p style="display: inline; letter-spacing: 0;font-size: 15pt; font-family: 'Poppins', sans-serif; ">
                             Welcome {{ auth()->user()->name }}</p>
                     @else
-                        <div class="container" style="padding-top: 2%; padding-left: 0; width: 100%; ">
-                            <div class="row" style="">
+                        <div class="container" style="padding-top: 2%; padding-left: 0; width: 100%;">
+                            <div class="row">
                                 <p class="col-sm-7" id="title"
                                     style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F;">SI BIOSKOP CINEMA</p>
-                                <a class="col justify-content-center" id="button"href="/login"
-                                    style="text-decoration: none; padding-top: 0.5%">
-                                    <div class="button1 text-center"
-                                        style="width: 35%; height: 50%; font-family: 'Poppins', sans-serif; border: 2px solid black;  border-radius: 4px; font-size: 10pt; letter-spacing: 0; padding-top: 0.5%">
+                                <div class="col d-flex align-items-start" id="button" href="/login"
+                                    style=" padding: 0px; padding-top: 0.7%;">
+                                    <a href="/login" class="button1 text-center"
+                                        style="text-decoration: none; margin-top: 0px; width: 35%; height: 50%; font-family: 'Poppins', sans-serif; border: 2px solid black; border-radius: 4px; font-size: 10pt; letter-spacing: 0; padding: 1%; padding-top: 0.5%; cursor: pointer;">
                                         Masuk/Daftar
-                                    </div>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                         </div>
+
 
                     @endauth
 
@@ -64,7 +65,8 @@
                             <div class="d-inline text-start" style="width: 100%;">
 
 
-                                <select id="lokasi" name="lokasi" class="" class="dropdown fw-medium @error('phoneNumber') is-invalid @enderror"
+                                <select id="lokasi" name="lokasi" class=""
+                                    class="dropdown fw-medium @error('phoneNumber') is-invalid @enderror"
                                     style="color: black; background-color: white; border-width: 1px; border-color: black; width: 50%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: left;; font-size: 11pt; appearance: none; overflow-y: hidden; padding-left: 6px; overlow-y: hidden;">
                                     <option value="silahkanPilihLokasi">Pilih Lokasi</option>
                                     <option value="Surabaya">Surabaya</option>
@@ -72,11 +74,11 @@
                                     <option value="Semarang">Semarang</option>
                                 </select>
                                 @auth
-                                <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id; }}">
+                                    <input type="hidden" name="user_id" id="user_id" value="{{ auth()->user()->id }}">
                                 @endauth
                                 <button type="submit" class="button1"
                                     style="width: 12%; font-size: 11pt; height: 5%; text-align: center; padding: 0; font-family: 'Poppins', sans-serif; border-radius: 4px;">Ubah</button>
-                                    
+
 
                                 @auth
                                     @php

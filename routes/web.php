@@ -1,15 +1,23 @@
 <?php
 
+use App\Models\Lokasi;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FilmController;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\CekTiketController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPassController;
-use App\Http\Controllers\EditProfileController;
 use App\Http\Controllers\PilihKursiController;
-use App\Models\Lokasi;
-
+use App\Http\Controllers\EditProfileController;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Verified;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use Illuminate\Support\Facades\Password;
+use App\Models\User;
+use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,7 +54,7 @@ Route::get('/filmGuest/{film:slug}/{min_tanggal_tayangs}', [FilmController::clas
 
 Route::get('/filmAuth/{film:slug}/{min_tanggal_tayangs}', [FilmController::class, 'showTodaysFilmAuth']);
 
-Route::get('/lokasi/{lokasi:city}', function(Lokasi $lokasi){
+Route::get('/lokasi/{lokasi:lokasi}', function(Lokasi $lokasi){
     return view('daftarCinema', [
         'cinemas' => $lokasi->cinemas
     ]);
@@ -61,12 +69,6 @@ Route::get('/ringkasanOrder', function() {
 });
 
 Route::get('/coba', [FilmController::class, 'index2']);
-
-Route::get('/reset', [ResetPassController::class, 'index']);
-
-Route::get('/resetVerification', [ResetPassController::class, 'verification']);
-
-Route::get('/resetEnter', [ResetPassController::class, 'enterPassword']);
 
 Route::get('/cinemaGuest/{cinema:slug}/{min_tanggal_tayangs}', [FilmController::class, 'filmBBGuest']);
 
@@ -92,10 +94,6 @@ Route::get('/profile', function() {
     return view('edit-profile.edit-profile');
 });
 
-// Route::get('/pilihKursi', function() {
-//     return view('pilihKursi');
-// });
-
 Route::post('/editName/{user:id}', [EditProfileController::class, 'editName']);
 
 Route::post('/editPass/{user:id}', [EditProfileController::class, 'editPass']);
@@ -106,6 +104,8 @@ Route::post('/editEmail', [EditProfileController::class, 'editEmail']);
 
 Route::get('/pilihKursi/{showID}', [PilihKursiController::class, 'pilihKursi'])->middleware('auth');
 
+// ->middleware(['auth', 'verified']);
+
 Route::get('/ringkasanOrder/{showID}/{seats}', [PilihKursiController::class, 'ringkasanOrder'])->middleware('auth');
 
 Route::get('/ringkasanOrder/{showID}/', [PilihKursiController::class, 'belumPilihKursi'])->middleware('auth');
@@ -115,3 +115,73 @@ Route::get('/transfer/{showID}/{seats}/{totBay}/{orderNumber}', [PilihKursiContr
 Route::post('/timer/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'storePesanan'])->middleware('auth');
 
 Route::get('/pembayaranSukses/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'pembayaranSukses'])->middleware('auth');
+
+// EMAIL VERIFICATION
+
+// Email Verification Routes | DONE
+Route::get('/email/verify', function () {
+    return view('auth.verify-email');
+})->middleware(['auth'])->name('verification.notice');
+
+// The Email Verification Handler | DONE
+Route::get('/email/verify/{id}/{hash}', function (EmailVerificationRequest $request) {
+    $request->fulfill();
+    return redirect('/');
+})->middleware(['auth', 'signed'])->name('verification.verify');
+
+// Resending The Verification Email | DONE
+Route::post('/email/verification-notification', function (Request $request) {
+    $request->user()->sendEmailVerificationNotification();
+    return back()->with('message', 'Link verifikasi telah dikirim!');
+})->middleware(['auth', 'throttle:6,1'])->name('verification.send');
+
+// RESET PASSWORD
+
+// The Password Reset Link Request Form
+Route::get('/forgot-password', function () {
+    return view('auth.forgot-password');
+})->middleware('guest')->name('password.request');
+
+// Handling The Form Submission
+Route::post('/forgot-password', function (Request $request) {
+    $request->validate(['email' => 'required|email']);
+ 
+    $status = Password::sendResetLink(
+        $request->only('email')
+    );
+ 
+    return $status === Password::RESET_LINK_SENT
+                ? back()->with(['status' => __($status)])
+                : back()->withErrors(['email' => __($status)]);
+})->middleware('guest')->name('password.email');
+
+// The Password Reset Form
+Route::get('/reset-password/{token}', function (string $token) {
+    return view('auth.reset-password', ['token' => $token]);
+})->middleware('guest')->name('password.reset');
+
+// Handling The Form Submission
+Route::post('/reset-password', function (Request $request) {
+    $request->validate([
+        'token' => 'required',
+        'email' => 'required|email',
+        'password' => 'required|min:8|confirmed',
+    ]);
+ 
+    $status = Password::reset(
+        $request->only('email', 'password', 'password_confirmation', 'token'),
+        function (User $user, string $password) {
+            $user->forceFill([
+                'password' => Hash::make($password)
+            ])->setRememberToken(Str::random(60));
+ 
+            $user->save();
+ 
+            event(new PasswordReset($user));
+        }
+    );
+ 
+    return $status === Password::PASSWORD_RESET
+                ? redirect()->route('login')->with('status', __($status))
+                : back()->withErrors(['email' => [__($status)]]);
+})->middleware('guest')->name('password.update');

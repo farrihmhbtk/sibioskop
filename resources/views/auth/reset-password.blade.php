@@ -21,17 +21,42 @@
 
 
     <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
 
 </head>
 
 <body>
 
-    <main class="form-signin w-100 h-75 card-center m-auto border border-dark border-3 rounded-2">
-        <form action="/" method="post">
+    <main class="form-signin w-100 card-center m-auto border border-dark border-3 rounded-2">
+        <form action="{{ route('password.update') }}" method="post">
             @csrf
+
+            <input type="hidden" name="token" value="{{ $token }}">
+
             <h1 class="h3 mb-4 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
+
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            
             <div class="form-floating my-2">
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                    id="email" placeholder="email" autofocus required value="{{ old('email') }}">
+                <label for="email" style="font-family: 'Poppins', sans-serif;">Email</label>
+                @error('email')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="form-floating my-2">
+
                 <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
                     id="password" placeholder="password" autofocus required value="{{ old('password') }}">
                 <label for="password" style="font-family: 'Poppins', sans-serif;">Password</label>
@@ -40,23 +65,26 @@
                         {{ $message }}
                     </div>
                 @enderror
+            </div>
 
-                <div class="form-floating my-2">
-                    <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
-                        id="password" placeholder="password" autofocus required value="{{ old('password') }}">
-                    <label for="password" style="font-family: 'Poppins', sans-serif;">Konfirmasi Password</label>
-                    @error('password')
-                        <div class="invalid-feedback">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+            <div class="form-floating my-2">
+                <input type="password" name="password_confirmation"
+                    class="form-control @error('password_confirmation') is-invalid @enderror" id="password_confirmation"
+                    placeholder="password_confirmation" autofocus required value="{{ old('password_confirmation') }}">
+                <label for="password_confirmation" style="font-family: 'Poppins', sans-serif;">Konfirmasi
+                    Password</label>
+                @error('password_confirmation')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
 
                 <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Setel password untuk akses
                     masuk ke akun SIBioskop Anda</small>
 
                 <button class="w-20 mb-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
                     style="font-family: 'Poppins', sans-serif; background-color: #EEC921; color:black">Simpan</button>
+            </div>
 
         </form>
 

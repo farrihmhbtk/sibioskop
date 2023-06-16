@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.111.3">
-    <title>Verifikasi · SiBioskop</title>
+    <title>Lupa Password · SiBioskop</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -23,30 +23,52 @@
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/style.css">
 
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+
+
 </head>
 
 <body>
 
-    <main class="form-signin h-75 w-100 m-auto border border-dark border-3 rounded-2 card-center">
-        <form action="/" method="post">
+    <main class="form-signin w-100 card-center m-auto border border-dark border-3 rounded-2">
+        <form action="/forgot-password" method="post">
             @csrf
-            <h1 class="h3 mt-5 mb-4 fw-normal text-center" style="font-family: 'ChunkFive', sans-serif;">KODE VERIFIKASI
-            </h1>
-            <p class="mb-4 text-justify text-center">Kami telah mengirimkan kode verifikasi ke email anda
-            </p>
+            <h1 class="h3 mb-3 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
+            <p class="mb-5 mt-5">Masukan email yang digunakan pada saat registrasi. Link reset password akan dikirimkan ke
+                email tersebut.</p>
+
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+
+            @if ($errors->has('email'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('email') }}
+                </div>
+            @endif
+
             <div class="form-floating my-2">
-                <input type="kodeVerifikasi" name="kodeVerifikasi"
-                    class="form-control @error('kodeVerifikasi') is-invalid @enderror" id="kodeVerifikasi"
-                    placeholder="kodeVerifikasi" autofocus required value="{{ old('kodeVerifikasi') }}">
-                <label for="kodeVerifikasi" style="font-family: 'Poppins', sans-serif;">Kode verifikasi</label>
-                @error('kodeVerifikasi')
+                <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
+                    id="email" placeholder="email" autofocus required value="{{ old('email') }}">
+                <label for="email" style="font-family: 'Poppins', sans-serif;">Email</label>
+                @error('email')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
             </div>
 
-            <button class="w-20 mt-4 mb-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
+            <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Sudah memiliki akun? <a
+                    href="/login">Masuk!</a></small>
+
+            <button class="w-20 mb-5 px-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
                 style="font-family: 'Poppins', sans-serif; background-color: #EEC921; color:black">Kirim</button>
 
         </form>

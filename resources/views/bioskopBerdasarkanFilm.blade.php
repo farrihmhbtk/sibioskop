@@ -165,7 +165,7 @@
                             ->distinct()
                             ->select('bioskops.bioskop')
                             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-                            ->where('lokasis.city', '=', $lokasi->lokasi)
+                            ->where('lokasis.lokasi', '=', $lokasi->lokasi)
                             ->where('cinemas.cinema', '=', $loopCinema->cinema)
                             ->where('jadwal_films.filmID', '=', $film->filmID)
                             ->get(); ?>
@@ -188,7 +188,7 @@
                                             ->distinct()
                                             ->select('jadwal_films.price')
                                             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-                                            ->where('lokasis.city', '=', $lokasi->lokasi)
+                                            ->where('lokasis.lokasi', '=', $lokasi->lokasi)
                                             ->where('bioskops.bioskop', '=', $loopBioskop->bioskop)
                                             ->get();
                                         ?>
@@ -212,7 +212,7 @@
                                         ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
                                         ->select('waktu_tayangs.startTime','jadwal_films.*')
                                         ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-                                        ->where('lokasis.city', '=', $lokasi->lokasi)
+                                        ->where('lokasis.lokasi', '=', $lokasi->lokasi)
                                         ->where('bioskops.bioskop', '=', $loopBioskop->bioskop)
                                         ->where('jadwal_films.filmID', '=', $film->filmID)
                                         ->get();

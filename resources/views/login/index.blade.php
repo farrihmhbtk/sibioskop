@@ -53,6 +53,13 @@
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
+
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
+                </div>
+            @endif
+
             <div class="form-floating my-2">
                 <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
                     id="email" placeholder="Email" autofocus required value="{{ old('email') }}">
@@ -71,7 +78,8 @@
             <div class="d-flex justify-content-between">
                 <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;">Belum memiliki akun? <a
                         href="/register">Daftar!</a></small>
-                <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;"><a href="/reset">Lupa
+                <small class="d-block mt-3 mb-3" style="font-family: 'Poppins', sans-serif;"><a
+                        href="/forgot-password">Lupa
                         Password</a></small>
             </div>
             <button class="w-20 mb-5 btn btn-lg btn-primary border border-dark border-2" type="submit"
