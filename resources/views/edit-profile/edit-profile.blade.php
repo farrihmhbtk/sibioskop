@@ -18,18 +18,7 @@
         flex-direction:column;
         ">
 
-            {{-- <img src="/img/maps.png" alt="Avatar" class="avatar"
-                style="
-            vertical-align: middle;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border-style: solid;
-            border-width: 2px;
-            border-color:black;
-        "> --}}
-
-        <div class="container">
+        {{-- <div class="container">
             <div class="row">
                 <div class="col text-center">
                     <svg class="text-center" width="300" height="300" viewBox="-10 -10 76 76"  fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -46,9 +35,9 @@
                     </svg>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
-
+        @include('edit-profile.partials-photo-profile.photo-profile')
 
         </div>
 

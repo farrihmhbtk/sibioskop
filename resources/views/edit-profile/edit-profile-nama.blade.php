@@ -18,16 +18,8 @@
         flex-direction:column;
         ">
 
-            <img src="/img/maps.png" alt="Avatar" class="avatar"
-                style="
-            vertical-align: middle;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border-style: solid;
-            border-width: 2px;
-            border-color:black;
-        ">
+            @include('edit-profile.partials-photo-profile.photo-profile')
+
 
         </div>
 

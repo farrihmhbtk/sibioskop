@@ -77,7 +77,18 @@
                 <input type="password" name="password" class="form-control @error('password') is-invalid @enderror"
                     id="password" placeholder="Password">
                 <label for="password" style="font-family: 'Poppins', sans-serif;">Password</label>
-                @error('name')
+                @error('password')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            
+            <div class="form-floating">
+                <input type="password" name="password_confirmation" class="form-control @error('password_confirmation') is-invalid @enderror"
+                    id="password_confirmation" placeholder="Konfirmasi Password">
+                <label for="password" style="font-family: 'Poppins', sans-serif;">Konfirmasi Password</label>
+                @error('password_confirmation')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
