@@ -8,7 +8,7 @@ use App\Models\KursiPesanan;
 use App\Models\Kursi;
 use Illuminate\Http\Request;
 
-class PilihKursiController extends Controller
+class PesanTiketController extends Controller
 {
     public function pilihKursi($showID)
     {

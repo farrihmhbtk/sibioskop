@@ -7,7 +7,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\CekTiketController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ResetPassController;
-use App\Http\Controllers\PilihKursiController;
+use App\Http\Controllers\PesanTiketController;
 use App\Http\Controllers\EditProfileController;
 use Illuminate\Http\Request;
 use Illuminate\Auth\Events\Verified;
@@ -104,19 +104,19 @@ Route::post('/editNoHP', [EditProfileController::class, 'editNoHP']);
 
 Route::post('/editEmail', [EditProfileController::class, 'editEmail']);
 
-Route::get('/pilihKursi/{showID}', [PilihKursiController::class, 'pilihKursi'])->middleware('auth');
+Route::get('/pilihKursi/{showID}', [PesanTiketController::class, 'pilihKursi'])->middleware('auth');
 
 // ->middleware(['auth', 'verified']);
 
-Route::get('/ringkasanOrder/{showID}/{seats}', [PilihKursiController::class, 'ringkasanOrder'])->middleware('auth');
+Route::get('/ringkasanOrder/{showID}/{seats}', [PesanTiketController::class, 'ringkasanOrder'])->middleware('auth');
 
-Route::get('/ringkasanOrder/{showID}/', [PilihKursiController::class, 'belumPilihKursi'])->middleware('auth');
+Route::get('/ringkasanOrder/{showID}/', [PesanTiketController::class, 'belumPilihKursi'])->middleware('auth');
 
-Route::get('/transfer/{showID}/{seats}/{totBay}/{orderNumber}', [PilihKursiController::class, 'transfer'])->middleware('auth');
+Route::get('/transfer/{showID}/{seats}/{totBay}/{orderNumber}', [PesanTiketController::class, 'transfer'])->middleware('auth');
 
-Route::post('/timer/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'storePesanan'])->middleware('auth');
+Route::post('/timer/{showID}/{seats}/{totBay}', [PesanTiketController::class, 'storePesanan'])->middleware('auth');
 
-Route::get('/pembayaranSukses/{showID}/{seats}/{totBay}', [PilihKursiController::class, 'pembayaranSukses'])->middleware('auth');
+Route::get('/pembayaranSukses/{showID}/{seats}/{totBay}', [PesanTiketController::class, 'pembayaranSukses'])->middleware('auth');
 
 // EMAIL VERIFICATION
 

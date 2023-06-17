@@ -70,7 +70,6 @@
                                     style="color: black; background-color: white; border-width: 1px; border-color: black; width: 50%; height: 25px; font-family: 'Poppins', sans-serif; border-radius: 7px; text-align: left;; font-size: 11pt; appearance: none; overflow-y: hidden; padding-left: 6px; overlow-y: hidden;">
                                     <option value="silahkanPilihLokasi">Pilih Lokasi</option>
                                     <option value="Surabaya">Surabaya</option>
-                                    <option value="Kediri">Kediri</option>
                                     <option value="Semarang">Semarang</option>
                                 </select>
                                 @auth
