@@ -30,13 +30,13 @@
                 <div class="row">
                     <div class="col-sm-12 mb-5">
                         <div class="wrapper" style="position: relative; width: 480px; ">
-                            <img id="video-cover" src="{{ $film->linkCoverTrailer }}" alt="Video title"
+                            <img id="video-cover-0" src="{{ $film->linkCoverTrailer }}" alt="Video title"
                                 style="max-width: 100%; height:auto; border-radius: 8px; border: 2px solid black; box-shadow: -10px 12px black">
-                            <iframe id="video" width="480" height="269"
+                            <iframe id="video-0" width="480" height="269"
                                 src="https://www.youtube.com/embed/{{ $film->linkTrailerID }}" frameborder="0"
                                 allow="autoplay; encrypted-media" allowfullscreen style="display: none;">
                             </iframe>
-                            <button id="playbutton" class="play-btn">
+                            <button id="playbutton-0" class="play-btn">
                                 <svg width="100" height="103" viewBox="0 0 119 123" fill="none"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path
@@ -190,6 +190,7 @@
                                             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
                                             ->where('lokasis.lokasi', '=', $lokasi->lokasi)
                                             ->where('bioskops.bioskop', '=', $loopBioskop->bioskop)
+                                            ->where('jadwal_films.filmID', '=', $film->filmID)
                                             ->get();
                                         ?>
 
