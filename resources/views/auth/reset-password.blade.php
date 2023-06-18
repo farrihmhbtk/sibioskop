@@ -33,7 +33,7 @@
 
             <input type="hidden" name="token" value="{{ $token }}">
 
-            <h1 class="h3 mb-4 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP</h1>
+            <h1 class="h3 mb-4 mt-5 fw-normal" style="font-family: 'ChunkFive', sans-serif;">SI BIOSKOP | <span style="font-family: 'Poppins', sans-serif; font-size: 21pt;">Reset Password</span></h1>
 
             @if ($errors->any())
                 <div class="alert alert-danger">

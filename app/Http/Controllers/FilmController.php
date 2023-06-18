@@ -34,13 +34,6 @@ class FilmController extends Controller
         ]);
     }
 
-    // public function indexCinema(Cinema $cinema)
-    // {
-    //     return view('filmBerdasarkanCinema', [
-    //         "cinemas" => $cinema
-    //     ]);
-    // }
-
     public function pembayaransukses()
     {
         return view('pembayaransukses', [
@@ -81,10 +74,6 @@ class FilmController extends Controller
     public function showTodaysFilmGuest(Film $film, $min_tanggal_tayangs)
     {
         $lokasi = HistoryLokasiGuest::select('lokasi')->orderBy('id', 'desc')->first();
-
-        // $min_tanggal_tayangs = DB::table('tanggal_tayangs')->select('showDateID')->where('showDateID', $min_tanggal_tayangs)->get();
-
-        // $min_tanggal_tayangs = TanggalTayang::whereshowdateid($min_tanggal_tayangs)->first();
 
         $loopCinemas = DB::table('lokasis')
             ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
@@ -129,10 +118,6 @@ class FilmController extends Controller
                 ->where('users.id', '=', $user->id)
                 ->orderBy('history_lokasis.id', 'desc')
                 ->first();
-
-        // $min_tanggal_tayangs = DB::table('tanggal_tayangs')->select('showDateID')->where('showDateID', $min_tanggal_tayangs)->get();
-
-        // $min_tanggal_tayangs = TanggalTayang::whereshowdateid($min_tanggal_tayangs)->first();
 
         if($lokasi != null){
             $loopCinemas = DB::table('lokasis')
@@ -185,10 +170,6 @@ class FilmController extends Controller
     {
         $temp_lokasi = HistoryLokasiGuest::select('lokasi')->orderBy('id', 'desc')->first();
 
-        // $min_tanggal_tayangs = DB::table('tanggal_tayangs')->select('showDateID')->where('showDateID', $min_tanggal_tayangs)->get();
-
-        // $min_tanggal_tayangs = TanggalTayang::whereshowdateid($min_tanggal_tayangs)->first();
-
         $loopFilms = DB::table('lokasis')
             ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
             ->join('bioskops', 'cinemas.cinemaID', '=', 'bioskops.cinemaID')
@@ -199,7 +180,6 @@ class FilmController extends Controller
             ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
             ->distinct()->select('jadwal_films.filmID')
             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-            // ->where('lokasis.lokasi', '=', $temp_lokasi->id_temp)
             ->where('cinemas.slug', '=', $cinema->slug)
             ->get();
 
@@ -210,7 +190,6 @@ class FilmController extends Controller
         return view('filmBerdasarkanCinema', [
             "cinemas" => $cinema,
             "loopFilms" => $loopFilms,
-            // "temp_lokasi" => $temp_lokasi,
             "min_tanggal_tayangs" => $min_tanggal_tayangs,
         ]);
     }
@@ -227,10 +206,6 @@ class FilmController extends Controller
             ->first();
         $lokasiText = $lokasi ? $lokasi->lokasi : 'silahkanPilihLokasi';
 
-        // $min_tanggal_tayangs = DB::table('tanggal_tayangs')->select('showDateID')->where('showDateID', $min_tanggal_tayangs)->get();
-
-        // $min_tanggal_tayangs = TanggalTayang::whereshowdateid($min_tanggal_tayangs)->first();
-
         $loopFilms = DB::table('lokasis')
             ->join('cinemas', 'lokasis.lokasiID', '=', 'cinemas.lokasiID')
             ->join('bioskops', 'cinemas.cinemaID', '=', 'bioskops.cinemaID')
@@ -241,7 +216,6 @@ class FilmController extends Controller
             ->join('studios', 'jadwal_films.studioID', '=', 'studios.studioID')
             ->distinct()->select('jadwal_films.filmID')
             ->where('jadwal_films.showDateID', '=', $min_tanggal_tayangs)
-            // ->where('lokasis.lokasi', '=', $temp_lokasi->id_temp)
             ->where('cinemas.slug', '=', $cinema->slug)
             ->get();
 
@@ -252,13 +226,8 @@ class FilmController extends Controller
         return view('filmBerdasarkanCinema', [
             "cinemas" => $cinema,
             "loopFilms" => $loopFilms,
-            // "temp_lokasi" => $temp_lokasi,
             "min_tanggal_tayangs" => $min_tanggal_tayangs,
         ]);
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
 
 }

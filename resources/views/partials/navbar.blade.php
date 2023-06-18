@@ -32,14 +32,14 @@
                     @auth
                         <p style="display: inline;">SI BIOSKOP CINEMA | </p>
                         <p style="display: inline; letter-spacing: 0;font-size: 15pt; font-family: 'Poppins', sans-serif; ">
-                            Welcome {{ auth()->user()->name }}</p>
+                            Welcome {{ auth()->user()->name }} </p>
                     @else
                         <div class="container" style="padding-top: 2%; padding-left: 0; width: 100%;">
                             <div class="row">
                                 <p class="col-sm-7" id="title"
                                     style="font-family: 'ChunkFive', sans-serif; color: #1F1F1F;">SI BIOSKOP CINEMA</p>
                                 <div class="col d-flex align-items-start" id="button" href="/login"
-                                    style=" padding: 0px; padding-top: 0.7%;">
+                                    style=" padding: 0px; padding-top: 0.7%; ">
                                     <a href="/login" class="button1 text-center"
                                         style="text-decoration: none; margin-top: 0px; width: 35%; height: 50%; font-family: 'Poppins', sans-serif; border: 2px solid black; border-radius: 4px; font-size: 10pt; letter-spacing: 0; padding: 1%; padding-top: 0.5%; cursor: pointer;">
                                         Masuk/Daftar
