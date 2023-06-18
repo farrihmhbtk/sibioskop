@@ -22,14 +22,6 @@ class Cinema extends Model
     public function bioskops()
     {
         return $this->hasMany(Bioskop::class);
-
-        // $bioskop = Bioskop::find(1);
-        // $bioskop->cinemas()->attach(1);
     }
 
-    
-
-    // public function temp_lokasi(){
-    //     return $this->belongsTo(temp_lokasi::class);
-    // }
 }
