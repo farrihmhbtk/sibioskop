@@ -1,12 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use Illuminate\Auth\Events\Registered;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
 use App\Notifications\VerifyEmailNotification;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 
 
 class RegisterController extends Controller
@@ -26,32 +28,26 @@ class RegisterController extends Controller
 
     public function store(Request $request)
     {
-        $user = $request->validate([
+        $validatedData = $request->validate([
             'name' => 'required|max:225',
             'password' => 'required|min:3|max:255|confirmed',
             'phoneNumber' => 'required|unique:users|min:5',
             'email' => 'required|min:5|unique:users|max:255'
         ]);
 
+        $validatedData['password'] = bcrypt($validatedData['password']);
+        $validatedData['email_verified_at'] = null;
 
-    
-        $user['password'] = bcrypt($user['password']);
-    
-        $createdUser = User::create($user);
-    
-        $createdUser->notify(new VerifyEmailNotification);
+        $createdUser = User::create($validatedData);
 
-        $credentials = $request->validate([
-            'email' => 'required',
-            'password' => 'required'
-        ]);
+        $createdUser->sendEmailVerificationNotification();
 
-        if (Auth::attempt($credentials)) {
-            session()->regenerate();
-            return redirect()->intended('/email/verify');
-            // return back()->with('loginSuccess', 'joss!');
-        }
-        
+        event(new Registered($createdUser));
+
+        Auth::login($createdUser); 
+
+        $request->session()->regenerate(); 
+
+        return redirect()->route('verification.notice');
     }
-    
 }

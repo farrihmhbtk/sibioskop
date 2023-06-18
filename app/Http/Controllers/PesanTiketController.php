@@ -26,6 +26,10 @@ class PesanTiketController extends Controller
         ]);
     }
 
+    public function showRingkasanOrder(){
+        return view('ringkasanOrder');
+    }
+
     public function ringkasanOrder($showID, $seats)
     {
         $films = DB::table('jadwal_films')

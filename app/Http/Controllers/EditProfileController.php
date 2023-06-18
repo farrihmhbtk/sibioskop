@@ -10,7 +10,31 @@ use Illuminate\Support\Facades\Hash;
 
 class EditProfileController extends Controller
 {
-    //
+    
+    public function showEditName(){
+        return view('edit-profile.edit-profile-nama');
+    }
+    
+    public function showEditNoHP(){
+        return view('edit-profile.edit-profile-noHP');
+    }
+    
+    public function showEditEmail(){
+        return view('edit-profile.edit-profile-email');
+    }
+    
+    public function showEditPass(){
+        return view('edit-profile.edit-profile-pass');
+    }
+    
+    public function showEditProfile(){
+        return view('edit-profile.edit-profile');
+    }
+    
+    public function showPanduan(){
+        return view('panduan');
+    }
+
     public function editName(Request $request, $user)
     {
 
