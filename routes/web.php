@@ -90,7 +90,7 @@ Route::get('/cekTiket', [CekTiketController::class, 'index']);
 
 Route::get('/filmGuest/{film:slug}/{min_tanggal_tayangs}', [FilmController::class, 'showTodaysFilmGuest']);
 
-Route::get('/lokasi/{lokasi:city}', function (Lokasi $lokasi) {
+Route::get('/lokasi/{lokasi:lokasi}', function (Lokasi $lokasi) {
     return view('daftarCinema', [
         'cinemas' => $lokasi->cinemas
     ]);
